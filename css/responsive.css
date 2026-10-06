@@ -1,0 +1,47 @@
+@media (max-width: 850px) {
+  .materia-contenido {
+    grid-template-columns: 1fr;
+  }
+  
+  .indice {
+    position: static;
+    max-height: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .menu-btn { display: block; }
+  
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: var(--esp-sm);
+    gap: 0.3rem;
+  }
+  
+  .nav.activo { display: flex; }
+  
+  .nav a {
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem;
+  }
+  
+  .hero h2 { font-size: 1.6rem; }
+  .hero p { font-size: 0.95rem; }
+  
+  .materia-titulo-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .materia-numero { font-size: 2.5rem; }
+  .materia-info h2 { font-size: 1.2rem; }
+  
+  .bloque-tema { padding: var(--esp-md); }
+  
+  .quiz-pregunta { font-size: 1rem; }
+  .quiz-pregunta-card { padding: var(--esp-md); }
+}

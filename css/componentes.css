@@ -1,0 +1,187 @@
+/* ===== BOTONES ===== */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radio-sm);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  transition: var(--trans);
+  cursor: pointer;
+}
+
+.btn:hover { transform: translateY(-2px); box-shadow: var(--sombra-hover); }
+
+.btn-primario { background: var(--secundario); color: var(--texto); }
+.btn-secundario { background: transparent; color: var(--blanco); border: 2px solid var(--blanco); }
+.btn-outline {
+  background: transparent;
+  color: var(--primario);
+  border: 2px solid var(--primario);
+}
+.btn-volver {
+  background: #f1f5f9;
+  color: var(--texto);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radio-sm);
+  font-weight: 600;
+  border: none;
+  margin-bottom: var(--esp-sm);
+}
+.btn-volver:hover { background: var(--primario); color: var(--blanco); }
+
+/* ===== TARJETAS ===== */
+.tarjeta {
+  background: var(--blanco);
+  border-radius: var(--radio-md);
+  padding: var(--esp-md);
+  box-shadow: var(--sombra);
+  border-top: 4px solid var(--primario);
+  transition: var(--trans);
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-hover);
+}
+
+/* ===== TARJETAS DE MATERIA (asignaturas) ===== */
+.tarjeta-materia {
+  border-radius: var(--radio-lg);
+  padding: var(--esp-lg);
+  color: var(--blanco);
+  cursor: pointer;
+  transition: var(--trans);
+  box-shadow: var(--sombra);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tarjeta-materia:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-hover);
+}
+
+.tarjeta-materia .icono-grande {
+  font-size: 3rem;
+  margin-bottom: var(--esp-sm);
+}
+
+.tarjeta-materia h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta-materia p {
+  font-size: 0.9rem;
+  opacity: 0.95;
+  margin-bottom: var(--esp-sm);
+}
+
+.tarjeta-materia .meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Colores de tarjetas por asignatura */
+.tarjeta-materia.ciencias { background: linear-gradient(135deg, var(--cie), #14b8a6); }
+.tarjeta-materia.matematicas { background: linear-gradient(135deg, var(--mat), #3b82f6); }
+.tarjeta-materia.fisica { background: linear-gradient(135deg, var(--fis), #a78bfa); }
+.tarjeta-materia.probabilidad { background: linear-gradient(135deg, var(--prob), #34d399); }
+.tarjeta-materia.contexto { background: linear-gradient(135deg, #b45309, #f59e0b); }
+.tarjeta-materia.herramientas { background: linear-gradient(135deg, #475569, #64748b); }
+
+/* ===== BADGE / ETIQUETA ===== */
+.badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  color: var(--blanco);
+  font-size: 0.7rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== FORMULAS Y EJEMPLOS ===== */
+.formula {
+  background: #f1f5f9;
+  border-left: 4px solid var(--secundario);
+  padding: 0.9rem 1.1rem;
+  font-family: 'Courier New', monospace;
+  margin: 0.9rem 0;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.ejemplo {
+  background: #fef3c7;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radio-sm);
+  margin: 1rem 0;
+  border-left: 4px solid var(--secundario);
+}
+
+.ejemplo strong { color: #92400e; }
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: var(--esp-sm);
+}
+
+.modal.activo { display: flex; }
+
+.modal-contenido {
+  background: var(--blanco);
+  border-radius: var(--radio-lg);
+  padding: var(--esp-lg);
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--gris);
+  line-height: 1;
+}
+
+.cerrar:hover { color: #ef4444; }
+
+/* ===== ESTADO VACÍO ===== */
+.vacio {
+  text-align: center;
+  padding: var(--esp-xl);
+  color: var(--gris);
+}
+
+.vacio .icono { font-size: 4rem; margin-bottom: var(--esp-sm); }

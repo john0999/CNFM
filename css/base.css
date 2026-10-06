@@ -1,0 +1,64 @@
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+  /* Colores semestres */
+  --s1: #c19a2e; --s2: #b8204a; --s3: #4f7d7a;
+  --s4: #a98f4f; --s5: #7a1f2e; --s6: #14614a;
+  
+  /* Colores asignaturas */
+  --mat: #2563eb;      /* Matemáticas - azul */
+  --fis: #7c3aed;      /* Física - violeta */
+  --prob: #059669;     /* Probabilidad - verde */
+  --cie: #0d9488;      /* Ciencias - teal */
+  
+  /* Colores base */
+  --primario: #0d9488;
+  --primario-oscuro: #0f766e;
+  --secundario: #f59e0b;
+  --fondo: #f8fafc;
+  --texto: #1e293b;
+  --gris: #64748b;
+  --blanco: #fff;
+  --sombra: 0 4px 15px rgba(0,0,0,.08);
+  --sombra-hover: 0 10px 25px rgba(0,0,0,.15);
+  
+  /* Espaciado */
+  --esp-xs: 0.5rem;
+  --esp-sm: 1rem;
+  --esp-md: 1.5rem;
+  --esp-lg: 2rem;
+  --esp-xl: 3rem;
+  
+  /* Radios */
+  --radio-sm: 8px;
+  --radio-md: 12px;
+  --radio-lg: 16px;
+  
+  /* Transiciones */
+  --trans: 0.25s ease;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+a { color: var(--primario); text-decoration: none; }
