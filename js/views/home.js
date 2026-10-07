@@ -7,7 +7,7 @@ const VistaHome = {
     contenedor.innerHTML = `
       <section class="hero">
         <div class="contenedor">
-          <h2>Aprende <span class="resaltado">Ciencias, Matemáticas y Física</span></h2>
+          <h2>Aprende <span class="resaltado">Química, Ciencias, Matemáticas y Física</span></h2>
           <p>Portal educativo alineado al plan de estudios de <strong>EMSAD Chiapas</strong>. Contenido contextualizado a tu comunidad.</p>
           <div class="hero-botones">
             <a href="#/ciencias" class="btn btn-primario">Explorar asignaturas</a>
@@ -51,6 +51,14 @@ const VistaHome = {
         descripcion: 'Química, Física y Biología integradas en 6 semestres.',
         meta: { temas: 42, semestres: 6 },
         clase: 'ciencias'
+      },
+       {
+        id: 'quimica',               
+        titulo: 'Química',
+        icono: '⚗️',
+        descripcion: 'Química I y II: estructura atómica, enlaces, reacciones y soluciones.',
+        meta: { temas: 17, semestres: 2 },
+        clase: 'quimica'
       },
       {
         id: 'matematicas',

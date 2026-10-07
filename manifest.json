@@ -1,16 +1,23 @@
 {
-  "name": "Ciencias Naturales EMSAD Chiapas",
-  "short_name": "Ciencias EMSAD",
-  "description": "Portal de Ciencias Naturales para estudiantes de EMSAD Chiapas",
+  "name": "Quantix",
+  "short_name": "Quantix",
+  "description": "Portal de Ciencias, Quimica, Matematicas, Fisica y Probabilidad para estudiantes del colegio de bachilleres de Chiapas",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f766e",
   "theme_color": "#0d9488",
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>",
+      "src": "./images/Quantix.png",
       "sizes": "192x192",
-      "type": "image/svg+xml"
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./images/Quantix.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

@@ -3,7 +3,7 @@
 ========================================================== */
 
 const CONTEXTO = {
-  titulo: "🏔️ EMSAD en Chiapas",
+  titulo: "🏔️ Mi Plantel",
   subtitulo: "Conoce el contexto de tu bachillerato",
   intro: `
     <p>El <strong>EMSAD (Educación Media Superior a Distancia)</strong> es un modelo educativo creado en 1997 para llevar el bachillerato a comunidades rurales donde no es posible establecer un plantel tradicional.</p>
@@ -11,7 +11,7 @@ const CONTEXTO = {
   `,
   datos: [
     { icono: "🏫", numero: "190", label: "Centros EMSAD" },
-    { icono: "👥", numero: "12,805", label: "Estudiantes indígenas" },
+    { icono: "👥", numero: "12,805", label: "Estudiantes" },
     { icono: "📍", numero: "82%", label: "Localidades < 2,500 hab" },
     { icono: "📚", numero: "5", label: "Campos de conocimiento" }
   ],
@@ -22,17 +22,16 @@ const CONTEXTO = {
         <p>El EMSAD combina materiales impresos, audiovisuales y herramientas TIC.</p>
         <h4>Características principales</h4>
         <ul>
-          <li>Atiende comunidades de 2,500 a 5,000 habitantes</li>
-          <li>Modalidad <strong>mixta</strong> (85% escolarizada)</li>
-          <li>Los docentes se llaman <strong>asesores</strong></li>
-          <li>Usa guías de aprendizaje y Cuadernos DGB</li>
+          <li>Atiende comunidades</li>
+          <li>Modalidad <strong>mixta</strong> (escolarizada)</li>
+          <li>Se usan guías de aprendizaje y Cuadernos DGB</li>
         </ul>
       `
     },
     {
       titulo: "🏔️ Contexto Chiapaneco",
       contenido: `
-        <p>Chiapas es el estado con <strong>mayor presencia de EMSAD</strong> en México. El <strong>41.74%</strong> de la matrícula estatal es población indígena.</p>
+        <p>Chiapas es el estado con <strong>mayor presencia de EMSAD</strong> en México. El <strong>41.74%</strong> de la matrícula estatal es población rural.</p>
         <h4>Diversidad cultural</h4>
         <p>Los centros atienden a estudiantes de grupos étnicos como <strong>Chuj, Kanjobal, Tzotzil, Tzeltal, Tojolabal y Zoque</strong>.</p>
         <h4>Realidad socioeconómica</h4>

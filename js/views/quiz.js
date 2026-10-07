@@ -1,8 +1,10 @@
 /* ==========================================================
-   VIEW - QUIZ (vista independiente, no modal)
+   VIEW - QUIZ (versión final con Química integrada)
+   Router v2 · Soporta: #/quiz, #/quiz/tipo-sem, #/quiz?tipo=&sem=
 ========================================================== */
 
 const VistaQuiz = {
+  // ===== Estado del quiz =====
   estado: {
     materia: null,
     semestre: null,
@@ -12,17 +14,42 @@ const VistaQuiz = {
     respondida: false
   },
 
-  render(contenedor, materiaParam) {
-    // Si hay parámetros, iniciar quiz
-    if (materiaParam) {
-      const [materia, semestre] = materiaParam.split('-');
+  // ===== Configuración de asignaturas =====
+  // Orden en que aparecen en el selector y nombres mostrados
+  ASIGNATURAS: [
+    { key: 'ciencias',     nombre: '🔬 Ciencias',                 color: '#0d9488' },
+    { key: 'quimica',      nombre: '⚗️ Química',                  color: '#dc2626' },
+    { key: 'matematicas',  nombre: '📐 Matemáticas',              color: '#2563eb' },
+    { key: 'fisica',       nombre: '⚡ Física',                   color: '#7c3aed' },
+    { key: 'probabilidad', nombre: '📊 Probabilidad y Estadística', color: '#059669' }
+  ],
+
+  /**
+   * Punto de entrada de la vista
+   * @param {HTMLElement} contenedor
+   * @param {Object} params - { id, segundo, params, query, ruta }
+   */
+  render(contenedor, params = {}) {
+    const { id, query } = params;
+
+    // URL: #/quiz/ciencias-3  (id = "ciencias-3")
+    if (id && id.includes('-')) {
+      const [materia, semestre] = id.split('-');
       return this.iniciar(contenedor, materia, semestre);
     }
 
-    // Si no, mostrar selector
+    // URL: #/quiz?tipo=ciencias&sem=3
+    if (query?.tipo && query?.sem) {
+      return this.iniciar(contenedor, query.tipo, query.sem);
+    }
+
+    // URL: #/quiz → selector
     this.renderSelector(contenedor);
   },
 
+  // ==========================================================
+  // SELECTOR DE CATEGORÍAS
+  // ==========================================================
   renderSelector(contenedor) {
     contenedor.innerHTML = `
       <div class="quiz-header">
@@ -38,74 +65,66 @@ const VistaQuiz = {
     const grid = document.getElementById('quizCategorias');
     const categorias = [];
 
-    // Ciencias (6 semestres)
-    Object.keys(QUIZZES.ciencias).forEach(sem => {
-      categorias.push({
-        tipo: 'ciencias',
-        semestre: sem,
-        titulo: `🔬 Ciencias - Semestre ${sem}`,
-        preguntas: QUIZZES.ciencias[sem].length
+    // Recorrer asignaturas en el ORDEN definido
+    this.ASIGNATURAS.forEach(({ key: tipo, nombre, color }) => {
+      const semestres = QUIZZES[tipo];
+      if (!semestres) return;
+
+      Object.keys(semestres).forEach(sem => {
+        categorias.push({
+          tipo,
+          semestre: sem,
+          color,
+          titulo: `${nombre} - Semestre ${sem}`,
+          preguntas: semestres[sem].length
+        });
       });
     });
 
-    // Matemáticas (4 semestres)
-    Object.keys(QUIZZES.matematicas).forEach(sem => {
-      categorias.push({
-        tipo: 'matematicas',
-        semestre: sem,
-        titulo: `📐 Matemáticas - Semestre ${sem}`,
-        preguntas: QUIZZES.matematicas[sem].length
-      });
-    });
+    // Si no hay quizzes disponibles
+    if (categorias.length === 0) {
+      grid.innerHTML = `
+        <div class="vacio" style="grid-column:1/-1;">
+          <div class="icono">📭</div>
+          <p>No hay quizzes disponibles por el momento.</p>
+        </div>
+      `;
+      return;
+    }
 
-    // Física (3 semestres)
-    Object.keys(QUIZZES.fisica).forEach(sem => {
-      categorias.push({
-        tipo: 'fisica',
-        semestre: sem,
-        titulo: `⚡ Física - Semestre ${sem}`,
-        preguntas: QUIZZES.fisica[sem].length
-      });
-    });
-
-    // Probabilidad
-    Object.keys(QUIZZES.probabilidad).forEach(sem => {
-      categorias.push({
-        tipo: 'probabilidad',
-        semestre: sem,
-        titulo: `📊 Probabilidad - Semestre ${sem}`,
-        preguntas: QUIZZES.probabilidad[sem].length
-      });
-    });
-
+    // Renderizar tarjetas
     grid.innerHTML = categorias.map(c => {
       const mejor = Storage.mejorResultado(`${c.tipo}-${c.semestre}`);
       return `
-        <div class="quiz-categoria-card" data-tipo="${c.tipo}" data-semestre="${c.semestre}">
+        <div class="quiz-categoria-card" 
+             style="border-left-color: ${c.color};"
+             onclick="Router.ir('quiz', '${c.tipo}-${c.semestre}')">
           <h3>${c.titulo}</h3>
           <p>${c.preguntas} preguntas</p>
           <div class="meta">
             <span>📝 ${c.preguntas} preguntas</span>
-            ${mejor ? `<span>🏆 Mejor: ${mejor.porcentaje}%</span>` : '<span>Sin intentos</span>'}
+            ${mejor 
+              ? `<span>🏆 Mejor: ${mejor.porcentaje}%</span>` 
+              : '<span>Sin intentos</span>'}
           </div>
         </div>
       `;
     }).join('');
-
-    grid.querySelectorAll('.quiz-categoria-card').forEach(card => {
-      card.addEventListener('click', () => {
-        this.iniciar(contenedor, card.dataset.tipo, card.dataset.semestre);
-      });
-    });
   },
 
+  // ==========================================================
+  // INICIAR QUIZ
+  // ==========================================================
   iniciar(contenedor, materia, semestre) {
     const banco = QUIZZES[materia]?.[semestre];
-    if (!banco) {
+
+    if (!banco || !banco.length) {
+      console.warn(`⚠️ No hay quiz para: ${materia} - semestre ${semestre}`);
       this.renderSelector(contenedor);
       return;
     }
 
+    // Reiniciar estado
     this.estado = {
       materia,
       semestre,
@@ -118,65 +137,78 @@ const VistaQuiz = {
     this.renderPregunta(contenedor);
   },
 
+  // ==========================================================
+  // RENDERIZAR PREGUNTA
+  // ==========================================================
   renderPregunta(contenedor) {
     const { materia, semestre, preguntas, indice } = this.estado;
 
+    // Si terminó el quiz
     if (indice >= preguntas.length) {
       return this.renderResultado(contenedor);
     }
 
     const p = preguntas[indice];
-    const progreso = ((indice) / preguntas.length) * 100;
-    const nombres = {
-      ciencias: '🔬 Ciencias', matematicas: '📐 Matemáticas',
-      fisica: '⚡ Física', probabilidad: '📊 Probabilidad'
-    };
+    const progreso = (indice / preguntas.length) * 100;
+    const nombreMateria = this.obtenerNombreMateria(materia);
 
     contenedor.innerHTML = `
-      <div class="quiz-container">
-        <div class="quiz-progreso">
-          <span>${nombres[materia]} · Semestre ${semestre}</span>
-          <span>${indice + 1} / ${preguntas.length}</span>
-        </div>
-        <div class="quiz-barra">
-          <div class="quiz-barra-fill" style="width: ${progreso}%"></div>
-        </div>
-        <div class="quiz-pregunta-card">
-          <p class="quiz-pregunta">${p.pregunta}</p>
-          <div class="quiz-opciones">
-            ${p.opciones.map((op, i) => `
-              <button class="quiz-opcion" data-indice="${i}">
-                <span class="letra">${String.fromCharCode(65 + i)}</span>
-                <span>${op}</span>
-              </button>
-            `).join('')}
+      <div class="contenedor">
+        <div class="quiz-container">
+          <div class="quiz-progreso">
+            <span>${nombreMateria} · Semestre ${semestre}</span>
+            <span>${indice + 1} / ${preguntas.length}</span>
+          </div>
+          <div class="quiz-barra">
+            <div class="quiz-barra-fill" style="width: ${progreso}%"></div>
+          </div>
+          <div class="quiz-pregunta-card">
+            <p class="quiz-pregunta">${p.pregunta}</p>
+            <div class="quiz-opciones">
+              ${p.opciones.map((op, i) => `
+                <button class="quiz-opcion" data-indice="${i}">
+                  <span class="letra">${String.fromCharCode(65 + i)}</span>
+                  <span>${op}</span>
+                </button>
+              `).join('')}
+            </div>
           </div>
         </div>
       </div>
     `;
 
+    // Escuchar clics en las opciones
     contenedor.querySelectorAll('.quiz-opcion').forEach(btn => {
       btn.addEventListener('click', () => {
-        this.responder(contenedor, parseInt(btn.dataset.indice));
+        this.responder(contenedor, parseInt(btn.dataset.indice, 10));
       });
     });
   },
 
+  // ==========================================================
+  // RESPONDER PREGUNTA
+  // ==========================================================
   responder(contenedor, seleccion) {
+    // Evitar doble clic
     if (this.estado.respondida) return;
     this.estado.respondida = true;
 
     const p = this.estado.preguntas[this.estado.indice];
     const botones = contenedor.querySelectorAll('.quiz-opcion');
 
+    // Marcar respuestas
     botones.forEach((btn, i) => {
       btn.disabled = true;
       if (i === p.correcta) btn.classList.add('correcta');
       if (i === seleccion && i !== p.correcta) btn.classList.add('incorrecta');
     });
 
-    if (seleccion === p.correcta) this.estado.aciertos++;
+    // Contar acierto
+    if (seleccion === p.correcta) {
+      this.estado.aciertos++;
+    }
 
+    // Pasar a la siguiente pregunta
     setTimeout(() => {
       this.estado.indice++;
       this.estado.respondida = false;
@@ -184,18 +216,30 @@ const VistaQuiz = {
     }, 1300);
   },
 
+  // ==========================================================
+  // RENDERIZAR RESULTADO FINAL
+  // ==========================================================
   renderResultado(contenedor) {
     const { materia, semestre, aciertos, preguntas } = this.estado;
     const total = preguntas.length;
     const porcentaje = Math.round((aciertos / total) * 100);
+    const nombreMateria = this.obtenerNombreMateria(materia);
 
-    // Guardar resultado
+    // Guardar resultado en localStorage
     Storage.guardarResultadoQuiz(`${materia}-${semestre}`, aciertos, total);
 
+    // Mensaje según puntaje
     let mensaje, emoji;
-    if (porcentaje >= 80) { mensaje = '¡Excelente! Dominas el tema.'; emoji = '🌟'; }
-    else if (porcentaje >= 60) { mensaje = '¡Bien! Puedes mejorar.'; emoji = '👍'; }
-    else { mensaje = 'Necesitas repasar el tema.'; emoji = '📚'; }
+    if (porcentaje >= 80) {
+      mensaje = '¡Excelente! Dominas el tema.';
+      emoji = '🌟';
+    } else if (porcentaje >= 60) {
+      mensaje = '¡Bien! Puedes mejorar.';
+      emoji = '👍';
+    } else {
+      mensaje = 'Necesitas repasar el tema.';
+      emoji = '📚';
+    }
 
     contenedor.innerHTML = `
       <div class="contenedor">
@@ -203,16 +247,22 @@ const VistaQuiz = {
           <div class="quiz-resultado">
             <div class="emoji">${emoji}</div>
             <h3>${mensaje}</h3>
+            <p style="color:#64748b;margin-bottom:.5rem;">
+              ${nombreMateria} · Semestre ${semestre}
+            </p>
             <div class="puntaje">${aciertos} / ${total}</div>
             <div class="porcentaje">${porcentaje}% de aciertos</div>
             <div class="quiz-resultado-botones">
-              <button class="btn btn-primario" onclick="VistaQuiz.iniciar(document.getElementById('app'), '${materia}', '${semestre}')">
+              <button class="btn btn-primario" 
+                      onclick="Router.ir('quiz', '${materia}-${semestre}')">
                 🔄 Reintentar
               </button>
-              <button class="btn btn-outline" onclick="Router.ir('quiz')">
+              <button class="btn btn-outline" 
+                      onclick="Router.ir('quiz')">
                 📝 Otro quiz
               </button>
-              <button class="btn btn-outline" onclick="Router.ir('home')">
+              <button class="btn btn-outline" 
+                      onclick="Router.ir('home')">
                 🏠 Inicio
               </button>
             </div>
@@ -220,5 +270,13 @@ const VistaQuiz = {
         </div>
       </div>
     `;
+  },
+
+  // ==========================================================
+  // UTILIDADES
+  // ==========================================================
+  obtenerNombreMateria(materia) {
+    const encontrada = this.ASIGNATURAS.find(a => a.key === materia);
+    return encontrada ? encontrada.nombre : materia;
   }
 };

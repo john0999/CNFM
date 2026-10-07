@@ -48,7 +48,253 @@ const QUIZZES = {
       { pregunta: "¿Cuál es un ecosistema de Chiapas?", opciones: ["Desierto", "Selva Lacandona", "Tundra", "Sabana"], correcta: 1 }
     ]
   },
+  quimica: {
+    1: [
+      {
+        pregunta: "¿Qué estudia la Química?",
+        opciones: [
+          "Solo los seres vivos",
+          "La composición, estructura y transformaciones de la materia",
+          "Únicamente los átomos",
+          "Los planetas y estrellas"
+        ],
+        correcta: 1
+      },
+      {
+        pregunta: "¿Cuál es el primer paso del método científico?",
+        opciones: [
+          "Hipótesis",
+          "Experimentación",
+          "Observación",
+          "Conclusión"
+        ],
+        correcta: 2
+      },
+      {
+        pregunta: "¿Cuál es la unidad de masa en el Sistema Internacional?",
+        opciones: [
+          "Gramo (g)",
+          "Libra (lb)",
+          "Kilogramo (kg)",
+          "Mol (mol)"
+        ],
+        correcta: 2
+      },
+      {
+        pregunta: "El paso de sólido a líquido se llama:",
+        opciones: [
+          "Evaporación",
+          "Fusión",
+          "Sublimación",
+          "Condensación"
+        ],
+        correcta: 1
+      },
+      {
+        pregunta: "¿Cuál de los siguientes es una mezcla homogénea?",
+        opciones: [
+          "Granito",
+          "Ensalada",
+          "Agua salada",
+          "Aceite y agua"
+        ],
+        correcta: 2
+      },
+      {
+        pregunta: "¿Qué partícula subatómica tiene carga positiva?",
+        opciones: [
+          "Electrón",
+          "Neutrón",
+          "Protón",
+          "Fotón"
+        ],
+        correcta: 2
+      },
+      {
+        pregunta: "Si un átomo tiene Z=11 y A=23, ¿cuántos neutrones tiene?",
+        opciones: [
+          "11",
+          "12",
+          "23",
+          "34"
+        ],
+        correcta: 1
+      },
+      {
+        pregunta: "¿Cuántos electrones caben como máximo en el subnivel p?",
+        opciones: [
+          "2",
+          "6",
+          "10",
+          "14"
+        ],
+        correcta: 1
+      },
+      {
+        pregunta: "¿Cuál es el grupo de los gases nobles?",
+        opciones: [
+          "Grupo 1",
+          "Grupo 2",
+          "Grupo 17",
+          "Grupo 18"
+        ],
+        correcta: 3
+      },
+      {
+        pregunta: "¿Qué tipo de enlace se forma entre un metal y un no metal?",
+        opciones: [
+          "Covalente polar",
+          "Covalente no polar",
+          "Iónico",
+          "Metálico"
+        ],
+        correcta: 2
+      },
+      {
+        pregunta: "La regla del octeto establece que los átomos buscan tener:",
+        opciones: [
+          "2 electrones en su última capa",
+          "8 electrones en su última capa",
+          "8 protones en el núcleo",
+          "18 neutrones"
+        ],
+        correcta: 1
+      },
+      {
+        pregunta: "¿Cuál es la configuración electrónica del sodio (Na, Z=11)?",
+        opciones: [
+          "1s² 2s² 2p⁶ 3s¹",
+          "1s² 2s² 2p⁶ 3s²",
+          "1s² 2s² 2p⁵ 3s²",
+          "1s² 2s² 2p⁶ 3p¹"
+        ],
+        correcta: 0
+      }
+    ],
 
+    2: [
+      {
+        pregunta: "¿Cuál es la fórmula del óxido de calcio?",
+        opciones: [
+          "CaO",
+          "Ca₂O",
+          "CaO₂",
+          "Ca(OH)₂"
+        ],
+        correcta: 0
+      },
+      {
+        pregunta: "¿Qué tipo de reacción es: 2H₂O → 2H₂ + O₂?",
+        opciones: [
+          "Síntesis",
+          "Descomposición",
+          "Sustitución simple",
+          "Doble sustitución"
+        ],
+        correcta: 1
+      },
+      {
+        pregunta: "¿Qué dice la Ley de Conservación de la Masa de Lavoisier?",
+        opciones: [
+          "La masa se crea en las reacciones",
+          "La masa se destruye en las reacciones",
+          "La masa de reactivos = masa de productos",
+          "La masa cambia según la temperatura"
+        ],
+        correcta: 2
+      },
+      {
+        pregunta: "Balancea: __Fe + __O₂ → __Fe₂O₃. ¿Cuáles son los coeficientes?",
+        opciones: [
+          "1, 1, 1",
+          "2, 3, 1",
+          "4, 3, 2",
+          "3, 4, 2"
+        ],
+        correcta: 2
+      },
+      {
+        pregunta: "¿Cuántas partículas hay en 1 mol de cualquier sustancia?",
+        opciones: [
+          "6.022×10²³",
+          "3.14×10²³",
+          "1×10²³",
+          "9.8×10²³"
+        ],
+        correcta: 0
+      },
+      {
+        pregunta: "Si la masa molar del agua es 18 g/mol, ¿cuántos moles hay en 54 g?",
+        opciones: [
+          "1 mol",
+          "2 moles",
+          "3 moles",
+          "4 moles"
+        ],
+        correcta: 2
+      },
+      {
+        pregunta: "¿Qué es una solución saturada?",
+        opciones: [
+          "Una con poco soluto",
+          "Una con mucho soluto sin disolver",
+          "Una con la máxima cantidad de soluto disuelto",
+          "Una sin soluto"
+        ],
+        correcta: 2
+      },
+      {
+        pregunta: "Un ácido según Arrhenius libera:",
+        opciones: [
+          "OH⁻ en agua",
+          "H⁺ en agua",
+          "Electrones",
+          "Neutrones"
+        ],
+        correcta: 1
+      },
+      {
+        pregunta: "¿Cuál es el pH de una sustancia neutra?",
+        opciones: [
+          "0",
+          "7",
+          "14",
+          "1"
+        ],
+        correcta: 1
+      },
+      {
+        pregunta: "En una reacción redox, la oxidación implica:",
+        opciones: [
+          "Ganancia de electrones",
+          "Pérdida de electrones",
+          "Ganancia de protones",
+          "Pérdida de neutrones"
+        ],
+        correcta: 1
+      },
+      {
+        pregunta: "¿Cuál es un ejemplo de ácido fuerte?",
+        opciones: [
+          "HCl (ácido clorhídrico)",
+          "H₂O (agua)",
+          "NaCl (sal)",
+          "CH₄ (metano)"
+        ],
+        correcta: 0
+      },
+      {
+        pregunta: "¿Qué producto se obtiene al reaccionar un ácido con un hidróxido?",
+        opciones: [
+          "Solo agua",
+          "Solo gas",
+          "Sal + agua",
+          "Óxido + hidrógeno"
+        ],
+        correcta: 2
+      }
+    ]
+  },
   // Matemáticas
   matematicas: {
     1: [

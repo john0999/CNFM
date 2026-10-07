@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CNFM | Portal Educativo</title>
-  <meta name="description" content="Portal educativo de Ciencias Naturales, Matemáticas, Física y Probabilidad para estudiantes de EMSAD Chiapas.">
-  
+  <title>Quantix | Portal Educativo</title>
+  <meta name="description"
+    content="Portal educativo de Ciencias Naturales, Matemáticas, Física y Probabilidad para estudiantes de EMSAD Chiapas.">
+
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
-  
+  <link rel="shortcut icon" href="./images/Quantix.png" type="image/x-icon">
+
   <!-- CSS modular -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -16,24 +18,34 @@
   <link rel="stylesheet" href="css/vistas.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
 
   <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="contenedor header-flex">
-      <a href="#/" class="logo">
-        <span class="logo-icon">🔬</span>
-        <div>
-          <h1>CNFMPro</h1>
-          <p class="subtitulo">Ciencias Naturales, Matemáticas, Física y Probabilidad</p>
+      <a href="#/"
+        style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; padding: 8px 16px;">
+
+        <img src="./images/Quantix.png" alt="Logo Quantix"
+          style="width: 48px; height: 48px; object-fit: contain; border-radius: 8px;">
+
+        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+          <h1 style="margin: 0; font-size: 1.5rem; font-weight: 700; color: #1a1a1a;">
+            Quantix
+          </h1>
+          <p style="margin: 0; font-size: 0.75rem; color: #666; font-style: italic;">
+            Ciencias, Química, Matemáticas, Física y Probabilidad
+          </p>
         </div>
       </a>
-      
+
       <button id="menuBtn" class="menu-btn" aria-label="Menú">☰</button>
-      
+
       <nav id="nav" class="nav">
         <a href="#/" data-route="home">🏠 Inicio</a>
         <a href="#/ciencias" data-route="ciencias">🔬 Ciencias</a>
+        <a href="#/quimica" data-route="quimica">⚗️ Química</a>
         <a href="#/matematicas" data-route="matematicas">📐 Matemáticas</a>
         <a href="#/fisica" data-route="fisica">⚡ Física</a>
         <a href="#/probabilidad" data-route="probabilidad">📊 Probabilidad</a>
@@ -52,7 +64,7 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="contenedor">
-      <p>© <span id="anio"></span> EMSAD Chiapas · Portal Educativo</p>
+      <p>© <span id="anio"></span> Quantix · Portal Educativo</p>
       <p class="footer-nota">Basado en el plan de estudios COSFAC / DGB · Marco Curricular Común</p>
     </div>
   </footer>
@@ -65,6 +77,7 @@
 
   <!-- Data -->
   <script src="js/data/ciencias.js"></script>
+  <script src="js/data/quimica.js"></script>
   <script src="js/data/matematicas.js"></script>
   <script src="js/data/fisica.js"></script>
   <script src="js/data/probabilidad.js"></script>
@@ -82,4 +95,5 @@
   <!-- App -->
   <script src="js/app.js"></script>
 </body>
+
 </html>

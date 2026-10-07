@@ -96,6 +96,7 @@
 .tarjeta-materia.probabilidad { background: linear-gradient(135deg, var(--prob), #34d399); }
 .tarjeta-materia.contexto { background: linear-gradient(135deg, #b45309, #f59e0b); }
 .tarjeta-materia.herramientas { background: linear-gradient(135deg, #475569, #64748b); }
+.tarjeta-materia.quimica { background: linear-gradient(135deg, var(--qui), #f87171); }
 
 /* ===== BADGE / ETIQUETA ===== */
 .badge {

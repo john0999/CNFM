@@ -1,29 +1,59 @@
 /* ==========================================================
-   APP - Punto de entrada
+   APP - Punto de entrada (actualizado para Router v2)
 ========================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== Registrar rutas =====
-  Router.registrar('home', (c) => VistaHome.render(c));
+  // ===== Registrar rutas con títulos =====
+  Router.registrar('home', 
+    (c) => VistaHome.render(c),
+    { titulo: 'Inicio' }
+  );
+
+  Router.registrar('ciencias', 
+    (c, params) => VistaMateria.render(c, 'ciencias', params),
+    { titulo: 'Ciencias Naturales' }
+  );
+
+  Router.registrar('quimica', 
+    (c, params) => VistaMateria.render(c, 'quimica', params),
+    { titulo: 'Química' }
+  );
   
-  Router.registrar('ciencias', (c, id) => {
-    const hash = window.location.hash.replace('#/', '').split('/');
-    VistaMateria.render(c, 'ciencias', id || null);
-  });
-  
-  Router.registrar('matematicas', (c, id) => VistaMateria.render(c, 'matematicas', id || null));
-  Router.registrar('fisica', (c, id) => VistaMateria.render(c, 'fisica', id || null));
-  Router.registrar('probabilidad', (c, id) => VistaMateria.render(c, 'probabilidad', id || null));
-  
-  Router.registrar('quiz', (c, id) => VistaQuiz.render(c, id || null));
-  Router.registrar('contexto', (c) => VistaContexto.render(c));
-  Router.registrar('herramientas', (c) => VistaHerramientas.render(c));
+  Router.registrar('matematicas', 
+    (c, params) => VistaMateria.render(c, 'matematicas', params),
+    { titulo: 'Matemáticas' }
+  );
+
+  Router.registrar('fisica', 
+    (c, params) => VistaMateria.render(c, 'fisica', params),
+    { titulo: 'Física' }
+  );
+
+  Router.registrar('probabilidad', 
+    (c, params) => VistaMateria.render(c, 'probabilidad', params),
+    { titulo: 'Probabilidad y Estadística' }
+  );
+
+  Router.registrar('quiz', 
+    (c, params) => VistaQuiz.render(c, params),
+    { titulo: 'Quiz Interactivo' }
+  );
+
+  Router.registrar('contexto', 
+    (c) => VistaContexto.render(c),
+    { titulo: 'Contexto Chiapas' }
+  );
+
+  Router.registrar('herramientas', 
+    (c) => VistaHerramientas.render(c),
+    { titulo: 'Herramientas' }
+  );
 
   // ===== Iniciar router =====
   Router.iniciar();
 
   // ===== Menú móvil =====
-  document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('menuBtn')?.addEventListener('click', () => {
     document.getElementById('nav').classList.toggle('activo');
   });
 
@@ -35,7 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== Año en footer =====
-  document.getElementById('anio').textContent = Utils.anioActual();
+  const anioEl = document.getElementById('anio');
+  if (anioEl) anioEl.textContent = Utils.anioActual();
 
   // ===== Registrar Service Worker =====
   if ('serviceWorker' in navigator) {
