@@ -2,16 +2,19 @@
   "name": "Quantix",
   "short_name": "Quantix",
   "description": "Portal de Ciencias, Quimica, Matematicas, Fisica y Probabilidad para estudiantes del colegio de bachilleres de Chiapas",
-  "start_url": "/",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0f766e",
   "theme_color": "#0d9488",
+  "lang": "es-MX",
   "icons": [
     {
       "src": "./images/Quantix.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "./images/Quantix.png",

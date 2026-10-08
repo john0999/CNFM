@@ -22,6 +22,12 @@ const ASSETS = [
   './js/offline.js',
   './js/quiz.js',
 
+  // views html
+  './views/sim.html',
+  './views/quimica/densidad.html',
+  './views/quimica/modelosatomos.html',
+  './views/quimica/molecula.html',
+
   // JS core
   './js/core/router.js',
   './js/core/storage.js',
@@ -35,7 +41,8 @@ const ASSETS = [
   './js/data/matematicas.js',
   './js/data/probabilidad.js',
   './js/data/quimica.js',
-  './js/data/quizzes.js'
+  './js/data/quizzes.js',
+  './js/data/soporte.js'
 ];
 
 // Instalación: precachea todo
