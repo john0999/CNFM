@@ -7,13 +7,13 @@ const HERRAMIENTAS = {
   subtitulo: "Todo lo que necesitas para estudiar",
   intro: "Recursos seleccionados para estudiantes de EMSAD Chiapas, considerando el contexto de conectividad limitada.",
   plataformas: [
-    {
-      nombre: "PhET Simulaciones",
-      url: "https://phet.colorado.edu/es/",
-      descripcion: "Simulaciones interactivas de Física, Química y Biología. ¡Funcionan sin internet!",
-      icono: "⚛️",
-      recomendado: true
-    },
+    // {
+    //   nombre: "PhET Simulaciones",
+    //   url: "https://phet.colorado.edu/es/",
+    //   descripcion: "Simulaciones interactivas de Física, Química y Biología. ¡Funcionan sin internet!",
+    //   icono: "⚛️",
+    //   recomendado: true
+    // },
     {
       nombre: "Khan Academy Español",
       url: "https://es.khanacademy.org/science",

@@ -8,7 +8,7 @@ const VistaHome = {
       <section class="hero">
         <div class="contenedor">
           <h2>Aprende <span class="resaltado">Química, Ciencias, Matemáticas y Física</span></h2>
-          <p>Portal educativo alineado al plan de estudios de <strong>EMSAD Chiapas</strong>. Contenido contextualizado a tu comunidad.</p>
+          <p>Portal educativo alineado a tu formación academica en tu plantel. Contenido contextualizado a tu comunidad.</p>
           <div class="hero-botones">
             <a href="#/ciencias" class="btn btn-primario">Explorar asignaturas</a>
             <a href="./views/sim.html" class="btn btn-primario">Simulaciones</a>

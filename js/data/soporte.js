@@ -14,9 +14,9 @@ const SOPORTE = {
 
   // ===== Información del desarrollador =====
   desarrollador: {
-    nombre: "Johnny Morales Gómez",              // ← CAMBIA ESTO
+    nombre: "Johnny Morales",              // ← CAMBIA ESTO
     rol: "ING. EN DESARROLLO Y GESTION DE SOFTWARE",          // ← CAMBIA ESTO
-    descripcion: "Soy un desarrollador apasionado por la tecnología y la educación. Este portal fue creado para apoyar a los estudiantes de EMSAD Chiapas con recursos digitales de calidad.",
+    descripcion: "Soy desarrollador y egresado del Plantel 204 Tzobojitle Jotoaquil. Apasionado por la tecnología y la educación, creé este portal para apoyar a los estudiantes de EMSAD con recursos claros, accesibles y útiles para su formación.",
     avatar: "👨‍💻",                             // ← Puedes poner un emoji o URL de imagen
     ubicacion: "Chiapas, México",
     año: "2026"
@@ -56,7 +56,7 @@ const SOPORTE = {
   faq: [
     {
       pregunta: "¿Cómo puedo reportar un error en el contenido?",
-      respuesta: "Usa el formulario con la opción 'Reportar error', o escríbenos por WhatsApp. Menciona la materia, semestre y tema donde encontraste el error."
+      respuesta: "Usa el formulario con la opción 'Reportar error', o escríbenos por Correo. Menciona la materia, semestre y tema donde encontraste el error."
     },
     {
       pregunta: "¿Puedo usar este material en mi escuela?",
@@ -74,5 +74,5 @@ const SOPORTE = {
 
   // ===== Cómo se reciben los mensajes =====
   // Formspree (gratis, sin backend) - solo 1 paso
-  formEndpoint: "https://formspree.io/f/TU-CODIGO",  // ← CAMBIA ESTO (ver instrucciones abajo)
+  // formEndpoint: "https://formspree.io/f/TU-CODIGO",  // ← CAMBIA ESTO (ver instrucciones abajo)
 };
