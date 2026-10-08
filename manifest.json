@@ -4,6 +4,7 @@
   "description": "Portal de Ciencias, Quimica, Matematicas, Fisica y Probabilidad para estudiantes del colegio de bachilleres de Chiapas",
   "start_url": "./index.html",
   "scope": "./",
+  "id": "/CNFM/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0f766e",
@@ -20,7 +21,13 @@
       "src": "./images/Quantix.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "./images/Quantix.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
