@@ -49,6 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
     { titulo: 'Herramientas' }
   );
 
+  Router.registrar('soporte', 
+  (c) => VistaSoporte.render(c),
+  { titulo: 'Soporte y Contacto' }
+);
+
   // ===== Iniciar router =====
   Router.iniciar();
 
