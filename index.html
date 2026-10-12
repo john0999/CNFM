@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantix | Portal Educativo</title>
+  <meta name="description"
+    content="Portal educativo de Ciencias Naturales, Matemáticas, Física y Probabilidad para estudiantes de EMSAD Chiapas.">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="shortcut icon" href="./images/Quantix.png" type="image/x-icon">
+
+  <!-- CSS modular -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/vistas.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="contenedor header-flex">
+      <a href="#/"
+        style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; padding: 8px 16px;">
+
+        <img src="./images/Quantix.png" alt="Logo Quantix"
+          style="width: 48px; height: 48px; object-fit: contain; border-radius: 8px;">
+
+        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+          <h1 style="margin: 0; font-size: 1.5rem; font-weight: 700; color: #1a1a1a;">
+            Quantix
+          </h1>
+          <p style="margin: 0; font-size: 0.75rem; color: #666; font-style: italic;">
+            Ciencias, Química, Matemáticas, Física y Probabilidad
+          </p>
+        </div>
+      </a>
+
+      <button id="menuBtn" class="menu-btn" aria-label="Menú">☰</button>
+
+      <nav id="nav" class="nav">
+        <a href="#/" data-route="home">
+          <img src="https://api.iconify.design/mdi/home.svg?color=%230d9488" alt="" width="18" height="18">
+          Inicio
+        </a>
+        <a href="#/ciencias" data-route="ciencias">
+          <img src="https://api.iconify.design/mdi/flask.svg?color=%230d9488" alt="" width="18" height="18">
+          Ciencias
+        </a>
+        <a href="#/quimica" data-route="quimica">
+          <img src="https://api.iconify.design/mdi/test-tube.svg?color=%23dc2626" alt="" width="18" height="18">
+          Química
+        </a>
+        <a href="#/matematicas" data-route="matematicas">
+          <img src="https://api.iconify.design/mdi/math-compass.svg?color=%232563eb" alt="" width="18" height="18">
+          Matemáticas
+        </a>
+        <a href="#/fisica" data-route="fisica">
+          <img src="https://api.iconify.design/mdi/atom.svg?color=%237c3aed" alt="" width="18" height="18">
+          Física
+        </a>
+        <a href="#/probabilidad" data-route="probabilidad">
+          <img src="https://api.iconify.design/mdi/chart-bell-curve.svg?color=%23059669" alt="" width="18" height="18">
+          Probabilidad
+        </a>
+        <!-- <a href="#/quiz" data-route="quiz">
+          <img src="https://api.iconify.design/mdi/clipboard-text.svg?color=%23f59e0b" alt="" width="18" height="18">
+          Quiz
+        </a> -->
+        <a href="#/contexto" data-route="contexto">
+          <img src="https://api.iconify.design/mdi/map-marker-radius.svg?color=%23b45309" alt="" width="18" height="18">
+          Más Información
+        </a>
+        <a href="#/simuladores" data-route="simuladores">
+          <img src="https://api.iconify.design/mdi/atom-variant.svg?color=%237c3aed" alt="" width="18" height="18">
+          Simuladores
+        </a>
+        <a href="#/herramientas" data-route="herramientas">
+          <img src="https://api.iconify.design/mdi/tools.svg?color=%23475569" alt="" width="18" height="18">
+          Herramientas
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <p style="
+      display: inline-block;
+      padding: 12px 22px;
+      margin: 12px 0;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(46, 204, 113, 0.45);
+      text-align: center;
+      letter-spacing: 0.3px;
+      animation: parpadeoQuantix 1.6s ease-in-out infinite;
+    ">
+    <style>
+      @keyframes parpadeoQuantix {
+
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        50% {
+          opacity: 0.55;
+          transform: scale(0.98);
+        }
+      }
+    </style>
+    🎉 Gracias <strong>Gonzalo Gómez Martínez</strong> por ser uno de los primeros en probar <strong>QUANTIX</strong> 🚀
+  </p>
+
+  <!-- ===== CONTENEDOR DE VISTAS ===== -->
+  <main id="app" class="app-container">
+    <!-- Las vistas se renderizan aquí dinámicamente -->
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="contenedor footer-flex">
+      <div class="footer-info">
+        <p>© <span id="anio"></span> QUANTIX </p>
+        <p class="footer-nota">Basado en el plan de estudios COBACH / DGB · MCCEMS 2026</p>
+      </div>
+      <div class="footer-soporte">
+        <a href="#/soporte" class="btn-soporte">
+          📬 Contactar a Soporte
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS (orden importa) ===== -->
+  <!-- Core -->
+  <script src="js/core/utils.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/router.js"></script>
+
+  <!-- Data -->
+  <script src="js/data/ciencias.js"></script>
+  <script src="js/data/quimica.js"></script>
+  <script src="js/data/matematicas.js"></script>
+  <script src="js/data/fisica.js"></script>
+  <script src="js/data/probabilidad.js"></script>
+  <script src="js/data/contexto.js"></script>
+  <script src="js/data/herramientas.js"></script>
+  <script src="js/data/quizzes.js"></script>
+  <script src="js/data/soporte.js"></script>
+  <script src="js/data/simuladores.js"></script>
+  <script src="js/data/agente.js"></script>
+
+  <!-- Views -->
+  <script src="js/views/home.js"></script>
+  <script src="js/views/soporte.js"></script>
+  <script src="js/views/materia.js"></script>
+  <script src="js/views/quiz.js"></script>
+  <script src="js/views/contexto.js"></script>
+  <script src="js/views/herramientas.js"></script>
+  <script src="js/views/simuladores.js"></script>
+  <script src="js/views/agente.js"></script>
+
+  <!-- App -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
