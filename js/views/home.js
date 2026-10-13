@@ -47,7 +47,7 @@ const VistaHome = {
     const materias = [
       {
         id: 'ciencias',
-        titulo: 'Ciencias Naturales',
+        titulo: 'Ciencias Naturales, Experimentales y Tecnología',
         icono: '🔬',
         descripcion: 'Química, Física y Biología integradas en 6 semestres.',
         meta: { temas: 42, semestres: 6 },

@@ -3,7 +3,7 @@
    Estructura: raíz con index.html, sw.js, /css /js /images /views
    ============================================================ */
 
-const CACHE_VERSION = 'v4'; // ⬅️ Sube este número cada vez que actualices
+const CACHE_VERSION = 'v5'; // ⬅️ Sube este número cada vez que actualices
 const CACHE_NAME = `quantix-ciencias-${CACHE_VERSION}`;
 
 // Detecta la ruta base automáticamente (funciona en raíz o subcarpeta)
@@ -32,9 +32,23 @@ const ASSETS = [
   BASE + 'js/quiz.js',
 
   // Views
-  BASE + 'views/quimica/densidad.html',
-  BASE + 'views/quimica/modelosatomos.html',
-  BASE + 'views/quimica/molecula.html',
+  BASE + 'views/matematicas/RectaNumerica.html',
+  BASE + 'views/matematicas/RectaNumericaOperaciones.html',
+  BASE + 'views/matematicas/graficandocuadráticas.html',
+  BASE + 'views/matematicas/modelodeareas.html',
+  BASE + 'views/matematicas/modeloalgebra.html',
+  BASE + 'views/matematicas/aritmetica.html',
+  BASE + 'views/ciencias/Transportedemembrana.html',
+  BASE + 'views/ciencias/Densidad.html',
+  BASE + 'views/ciencias/seleccionnatural.html',
+  BASE + 'views/ciencias/expresiongenica.html',
+  BASE + 'views/quimica/BalanceoDeEcuaciones.html',
+  BASE + 'views/quimica/Concentracion.html',
+  BASE + 'views/quimica/ConstruyeunaMolecula.html',
+  BASE + 'views/quimica/ConstruyeUnAtomo.html',
+  BASE + 'views/quimica/EscaladepH.html',
+  BASE + 'views/quimica/EstadosdelMateria.html',
+
 
   // JS core
   BASE + 'js/core/router.js',

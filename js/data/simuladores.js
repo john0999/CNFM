@@ -112,44 +112,37 @@ const SIMULADORES = {
       ]
     },
     {
-      nombre: "🧬 Biología",
+      nombre: "Ciencias Naturales, Experimentales y Tecnología",
       color: "#059669",
       simuladores: [
         {
-          nombre: "En Desarrollo, pronto estará disponible",
-          url: "#",
-          descripcion: "Simulador en desarrollo. Pronto estará disponible para su uso.",
-          nivel: "Básico",
+          nombre: "Transporte de membrana",
+          url: "./views/ciencias/Transportedemembrana.html",
+          descripcion: "Predecir cuándo las moléculas e iones con un tamaño y carga específicos atravesarán la membrana y cuándo no lo harán.",
+          nivel: "Intermedio",
+          idioma: "Español"
+        },
+        {
+          nombre: "Densidad",
+          url: "./views/ciencias/Densidad.html",
+          descripcion: "Explica cómo los objetos de masa similar pueden tener diferentes volúmenes, y cómo los objetos de volumen similar pueden tener diferentes masas.",
+          nivel: "Avanzado",
+          idioma: "Español"
+        },
+        {
+          nombre: "Selección Natural",
+          url: "./views/ciencias/seleccionnatural.html",
+          descripcion: "Determina qué mutaciones son favorecidas o neutrales para los agentes de selección de depredadores y variedad de alimentos.",
+          nivel: "Avanzado",
+          idioma: "Español"
+        },
+        {
+          nombre: "Expresión génica - Fundamentos",
+          url: "./views/ciencias/expresiongenica.html",
+          descripcion: "Predice cómo el cambio de las concentraciones e interacciones de las biomoléculas afecta la producción de proteínas.",
+          nivel: "Intermedio",
           idioma: "Español"
         }
-        // {
-        //   nombre: "Selección Natural",
-        //   url: "https://phet.colorado.edu/es/simulation/natural-selection",
-        //   descripcion: "Observa cómo evoluciona una población de conejos según su entorno.",
-        //   nivel: "Intermedio",
-        //   idioma: "Español"
-        // },
-        // {
-        //   nombre: "Neuronas",
-        //   url: "https://phet.colorado.edu/es/simulation/neuron",
-        //   descripcion: "Explora cómo las neuronas transmiten señales eléctricas.",
-        //   nivel: "Avanzado",
-        //   idioma: "Español"
-        // },
-        // {
-        //   nombre: "Membrana Celular",
-        //   url: "https://phet.colorado.edu/es/simulation/membrane-channels",
-        //   descripcion: "Descubre cómo funciona el transporte celular.",
-        //   nivel: "Avanzado",
-        //   idioma: "Español"
-        // },
-        // {
-        //   nombre: "Genética de Poblaciones",
-        //   url: "https://phet.colorado.edu/es/simulation/gene-expression-essentials",
-        //   descripcion: "Explora cómo se expresan los genes y se heredan los caracteres.",
-        //   nivel: "Intermedio",
-        //   idioma: "Español"
-        // }
       ]
     },
     {
@@ -157,40 +150,47 @@ const SIMULADORES = {
       color: "#2563eb",
       simuladores: [
         {
-          nombre: "En Desarrollo, pronto estará disponible",
-          url: "#",
-          descripcion: "Simulador en desarrollo. Pronto estará disponible para su uso.",
+          nombre: "Recta Numérica: Distancia",
+          url: "./views/matematicas/RectaNumerica.html",
+          descripcion: "Razonar sobre la resta de enteros en términos de ubicaciones de números y distancias dirigidas.",
+          nivel: "Básico",
+          idioma: "Español"
+        },
+        {
+          nombre: "Recta Numérica: Operaciones",
+          url: "./views/matematicas/RectaNumericaOperaciones.html",
+          descripcion: "Utiliza la lógica para razonar que la suma tiene el efecto opuesto a la resta o que sumar (o restar) un número entero negativo tiene el efecto opuesto a sumar (o restar) un entero positivo.",
+          nivel: "Básico",
+          idioma: "Español"
+        },
+        {
+          nombre: "Graficando Cuadráticas",
+          url: "./views/matematicas/graficandocuadráticas.html",
+          descripcion: "Describe cómo cambiar los coeficientes de una función cuadrática cambia la gráfica de la función.",
+          nivel: "Intermedio",
+          idioma: "Español"
+        },
+        {
+          nombre: "Modelo de Áreas: Decimales",
+          url: "./views/matematicas/modelodeareas.html",
+          descripcion: "Crear una estrategia para determinar el producto de dos números racionales (o un número entero y uno racional) mediante la representación del producto como un área o la suma de áreas.",
+          nivel: "Intermedio",
+          idioma: "Español"
+        },
+        {
+          nombre: "Modelo de Áreas: Álgebra",
+          url: "./views/matematicas/modeloalgebra.html",
+          descripcion: "Desarrolla y justifica un método para usar el modelo de áreas para determinar el producto de un monomio y un binomio o el producto de dos binomios.",
+          nivel: "Avanzado",
+          idioma: "Español"
+        },
+        {
+          nombre: "Aritmética",
+          url: "./views/matematicas/aritmetica.html",
+          descripcion: "Explora la suma, resta, multiplicación y división de números enteros y fracciones.",
           nivel: "Básico",
           idioma: "Español"
         }
-        // {
-        //   nombre: "Graficadora de Funciones",
-        //   url: "https://www.geogebra.org/graphing",
-        //   descripcion: "Grafica cualquier función. Analiza dominio, rango, raíces y más.",
-        //   nivel: "Básico",
-        //   idioma: "Español"
-        // },
-        // {
-        //   nombre: "Geometría Interactiva",
-        //   url: "https://www.geogebra.org/geometry",
-        //   descripcion: "Construye figuras geométricas y explora sus propiedades.",
-        //   nivel: "Básico",
-        //   idioma: "Español"
-        // },
-        // {
-        //   nombre: "Probabilidad y Estadística",
-        //   url: "https://www.geogebra.org/classic#probability",
-        //   descripcion: "Visualiza distribuciones y calcula probabilidades.",
-        //   nivel: "Intermedio",
-        //   idioma: "Español"
-        // },
-        // {
-        //   nombre: "Trigonometría",
-        //   url: "https://www.geogebra.org/m/trigonometry",
-        //   descripcion: "Explora el círculo unitario y las funciones trigonométricas.",
-        //   nivel: "Intermedio",
-        //   idioma: "Español"
-        // }
       ]
     },
     {

@@ -34,7 +34,7 @@ const VistaMateria = {
     if (id.startsWith('semestre-')) {
       const semestre = id.replace('semestre-', '');
       const semData = data[semestre];
-      
+
       if (!semData) {
         Router.ir(materia);
         return;
@@ -77,7 +77,7 @@ const VistaMateria = {
       fisica: '⚡', probabilidad: '📊'
     };
     const nombres = {
-      ciencias: 'Ciencias Naturales', quimica: 'Química', matematicas: 'Matemáticas',
+      ciencias: 'Ciencias Naturales, Experimentales y Tecnología', quimica: 'Química', matematicas: 'Matemáticas',
       fisica: 'Física', probabilidad: 'Probabilidad y Estadística'
     };
 
@@ -96,14 +96,20 @@ const VistaMateria = {
         <div class="grid-materias">
           ${Object.entries(data).map(([num, sem]) => `
             <div class="tarjeta-materia ${materia}" 
-                 onclick="Router.ir('${materia}', 'semestre-${num}')">
+                onclick="Router.ir('${materia}', 'semestre-${num}')">
               <div>
                 <div class="icono-grande">${sem.icono}</div>
-                <h3>${sem.semestre}</h3>
-                <p>${sem.descripcion}</p>
+                <h3 style="font-size:1.05rem;line-height:1.3;">${sem.titulo}</h3>
+                <p style="font-size:0.78rem;opacity:0.9;margin-top:0.3rem;">
+                  ${sem.subtitulo}
+                </p>
+                <p style="font-size:0.85rem;margin-top:0.5rem;">
+                  ${sem.descripcion}
+                </p>
               </div>
               <div class="meta">
                 <span>📖 ${this.contarTemas(sem)} temas</span>
+                <span>📅 ${sem.semestre}</span>
               </div>
             </div>
           `).join('')}
@@ -129,9 +135,13 @@ const VistaMateria = {
           </span>
           <div class="materia-info">
             <h2>${semData.icono} ${semData.titulo}</h2>
-            <p>${semData.semestre}</p>
+            <p style="color:#0d9488;font-weight:600;font-size:0.9rem;">
+              ${semData.subtitulo}
+            </p>
+            <p style="color:#64748b;font-size:0.85rem;margin-top:0.2rem;">
+              ${semData.semestre}
+            </p>
           </div>
-        </div>
         ${semData.contexto ? `
           <div class="materia-contexto">
             <strong>🏔️ Contexto Chiapas:</strong> ${semData.contexto}
@@ -159,8 +169,8 @@ const VistaMateria = {
       <h4>📑 Temas (${temas.length})</h4>
       <ul>
         ${temas.map(t => {
-          const completado = Storage.estaCompletado(key, t.id);
-          return `
+      const completado = Storage.estaCompletado(key, t.id);
+      return `
             <li>
               <a href="#${t.id}" 
                  data-target="${t.id}"
@@ -170,7 +180,7 @@ const VistaMateria = {
               </a>
             </li>
           `;
-        }).join('')}
+    }).join('')}
       </ul>
     `;
 

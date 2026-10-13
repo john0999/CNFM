@@ -6,8 +6,8 @@
 
 const QUIMICA = {
   1: {
-    titulo: "Química I",
-    semestre: "Primer Semestre",
+    titulo: "Química",
+    semestre: "Todos",
     clase: "s1",
     icono: "⚗️",
     descripcion: "Introducción a la química, estructura atómica, tabla periódica y enlaces.",
@@ -391,8 +391,8 @@ Cl• (7 electrones)
   },
 
   2: {
-    titulo: "Química II",
-    semestre: "Segundo Semestre",
+    titulo: "Química",
+    semestre: "Todos",
     clase: "s2",
     icono: "⚗️",
     descripcion: "Nomenclatura, reacciones químicas, estequiometría y soluciones.",
