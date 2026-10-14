@@ -35,7 +35,7 @@ const SIMULADORES = {
         },
         {
           nombre: "Concentración y Molaridad",
-          url: "./views/quimica/ConcentracionYMolaridad.html",
+          url: "./views/quimica/Concentracion.html",
           descripcion: "Aprende a calcular concentración y molaridad de soluciones.",
           nivel: "Intermedio",
           idioma: "Español"
@@ -138,7 +138,7 @@ const SIMULADORES = {
         },
         {
           nombre: "Expresión génica - Fundamentos",
-          url: "./views/ciencias/expresiongenica.html",
+          url: "./views/ciencias/expresiongenetica.html",
           descripcion: "Predice cómo el cambio de las concentraciones e interacciones de las biomoléculas afecta la producción de proteínas.",
           nivel: "Intermedio",
           idioma: "Español"
@@ -165,7 +165,7 @@ const SIMULADORES = {
         },
         {
           nombre: "Graficando Cuadráticas",
-          url: "./views/matematicas/graficandocuadráticas.html",
+          url: "./views/matematicas/graficandocuadraticas.html",
           descripcion: "Describe cómo cambiar los coeficientes de una función cuadrática cambia la gráfica de la función.",
           nivel: "Intermedio",
           idioma: "Español"

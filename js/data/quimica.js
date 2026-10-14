@@ -12,7 +12,7 @@ const QUIMICA = {
     icono: "⚗️",
     descripcion: "Introducción a la química, estructura atómica, tabla periódica y enlaces.",
     contexto: "La química está en todo: en el café de Chiapas, en el suelo de tu comunidad, en el agua de los ríos y en los medicamentos. Comprenderla te permite entender el mundo que te rodea.",
-    
+
     // Bloque 1: La Química como Ciencia
     temas: [
       {
@@ -173,7 +173,7 @@ Deposición: gas → sólido (libera calor)
         `
       }
     ],
-    
+
     // Bloque 2: Estructura Atómica
     temasAtómicos: [
       {
@@ -242,7 +242,7 @@ f → 14 electrones
         `
       }
     ],
-    
+
     // Bloque 3: Tabla Periódica
     temasTabla: [
       {
@@ -316,7 +316,7 @@ f → 14 electrones
         `
       }
     ],
-    
+
     // Bloque 4: Enlaces Químicos
     temasEnlaces: [
       {
@@ -397,7 +397,7 @@ Cl• (7 electrones)
     icono: "⚗️",
     descripcion: "Nomenclatura, reacciones químicas, estequiometría y soluciones.",
     contexto: "Las reacciones químicas están presentes en la cocina, en la agricultura, en la industria y en los procesos biológicos de tu cuerpo.",
-    
+
     temas: [
       {
         id: "q2-1",
@@ -707,7 +707,37 @@ Cu²⁺ se reduce (gana 2e⁻)
             <strong>Contexto Chiapas:</strong> El uso de fertilizantes en las plantaciones de café puede contaminar los ríos si no se aplican correctamente. La química verde propone alternativas sostenibles.
           </div>
         `
+      },
+    ]
+  },
+  3: {
+    titulo: "Tabla periodica de los elementos quimicos",
+    subtitulo: "Explora la tabla periódica completa con los 118 elementos.",
+    semestre: "Química",
+    clase: "s1,s2,s3,s4,s5,s6",
+    icono: "📊",
+    descripcion: "Los 118 elementos con colores por categoría",
+    contexto: "Configuración electrónica de cada uno",
+
+    temas: [
+      {
+        id: "q1-tabla",
+        titulo: "Tabla Periódica Interactiva",
+        icono: "⚛️",
+        esEnlace: true,                     // ← Marca como enlace
+        ruta: "tabla-periodica",            // ← Ruta a la que lleva
+        contenido: `
+    <p>Explora la tabla periódica completa con los 118 elementos.</p>
+    <p>Haz clic en <strong>"Abrir tabla periódica"</strong> para ver la vista interactiva con:</p>
+    <ul>
+      <li>Los 118 elementos con colores por categoría</li>
+      <li>Configuración electrónica de cada uno</li>
+      <li>Masa atómica, grupo y periodo</li>
+      <li>Datos curiosos contextualizados</li>
+    </ul>
+  `
       }
     ]
   }
+
 };

@@ -40,6 +40,14 @@ const SOPORTE = {
       valor: "john0999",                      // ← CAMBIA ESTO
       enlace: "https://github.com/john0999",
       descripcion: "Reporta errores técnicos"
+    },
+    {
+      tipo: "QUANTIX",
+      icono: "",
+      titulo: "WhatsApp",
+      valor: "QUANTIX",                      // ← CAMBIA ESTO
+      enlace: "https://whatsapp.com/channel/0029Vb96OZrDuMRozgYqyc1n",
+      descripcion: "Sigue el canal de Quantix en WhatsApp"
     }
   ],
 

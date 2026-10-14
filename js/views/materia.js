@@ -197,19 +197,53 @@ const VistaMateria = {
     const detalle = document.getElementById('temasDetalle');
     detalle.innerHTML = temas.map(t => {
       const completado = Storage.estaCompletado(key, t.id);
-      return `
-        <article class="bloque-tema" id="${t.id}">
+
+      // Si el tema es un ENLACE a otra vista
+      if (t.esEnlace && t.ruta) {
+        return `
+        <article class="bloque-tema" id="${t.id}" style="
+          border-left: 5px solid #0d9488;
+        ">
           <h3>${t.icono} ${t.titulo}</h3>
           <div class="contenido-tema">${t.contenido}</div>
-          <button class="btn-completado ${completado ? 'completado' : ''}" 
-                  data-tema="${t.id}" 
-                  data-key="${key}">
-            ${completado ? '✅ Completado' : '📖 Marcar como leído'}
+          <button onclick="Router.ir('${t.ruta}')" style="
+            background: linear-gradient(135deg, #0d9488, #0f766e);
+            color: #ffffff;
+            border: none;
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+          "
+          onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(13,148,136,0.3)';"
+          onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            🚀 Abrir tabla periódica →
           </button>
         </article>
       `;
+      }
+
+      // Tema normal (comportamiento existente)
+      return `
+      <article class="bloque-tema" id="${t.id}">
+        <h3>${t.icono} ${t.titulo}</h3>
+        <div class="contenido-tema">${t.contenido}</div>
+        <button class="btn-completado ${completado ? 'completado' : ''}" 
+                data-tema="${t.id}" 
+                data-key="${key}">
+          ${completado ? '✅ Completado' : '📖 Marcar como leído'}
+        </button>
+      </article>
+    `;
     }).join('');
 
+    // Listeners para temas normales (ya existentes)
     detalle.querySelectorAll('.btn-completado').forEach(btn => {
       btn.addEventListener('click', () => {
         const k = btn.dataset.key;
@@ -218,7 +252,6 @@ const VistaMateria = {
         btn.textContent = '✅ Completado';
         btn.classList.add('completado');
 
-        // Actualizar check en índice
         const link = document.querySelector(`.indice a[data-target="${temaId}"]`);
         if (link && !link.querySelector('.check')) {
           const check = document.createElement('span');

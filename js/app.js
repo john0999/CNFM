@@ -63,6 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
     (c) => VistaAgente.render(c),
     { titulo: 'CienTIA' }
   );
+
+  Router.registrar('tabla-periodica',
+    (c) => VistaTablaPeriodica.render(c),
+    { titulo: 'Tabla Periódica Interactiva' }
+  );
   // ===== Iniciar router =====
   Router.iniciar();
 
