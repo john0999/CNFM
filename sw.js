@@ -3,7 +3,7 @@
    Estructura: raíz con index.html, sw.js, /css /js /images /views
    ============================================================ */
 
-const CACHE_VERSION = 'v5'; // ⬅️ Sube este número cada vez que actualices
+const CACHE_VERSION = 'v6'; // ⬅️ Sube este número cada vez que actualices
 const CACHE_NAME = `quantix-ciencias-${CACHE_VERSION}`;
 
 // Detecta la ruta base automáticamente (funciona en raíz o subcarpeta)
@@ -48,6 +48,7 @@ const ASSETS = [
   BASE + 'views/quimica/ConstruyeUnAtomo.html',
   BASE + 'views/quimica/EscaladepH.html',
   BASE + 'views/quimica/EstadosdelMateria.html',
+  BASE + 'views/fisica/LabdeFuerzadeGravedad.html',
 
 
   // JS core

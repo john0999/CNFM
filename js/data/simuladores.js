@@ -61,19 +61,12 @@ const SIMULADORES = {
       color: "#7c3aed",
       simuladores: [
         {
-          nombre: "En Desarrollo, pronto estará disponible",
-          url: "#",
-          descripcion: "Simulador en desarrollo. Pronto estará disponible para su uso.",
+          nombre: "Lab de Fuerza de Gravedad: Intro",
+          url: "./views/fisica/LabdeFuerzadeGravedad.html",
+          descripcion: "Relacione la fuerza gravitacional con las masas de objetos y la distancia entre los objetos. Explique la tercera ley de Newton para las fuerzas gravitacionales.",
           nivel: "Básico",
           idioma: "Español"
-        }
-        // {
-        //   nombre: "Fuerzas y Movimiento",
-        //   url: "https://phet.colorado.edu/es/simulation/forces-and-motion-basics",
-        //   descripcion: "Empuja objetos y observa cómo se mueven. Aprende las leyes de Newton.",
-        //   nivel: "Básico",
-        //   idioma: "Español"
-        // },
+        },
         // {
         //   nombre: "Péndulo Simple",
         //   url: "https://phet.colorado.edu/es/simulation/pendulum-lab",
