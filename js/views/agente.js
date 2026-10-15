@@ -3,14 +3,14 @@
 ========================================================== */
 
 const VistaAgente = {
-    // ===== Estado del chat =====
-    historial: [],
-    enviando: false,
+  // ===== Estado del chat =====
+  historial: [],
+  enviando: false,
 
-    render(contenedor) {
-        const a = AGENTE;
+  render(contenedor) {
+    const a = AGENTE;
 
-        contenedor.innerHTML = `
+    contenedor.innerHTML = `
       <div style="
         background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
         color: #ffffff;
@@ -94,36 +94,36 @@ const VistaAgente = {
       </div>
     `;
 
-        // Cargar historial previo
-        this.historial = [
-            { role: "assistant", content: AGENTE.mensajes.bienvenida }
-        ];
+    // Cargar historial previo
+    this.historial = [
+      { role: "assistant", content: AGENTE.mensajes.bienvenida }
+    ];
 
-        this.renderHistorial();
+    this.renderHistorial();
 
-        // Enter para enviar
-        const input = document.getElementById('inputMensaje');
-        input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                this.enviar();
-            }
-        });
-    },
+    // Enter para enviar
+    const input = document.getElementById('inputMensaje');
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        this.enviar();
+      }
+    });
+  },
 
-    renderHistorial() {
-        const chatArea = document.getElementById('chatArea');
-        if (!chatArea) return;
+  renderHistorial() {
+    const chatArea = document.getElementById('chatArea');
+    if (!chatArea) return;
 
-        chatArea.innerHTML = this.historial.map(msg => {
-            const esUsuario = msg.role === 'user';
+    chatArea.innerHTML = this.historial.map(msg => {
+      const esUsuario = msg.role === 'user';
 
-            // 🆕 Convertir markdown básico a HTML
-            const contenidoFormateado = esUsuario
-                ? this.escaparHTML(msg.content)
-                : this.formatearMarkdown(msg.content);
+      // 🆕 Convertir markdown básico a HTML
+      const contenidoFormateado = esUsuario
+        ? this.escaparHTML(msg.content)
+        : this.formatearMarkdown(msg.content);
 
-            return `
+      return `
       <div style="
         display: flex;
         justify-content: ${esUsuario ? 'flex-end' : 'flex-start'};
@@ -139,130 +139,140 @@ const VistaAgente = {
           line-height: 1.6;
           word-wrap: break-word;
         ">
-          ${esUsuario ? '' : '<strong style="display:block;margin-bottom:0.3rem;color:#0f766e;font-size:0.85rem;">🤖 Asistente</strong>'}
+          ${esUsuario ? '' : '<strong style="display:block;margin-bottom:0.3rem;color:#0f766e;font-size:0.85rem;">CienTIA</strong>'}
           ${contenidoFormateado}
         </div>
       </div>
     `;
-        }).join('');
+    }).join('');
 
-        chatArea.scrollTop = chatArea.scrollHeight;
-    },
+    chatArea.scrollTop = chatArea.scrollHeight;
+    // 🆕 Renderizar las fórmulas LaTeX después de insertar el HTML
+    if (window.renderMathInElement) {
+      window.renderMathInElement(chatArea, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ],
+        throwOnError: false
+      });
+    }
+  },
 
-    // 🆕 Escapar HTML para mensajes del usuario (seguridad)
-    escaparHTML(texto) {
-        const div = document.createElement('div');
-        div.textContent = texto;
-        return div.innerHTML.replace(/\n/g, '<br>');
-    },
+  // 🆕 Escapar HTML para mensajes del usuario (seguridad)
+  escaparHTML(texto) {
+    const div = document.createElement('div');
+    div.textContent = texto;
+    return div.innerHTML.replace(/\n/g, '<br>');
+  },
 
-    // 🆕 Formatear markdown básico en respuestas de la IA
-    formatearMarkdown(texto) {
-        let html = texto;
+  // 🆕 Formatear markdown básico en respuestas de la IA
+  formatearMarkdown(texto) {
+    let html = texto;
 
-        // Escapar HTML primero (seguridad)
-        html = html
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;');
+    // Escapar HTML primero (seguridad)
+    html = html
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
 
-        // Negritas: **texto**
-        html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    // Negritas: **texto**
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 
-        // Cursivas: *texto*
-        html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+    // Cursivas: *texto*
+    html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
 
-        // Código inline: `texto`
-        html = html.replace(/`(.+?)`/g, '<code style="background:#e2e8f0;padding:2px 6px;border-radius:4px;font-size:0.9em;">$1</code>');
+    // Código inline: `texto`
+    html = html.replace(/`(.+?)`/g, '<code style="background:#e2e8f0;padding:2px 6px;border-radius:4px;font-size:0.9em;">$1</code>');
 
-        // Saltos de línea
-        html = html.replace(/\n\n/g, '</p><p style="margin:0.6rem 0;">');
-        html = html.replace(/\n/g, '<br>');
+    // Saltos de línea
+    html = html.replace(/\n\n/g, '</p><p style="margin:0.6rem 0;">');
+    html = html.replace(/\n/g, '<br>');
 
-        return '<p style="margin:0;">' + html + '</p>';
-    },
+    return '<p style="margin:0;">' + html + '</p>';
+  },
 
-    usarSugerencia(texto) {
-        const input = document.getElementById('inputMensaje');
-        input.value = texto;
-        this.enviar();
-    },
+  usarSugerencia(texto) {
+    const input = document.getElementById('inputMensaje');
+    input.value = texto;
+    this.enviar();
+  },
 
-    async enviar() {
-        const input = document.getElementById('inputMensaje');
-        const btnEnviar = document.getElementById('btnEnviar');
-        const mensaje = input.value.trim();
+  async enviar() {
+    const input = document.getElementById('inputMensaje');
+    const btnEnviar = document.getElementById('btnEnviar');
+    const mensaje = input.value.trim();
 
-        if (!mensaje || this.enviando) return;
+    if (!mensaje || this.enviando) return;
 
-        // Verificar API key
-        // if (!AGENTE.config.apiKey || AGENTE.config.apiKey === "TU-OPENROUTER-API-KEY") {
-        //     this.agregarMensaje('assistant', AGENTE.mensajes.errorApiKey);
-        //     return;
-        // }
+    // Verificar API key
+    // if (!AGENTE.config.apiKey || AGENTE.config.apiKey === "TU-OPENROUTER-API-KEY") {
+    //     this.agregarMensaje('assistant', AGENTE.mensajes.errorApiKey);
+    //     return;
+    // }
 
-        // Agregar mensaje del usuario
-        this.agregarMensaje('user', mensaje);
-        input.value = '';
+    // Agregar mensaje del usuario
+    this.agregarMensaje('user', mensaje);
+    input.value = '';
 
-        // Estado de carga
-        this.enviando = true;
-        btnEnviar.disabled = true;
-        btnEnviar.textContent = 'Pensando...';
-        btnEnviar.style.background = '#94a3b8';
+    // Estado de carga
+    this.enviando = true;
+    btnEnviar.disabled = true;
+    btnEnviar.textContent = 'Pensando...';
+    btnEnviar.style.background = '#94a3b8';
 
-        // Agregar placeholder de respuesta
-        this.agregarMensaje('assistant', '⏳ Pensando...');
+    // Agregar placeholder de respuesta
+    this.agregarMensaje('assistant', '⏳ Pensando...');
 
-        try {
-            const respuesta = await this.consultarIA(mensaje);
+    try {
+      const respuesta = await this.consultarIA(mensaje);
 
-            // Reemplazar el placeholder
-            this.historial.pop();
-            this.agregarMensaje('assistant', respuesta);
+      // Reemplazar el placeholder
+      this.historial.pop();
+      this.agregarMensaje('assistant', respuesta);
 
-        } catch (error) {
-            console.error('Error:', error);
-            this.historial.pop();
+    } catch (error) {
+      console.error('Error:', error);
+      this.historial.pop();
 
-            let mensajeError = AGENTE.mensajes.errorGeneral;
-            if (error.message.includes('401') || error.message.includes('key')) {
-                mensajeError = AGENTE.mensajes.errorApiKey;
-            } else if (error.message.includes('429')) {
-                mensajeError = AGENTE.mensajes.errorLimite;
-            } else if (error.message.includes('fetch') || error.message.includes('network')) {
-                mensajeError = AGENTE.mensajes.errorRed;
-            }
+      let mensajeError = AGENTE.mensajes.errorGeneral;
+      if (error.message.includes('401') || error.message.includes('key')) {
+        mensajeError = AGENTE.mensajes.errorApiKey;
+      } else if (error.message.includes('429')) {
+        mensajeError = AGENTE.mensajes.errorLimite;
+      } else if (error.message.includes('fetch') || error.message.includes('network')) {
+        mensajeError = AGENTE.mensajes.errorRed;
+      }
 
-            this.agregarMensaje('assistant', mensajeError);
+      this.agregarMensaje('assistant', mensajeError);
 
-        } finally {
-            this.enviando = false;
-            btnEnviar.disabled = false;
-            btnEnviar.textContent = 'Enviar';
-            btnEnviar.style.background = '#0d9488';
-            document.getElementById('inputMensaje').focus();
-        }
-    },
+    } finally {
+      this.enviando = false;
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = 'Enviar';
+      btnEnviar.style.background = '#0d9488';
+      document.getElementById('inputMensaje').focus();
+    }
+  },
 
-    agregarMensaje(role, content) {
-        this.historial.push({ role, content });
-        this.renderHistorial();
-    },
+  agregarMensaje(role, content) {
+    this.historial.push({ role, content });
+    this.renderHistorial();
+  },
 
-    async consultarIA(mensajeUsuario) {
-        const config = AGENTE.config;
+  async consultarIA(mensajeUsuario) {
+    const config = AGENTE.config;
 
-        // 1. Reconstruimos el historial reciente como texto plano
-        //    (El Worker de Cloudflare es simple y solo recibe { prompt: "..." })
-        const historialReciente = this.historial
-            .filter(m => !m.content.startsWith('⏳') && !m.content.startsWith('⚠️'))
-            .slice(-4) // Últimos 4 mensajes para dar contexto
-            .map(m => `${m.role === 'user' ? 'Estudiante' : 'CienTIA'}: ${m.content}`)
-            .join('\n\n');
+    // 1. Reconstruimos el historial reciente como texto plano
+    //    (El Worker de Cloudflare es simple y solo recibe { prompt: "..." })
+    const historialReciente = this.historial
+      .filter(m => !m.content.startsWith('⏳') && !m.content.startsWith('⚠️'))
+      .slice(-4) // Últimos 4 mensajes para dar contexto
+      .map(m => `${m.role === 'user' ? 'Estudiante' : 'CienTIA'}: ${m.content}`)
+      .join('\n\n');
 
-        // 2. Construimos el prompt final que enviaremos al Worker
-        const promptParaWorker = `
+    // 2. Construimos el prompt final que enviaremos al Worker
+    const promptParaWorker = `
 ${AGENTE.systemPrompt}
 
 --- HISTORIAL DE CONVERSACIÓN ---
@@ -273,63 +283,63 @@ ${mensajeUsuario}
 
 CienTIA:`;
 
-        // 3. Petición a TU Worker de Cloudflare (no a Google directamente)
-        const response = await fetch(config.endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                prompt: promptParaWorker
-            })
-        });
+    // 3. Petición a TU Worker de Cloudflare (no a Google directamente)
+    const response = await fetch(config.endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        prompt: promptParaWorker
+      })
+    });
 
-        if (!response.ok) {
-            const errorData = await response.json().catch(() => ({}));
-            throw new Error(`HTTP ${response.status}: ${errorData.error || 'Error en el Worker'}`);
-        }
-
-        // 4. Tu Worker devuelve el JSON crudo de Gemini, así que lo parseamos aquí
-        const data = await response.json();
-
-        // Si Gemini devolvió un error, lo lanzamos
-        if (data.error) {
-            throw new Error(data.error.message || 'Error desde Gemini');
-        }
-
-        const candidate = data.candidates?.[0];
-
-        if (!candidate) {
-            throw new Error('El asistente no devolvió respuesta');
-        }
-
-        const finishReason = candidate.finishReason;
-        const texto = candidate.content?.parts?.[0]?.text;
-
-        if (!texto) {
-            throw new Error('Respuesta vacía del asistente');
-        }
-
-        // Si se cortó por MAX_TOKENS
-        if (finishReason === 'MAX_TOKENS') {
-            return texto + '\n\n---\n\n⚠️ *La respuesta fue muy larga. Pídeme que continúe o que resuma.*';
-        }
-
-        // Si fue bloqueado por seguridad
-        if (finishReason === 'SAFETY') {
-            return '🔒 La respuesta fue bloqueada por los filtros de seguridad. Intenta reformular tu pregunta.';
-        }
-
-        // Si fue bloqueado por contenido prohibido
-        if (finishReason === 'PROHIBITED_CONTENT') {
-            return '🚫 El contenido fue marcado como prohibido. Reformula tu pregunta.';
-        }
-
-        // Si se detuvo por otra razón anormal
-        if (finishReason && finishReason !== 'STOP') {
-            console.warn('Finish reason inesperado:', finishReason);
-            return texto + '\n\n*[Respuesta detenida: ' + finishReason + ']*';
-        }
-
-        // ✅ Respuesta completa
-        return texto;
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(`HTTP ${response.status}: ${errorData.error || 'Error en el Worker'}`);
     }
+
+    // 4. Tu Worker devuelve el JSON crudo de Gemini, así que lo parseamos aquí
+    const data = await response.json();
+
+    // Si Gemini devolvió un error, lo lanzamos
+    if (data.error) {
+      throw new Error(data.error.message || 'Error desde Gemini');
+    }
+
+    const candidate = data.candidates?.[0];
+
+    if (!candidate) {
+      throw new Error('El asistente no devolvió respuesta');
+    }
+
+    const finishReason = candidate.finishReason;
+    const texto = candidate.content?.parts?.[0]?.text;
+
+    if (!texto) {
+      throw new Error('Respuesta vacía del asistente');
+    }
+
+    // Si se cortó por MAX_TOKENS
+    if (finishReason === 'MAX_TOKENS') {
+      return texto + '\n\n---\n\n⚠️ *La respuesta fue muy larga. Pídeme que continúe o que resuma.*';
+    }
+
+    // Si fue bloqueado por seguridad
+    if (finishReason === 'SAFETY') {
+      return '🔒 La respuesta fue bloqueada por los filtros de seguridad. Intenta reformular tu pregunta.';
+    }
+
+    // Si fue bloqueado por contenido prohibido
+    if (finishReason === 'PROHIBITED_CONTENT') {
+      return '🚫 El contenido fue marcado como prohibido. Reformula tu pregunta.';
+    }
+
+    // Si se detuvo por otra razón anormal
+    if (finishReason && finishReason !== 'STOP') {
+      console.warn('Finish reason inesperado:', finishReason);
+      return texto + '\n\n*[Respuesta detenida: ' + finishReason + ']*';
+    }
+
+    // ✅ Respuesta completa
+    return texto;
+  }
 };
