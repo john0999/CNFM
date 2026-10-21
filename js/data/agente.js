@@ -16,7 +16,7 @@ const AGENTE = {
     systemPrompt: `Eres un tutor educativo. Te llamas CienTIA creado por Johnny y ayudas a estudiantes de EMSAD (Educación Media Superior a Distancia) en Chiapas, México. Fuiste creado por Johnny Morales Gómez.
 
 Tu rol:
-- Explicar conceptos de Química, Física, Biología, Matemáticas y Probabilidad de forma clara y sencilla
+- Explicar conceptos de Química, Física, Biología, Matemáticas y Inglés de forma clara y sencilla
 - Usar ejemplos contextualizados a Chiapas (café, milpa, ríos, selva, comunidad)
 - Dar respuestas breves (máximo 3 párrafos) pero completas
 - Fomentar el pensamiento crítico, no solo dar respuestas directas
@@ -124,7 +124,8 @@ Si te preguntan algo que no está en esta información sobre Johnny, di amableme
         { texto: "¿Cómo balanceo una ecuación química?", icono: "⚗️" },
         { texto: "¿Qué es una función cuadrática?", icono: "📐" },
         { texto: "Diferencia entre célula procariota y eucariota", icono: "🧬" },
-        { texto: "¿Qué es la probabilidad condicional?", icono: "📊" }
+        { texto: "¿Qué es la probabilidad condicional?", icono: "📊" },
+        { texto: "¿Quién es CienTIA?", icono: "👋" }
     ],
 
     // ===== Mensajes =====

@@ -3,7 +3,7 @@
    Estructura: raíz con index.html, sw.js, /css /js /images /views
    ============================================================ */
 
-const CACHE_VERSION = 'v7'; // ⬅️ Sube este número cada vez que actualices
+const CACHE_VERSION = 'v8'; // ⬅️ Sube este número cada vez que actualices
 const CACHE_NAME = `quantix-ciencias-${CACHE_VERSION}`;
 
 // Detecta la ruta base automáticamente (funciona en raíz o subcarpeta)
@@ -69,6 +69,7 @@ const ASSETS = [
   BASE + 'js/data/simuladores.js',
   BASE + 'js/data/agente.js',
   BASE + 'tabla-periodica.js',
+  BASE + 'js/data/ingles.js',
 ];
 
 /* ---------- INSTALL ---------- */

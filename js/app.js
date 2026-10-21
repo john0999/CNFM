@@ -10,28 +10,32 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   Router.registrar('ciencias',
-    (c, params) => VistaMateria.render(c, 'ciencias', params),
+    (c, params) => VistaCiencias.render(c, params),
     { titulo: 'Ciencias Naturales' }
   );
 
   Router.registrar('quimica',
-    (c, params) => VistaMateria.render(c, 'quimica', params),
+    (c, params) => VistaQuimica.render(c, params),
     { titulo: 'Química' }
   );
 
   Router.registrar('matematicas',
-    (c, params) => VistaMateria.render(c, 'matematicas', params),
+    (c, params) => VistaMatematicas.render(c, params),
     { titulo: 'Matemáticas' }
   );
 
   Router.registrar('fisica',
-    (c, params) => VistaMateria.render(c, 'fisica', params),
+    (c, params) => VistaFisica.render(c, params),
     { titulo: 'Física' }
   );
 
-  Router.registrar('probabilidad',
-    (c, params) => VistaMateria.render(c, 'probabilidad', params),
-    { titulo: 'Probabilidad y Estadística' }
+  // Router.registrar('probabilidad',
+  //   (c, params) => VistaMateria.render(c, 'probabilidad', params),
+  //   { titulo: 'Probabilidad y Estadística' }
+  // );
+  Router.registrar('ingles',
+    (c, params) => VistaIngles.render(c, params),
+    { titulo: 'Inglés' }
   );
 
   Router.registrar('quiz',

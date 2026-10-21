@@ -156,3 +156,17 @@
     height: 18px;
   }
 }
+
+@media (max-width: 700px) {
+  .grid-herramientas-destacadas {
+    grid-template-columns: 1fr;
+  }
+  
+  .tarjeta-herramienta {
+    padding: var(--esp-sm);
+  }
+  
+  .tarjeta-herramienta .icono-grande {
+    font-size: 2rem;
+  }
+}

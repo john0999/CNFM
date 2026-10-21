@@ -78,14 +78,6 @@ const VistaHome = {
         clase: 'fisica'
       },
       {
-        id: 'probabilidad',
-        titulo: 'Probabilidad y Estadística',
-        icono: '📊',
-        descripcion: 'Estadística descriptiva, probabilidad e inferencia.',
-        meta: { temas: 11, semestres: 1 },
-        clase: 'probabilidad'
-      },
-      {
         id: 'contexto',
         titulo: 'Contexto Chiapas',
         icono: '🏔️',

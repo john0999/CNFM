@@ -1174,3 +1174,9 @@
   .chat-actions-left { justify-content: center; }
   .chat-status { text-align: center; }
 }
+
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
