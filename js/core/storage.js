@@ -95,6 +95,24 @@ const Storage = {
     } catch { return null; }
   },
 
+    // ===== PROGRESO DEL QUIZ (Por Niveles) =====
+  obtenerAvanceQuiz(materia) {
+    try {
+      return JSON.parse(localStorage.getItem('quiz_avance_' + materia) || '{"basico":0, "intermedio":0, "avanzado":0}');
+    } catch { return '{"basico":0, "intermedio":0, "avanzado":0}'; }
+  },
+
+  guardarAvanceQuiz(materia, nivel, porcentaje) {
+    let avance = this.obtenerAvanceQuiz(materia);
+    // Solo guardamos si el nuevo porcentaje es mayor al récord anterior
+    if (porcentaje > avance[nivel]) {
+      avance[nivel] = porcentaje;
+      localStorage.setItem('quiz_avance_' + materia, JSON.stringify(avance));
+      return true; // Retorna true si es un nuevo récord
+    }
+    return false;
+  },
+
   // ===== RESET =====
   limpiarTodo() {
     Object.values(this.KEYS).forEach(k => localStorage.removeItem(k));

@@ -68,6 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
     { titulo: 'CienTIA' }
   );
 
+  Router.registrar('lengua',
+    (c, params) => VistaLengua.render(c, params),
+    { titulo: 'Lengua y Comunicación' }
+  );
+
   Router.registrar('tabla-periodica',
     (c) => VistaTablaPeriodica.render(c),
     { titulo: 'Tabla Periódica Interactiva' }

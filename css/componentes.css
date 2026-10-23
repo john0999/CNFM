@@ -99,6 +99,7 @@
 .tarjeta-materia.quimica { background: linear-gradient(135deg, var(--qui), #f87171); }
 .tarjeta-materia.simuladores { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
 .tarjeta-materia.agente { background: linear-gradient(135deg, #1e293b, #475569); }
+.tarjeta-materia.lengua { background: linear-gradient(135deg, #e11d48, #be123c); }
 
 /* ===== BADGE / ETIQUETA ===== */
 .badge {
