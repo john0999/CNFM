@@ -99,7 +99,7 @@ const Storage = {
   obtenerAvanceQuiz(materia) {
     try {
       return JSON.parse(localStorage.getItem('quiz_avance_' + materia) || '{"basico":0, "intermedio":0, "avanzado":0}');
-    } catch { return '{"basico":0, "intermedio":0, "avanzado":0}'; }
+    } catch { return { basico: 0, intermedio: 0, avanzado: 0 }; }
   },
 
   guardarAvanceQuiz(materia, nivel, porcentaje) {

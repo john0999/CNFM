@@ -3,7 +3,7 @@
    Estructura: raíz con index.html, sw.js, /css /js /images /views
    ============================================================ */
 
-const CACHE_VERSION = 'v9'; // ⬅️ Sube este número cada vez que actualices
+const CACHE_VERSION = 'v10'; // ⬅️ Sube este número cada vez que actualices
 const CACHE_NAME = `quantix-ciencias-${CACHE_VERSION}`;
 
 // Detecta la ruta base automáticamente (funciona en raíz o subcarpeta)
@@ -27,27 +27,24 @@ const ASSETS = [
 
   // JS raíz
   BASE + 'js/app.js',
-  BASE + 'js/datos.js',
-  BASE + 'js/offline.js',
-  BASE + 'js/quiz.js',
 
   // Views
   BASE + 'views/matematicas/RectaNumerica.html',
   BASE + 'views/matematicas/RectaNumericaOperaciones.html',
-  BASE + 'views/matematicas/graficandocuadráticas.html',
+  BASE + 'views/matematicas/graficandocuadraticas.html',
   BASE + 'views/matematicas/modelodeareas.html',
   BASE + 'views/matematicas/modeloalgebra.html',
   BASE + 'views/matematicas/aritmetica.html',
   BASE + 'views/ciencias/Transportedemembrana.html',
   BASE + 'views/ciencias/Densidad.html',
   BASE + 'views/ciencias/seleccionnatural.html',
-  BASE + 'views/ciencias/expresiongenica.html',
+  BASE + 'views/ciencias/expresiongenetica.html',
   BASE + 'views/quimica/BalanceoDeEcuaciones.html',
   BASE + 'views/quimica/Concentracion.html',
   BASE + 'views/quimica/ConstruyeunaMolecula.html',
   BASE + 'views/quimica/ConstruyeUnAtomo.html',
   BASE + 'views/quimica/EscaladepH.html',
-  BASE + 'views/quimica/EstadosdelMateria.html',
+  BASE + 'views/quimica/Estadosdelamateria.html',
   BASE + 'views/fisica/LabdeFuerzadeGravedad.html',
 
 
@@ -68,8 +65,26 @@ const ASSETS = [
   BASE + 'js/data/soporte.js',
   BASE + 'js/data/simuladores.js',
   BASE + 'js/data/agente.js',
-  BASE + 'tabla-periodica.js',
+  BASE + 'js/data/tabla-periodica.js',
   BASE + 'js/data/ingles.js',
+  BASE + 'js/data/lengua.js',
+
+  // JS views
+  BASE + 'js/views/home.js',
+  BASE + 'js/views/soporte.js',
+  BASE + 'js/views/materia.js',
+  BASE + 'js/views/contexto.js',
+  BASE + 'js/views/herramientas.js',
+  BASE + 'js/views/simuladores.js',
+  BASE + 'js/views/agente.js',
+  BASE + 'js/views/tabla-periodica.js',
+  BASE + 'js/views/vista-fisica.js',
+  BASE + 'js/views/vista-quimica.js',
+  BASE + 'js/views/vista-ingles.js',
+  BASE + 'js/views/vista-matematicas.js',
+  BASE + 'js/views/vista-ciencias.js',
+  BASE + 'js/views/vista-quiz.js',
+  BASE + 'js/views/vista-lengua.js',
 ];
 
 /* ---------- INSTALL ---------- */
