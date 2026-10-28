@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 200" role="img"><title>Montaje de filtración</title>
+    <rect x="10" y="188" width="50" height="8" rx="2" fill="#334155"/>
+    <rect x="20" y="10" width="5" height="180" fill="#94a3b8" stroke="#0f172a" stroke-width="1"/>
+    <line x1="25" y1="62" x2="70" y2="62" stroke="#475569" stroke-width="3"/>
+    <path d="M66 50 L134 50 L106 100 L106 140 L94 140 L94 100 Z" fill="#e0f2fe" stroke="#0f172a" stroke-width="2" stroke-linejoin="round"/>
+    <ellipse cx="100" cy="62" rx="30" ry="5" fill="none" stroke="#475569" stroke-width="3"/>
+    <path d="M72 54 L128 54 L100 98 Z" fill="#fff7ed" stroke="#a8a29e" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <path d="M82 68 L118 68 L100 96 Z" fill="#a16207" fill-opacity="0.45"/>
+    <g fill="#78350f"><circle cx="97" cy="88" r="2"/><circle cx="103" cy="86" r="2"/><circle cx="100" cy="92" r="2"/><circle cx="94" cy="82" r="1.6"/><circle cx="106" cy="81" r="1.6"/></g>
+    <circle cx="100" cy="150" r="2.5" fill="#38bdf8"/>
+    <path d="M68 158 L72 162 L72 186 Q72 190 76 190 L124 190 Q128 190 128 186 L128 162" fill="#e0f2fe" stroke="#0f172a" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M74 174 L126 174 L126 185 Q126 188 123 188 L77 188 Q74 188 74 185 Z" fill="#38bdf8" fill-opacity="0.65"/>
+    <g stroke="#64748b" stroke-width="1"><line x1="122" y1="72" x2="150" y2="72"/><line x1="104" y1="88" x2="150" y2="94"/><line x1="110" y1="120" x2="150" y2="120"/><line x1="128" y1="180" x2="150" y2="180"/></g>
+    <text x="153" y="75" font-family="Arial, sans-serif" font-size="10" fill="#0f172a" >Papel filtro</text><text x="153" y="97" font-family="Arial, sans-serif" font-size="10" fill="#0f172a" >Residuo</text><text x="153" y="123" font-family="Arial, sans-serif" font-size="10" fill="#0f172a" >Embudo</text><text x="153" y="183" font-family="Arial, sans-serif" font-size="10" fill="#0f172a" >Filtrado</text></svg>

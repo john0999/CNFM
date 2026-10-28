@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" role="img"><title>Vidrio de reloj</title>
+    <path d="M8 70 Q60 116 112 70 Q60 102 8 70 Z" fill="#e0f2fe" stroke="#0f172a" stroke-width="2" stroke-linejoin="round"/>
+    <g fill="#f8fafc" stroke="#64748b" stroke-width="1">
+      <path d="M44 84 l6 -6 l6 6 l-6 6 Z"/><path d="M58 88 l5 -5 l5 5 l-5 5 Z"/><path d="M70 83 l4 -4 l4 4 l-4 4 Z"/>
+    </g></svg>

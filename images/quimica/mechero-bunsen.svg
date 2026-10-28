@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" role="img"><title>Mechero de Bunsen</title>
+    <path d="M60 8 C44 30 47 50 52 60 L68 60 C73 50 76 30 60 8 Z" fill="#60a5fa" fill-opacity="0.45"/>
+    <path d="M60 28 C54 40 55 52 56 60 L64 60 C65 52 66 40 60 28 Z" fill="#2563eb"/>
+    <rect x="52" y="60" width="16" height="80" fill="#94a3b8" stroke="#0f172a" stroke-width="1.5"/>
+    <rect x="49" y="108" width="22" height="11" rx="2" fill="#64748b" stroke="#0f172a" stroke-width="1.5"/>
+    <rect x="68" y="128" width="28" height="6" rx="2" fill="#64748b" stroke="#0f172a" stroke-width="1.5"/>
+    <rect x="28" y="140" width="64" height="11" rx="3" fill="#475569" stroke="#0f172a" stroke-width="1.5"/></svg>

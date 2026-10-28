@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240" role="img"><title>Alebrije con cabeza de quetzal y cola de serpiente</title>
+    <path d="M160 150 C200 170 230 150 250 170 C270 190 250 220 226 210 C210 204 214 186 228 190" fill="none" stroke="#1e1b4b" stroke-width="16" stroke-linecap="round"/>
+    <path d="M160 150 C200 170 230 150 250 170 C270 190 250 220 226 210 C210 204 214 186 228 190" fill="none" stroke="#22c55e" stroke-width="11" stroke-linecap="round"/>
+    <path d="M160 150 C200 170 230 150 250 170 C270 190 250 220 226 210" fill="none" stroke="#facc15" stroke-width="11" stroke-dasharray="5 9"/>
+    <path d="M112 178 L104 214 M100 214 h14 M140 180 L146 214 M140 214 h14" stroke="#f97316" stroke-width="6" stroke-linecap="round"/>
+    <path d="M150 112 C190 60 240 70 262 52 C250 90 214 118 170 130 Z" fill="#0ea5e9" stroke="#1e1b4b" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M160 116 C196 84 228 84 248 70 M168 124 C200 104 222 100 240 92" fill="none" stroke="#f472b6" stroke-width="4"/>
+    <ellipse cx="128" cy="146" rx="50" ry="38" fill="#16a34a" stroke="#1e1b4b" stroke-width="3"/>
+    <path d="M96 150 C100 176 140 186 160 160 C150 176 112 176 96 150 Z" fill="#dc2626" stroke="#1e1b4b" stroke-width="2.5"/>
+    <path d="M112 125 L118 132 L112 139 L106 132 Z" fill="#facc15" stroke="#1e1b4b" stroke-width="1.5"/><path d="M136 121 L142 128 L136 135 L130 128 Z" fill="#facc15" stroke="#1e1b4b" stroke-width="1.5"/><path d="M150 139 L156 146 L150 153 L144 146 Z" fill="#facc15" stroke="#1e1b4b" stroke-width="1.5"/><path d="M120 147 L126 154 L120 161 L114 154 Z" fill="#facc15" stroke="#1e1b4b" stroke-width="1.5"/>
+    <path d="M70 66 C60 44 74 34 82 52 C84 36 98 34 96 58 C104 46 116 50 106 70" fill="#22c55e" stroke="#1e1b4b" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="86" cy="96" r="32" fill="#22c55e" stroke="#1e1b4b" stroke-width="3"/>
+    <path d="M64 86 q8 -10 16 0" fill="none" stroke="#facc15" stroke-width="4"/>
+    <circle cx="78" cy="94" r="10" fill="#fff" stroke="#1e1b4b" stroke-width="2.5"/><circle cx="76" cy="95" r="5" fill="#1e1b4b"/><circle cx="74" cy="92" r="1.6" fill="#fff"/>
+    <path d="M58 102 L30 112 L58 116 Z" fill="#facc15" stroke="#1e1b4b" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="96" cy="110" r="3" fill="#e11d48"/><circle cx="104" cy="100" r="3" fill="#e11d48"/><circle cx="100" cy="120" r="3" fill="#e11d48"/></svg>

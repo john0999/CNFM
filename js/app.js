@@ -73,6 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
     { titulo: 'Lengua y Comunicación' }
   );
 
+  Router.registrar('laboratorio',
+    (c, params) => VistaLaboratorio.render(c, params),
+    { titulo: 'Material de Laboratorio' }
+  );
+
   Router.registrar('tabla-periodica',
     (c) => VistaTablaPeriodica.render(c),
     { titulo: 'Tabla Periódica Interactiva' }

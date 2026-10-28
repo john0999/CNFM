@@ -3,7 +3,7 @@
    Estructura: raíz con index.html, sw.js, /css /js /images /views
    ============================================================ */
 
-const CACHE_VERSION = 'v11'; // ⬅️ Sube este número cada vez que actualices
+const CACHE_VERSION = 'v12'; // ⬅️ Sube este número cada vez que actualices
 const CACHE_NAME = `quantix-ciencias-${CACHE_VERSION}`;
 
 // Detecta la ruta base automáticamente (funciona en raíz o subcarpeta)
@@ -24,6 +24,19 @@ const ASSETS = [
 
   // Imágenes
   BASE + 'images/Quantix.png',
+
+  // Imágenes de Química (material de laboratorio y diagramas)
+  ...[
+    'probeta', 'vaso-precipitados', 'matraz-erlenmeyer', 'matraz-aforado', 'pipeta', 'bureta',
+    'tubo-ensayo', 'gradilla', 'mechero-bunsen', 'balanza', 'termometro', 'embudo',
+    'vidrio-reloj', 'capsula-porcelana', 'mortero', 'soporte-universal', 'piseta', 'embudo-separacion',
+    'menisco', 'filtracion', 'destilacion', 'estados-particulas', 'atomo-bohr'
+  ].map(nombre => BASE + `images/quimica/${nombre}.svg`),
+
+  // Imágenes de Lengua y Comunicación (alebrijes y diagramas)
+  ...[
+    'alebrije-jaguar', 'alebrije-quetzal', 'curva-narrativa', 'comic-partes', 'mapa-conceptual', 'comunicacion'
+  ].map(nombre => BASE + `images/lengua/${nombre}.svg`),
 
   // JS raíz
   BASE + 'js/app.js',
@@ -61,6 +74,9 @@ const ASSETS = [
   BASE + 'js/data/matematicas.js',
   BASE + 'js/data/probabilidad.js',
   BASE + 'js/data/quimica.js',
+  BASE + 'js/data/quimica-estudio.js',
+  BASE + 'js/data/material-laboratorio.js',
+  BASE + 'js/views/vista-laboratorio.js',
   BASE + 'js/data/quizzes.js',
   BASE + 'js/data/soporte.js',
   BASE + 'js/data/simuladores.js',
@@ -68,6 +84,7 @@ const ASSETS = [
   BASE + 'js/data/tabla-periodica.js',
   BASE + 'js/data/ingles.js',
   BASE + 'js/data/lengua.js',
+  BASE + 'js/data/lengua-estudio.js',
 
   // JS views
   BASE + 'js/views/home.js',

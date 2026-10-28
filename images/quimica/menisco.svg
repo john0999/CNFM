@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img"><title>Lectura correcta del menisco</title>
+    <line x1="80" y1="10" x2="80" y2="150" stroke="#0f172a" stroke-width="2"/>
+    <line x1="160" y1="10" x2="160" y2="150" stroke="#0f172a" stroke-width="2"/>
+    <path d="M81 70 Q120 95 159 70 L159 150 L81 150 Z" fill="#38bdf8" fill-opacity="0.65"/>
+    <g stroke="#0f172a" stroke-width="1"><line x1="140" y1="42" x2="160" y2="42"/><line x1="148" y1="62" x2="160" y2="62"/><line x1="140" y1="82" x2="160" y2="82"/><line x1="148" y1="102" x2="160" y2="102"/><line x1="140" y1="122" x2="160" y2="122"/></g>
+    <ellipse cx="30" cy="82.5" rx="12" ry="7" fill="#fff" stroke="#0f172a" stroke-width="1.5"/>
+    <circle cx="33" cy="82.5" r="4" fill="#0f172a"/>
+    <line x1="44" y1="82.5" x2="200" y2="82.5" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="166" y="79" font-family="Arial, sans-serif" font-size="10" fill="#0f172a" >Lectura</text><text x="166" y="91" font-family="Arial, sans-serif" font-size="10" fill="#0f172a" >correcta</text>
+    <text x="30" y="104" font-family="Arial, sans-serif" font-size="10" fill="#0f172a" text-anchor="middle">Ojo a la</text><text x="30" y="116" font-family="Arial, sans-serif" font-size="10" fill="#0f172a" text-anchor="middle">altura</text></svg>

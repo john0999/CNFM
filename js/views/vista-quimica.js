@@ -36,6 +36,11 @@ const VistaQuimica = {
               <p style="color: #64748b; font-size: 0.9rem;">${sem.descripcion}</p>
             </div>
           `).join('')}
+          <a href="#/laboratorio" class="tarjeta-semestre-lab" style="background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 5px solid #dc2626; color: inherit; display: block; transition: transform 0.2s;" onmouseenter="this.style.transform='translateY(-5px)'" onmouseleave="this.style.transform='translateY(0)'">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🔬</div>
+            <h3 style="color: #dc2626; margin-bottom: 0.5rem;">Material de Laboratorio</h3>
+            <p style="color: #64748b; font-size: 0.9rem;">Probetas, matraces, buretas y más: para qué sirve cada instrumento y cómo usarlo.</p>
+          </a>
         </div>
       </div>
     `;
@@ -129,6 +134,7 @@ const VistaQuimica = {
 
         <div style="padding: 1.5rem;">
           <div class="contenido-tema" style="margin-bottom: 1.5rem;">${tema.contenido}</div>
+          ${this.renderEstudio(tema.id)}
 
           ${!estaBloqueado && tema.actividades ? `
           <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;">
@@ -153,6 +159,18 @@ const VistaQuimica = {
         this.cargarActividad(tema.id, tema.actividades, 0);
       }
     });
+  },
+
+  // Material de estudio ampliado (js/data/quimica-estudio.js), plegable
+  renderEstudio(temaId) {
+    const extra = typeof QUIMICA_ESTUDIO !== 'undefined' && QUIMICA_ESTUDIO[temaId];
+    if (!extra) return '';
+    return `
+      <details class="estudio-extra">
+        <summary>📚 Estudia más sobre este tema</summary>
+        <div class="contenido-tema">${extra}</div>
+      </details>
+    `;
   },
 
   cargarActividad(temaId, actividades, index) {

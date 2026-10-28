@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 200" role="img"><title>Elementos de la comunicación</title>
+    <rect x="10" y="60" width="110" height="60" rx="10" fill="#e11d48"/>
+    <text x="65" y="86" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" fill="#fff" font-weight="bold">EMISOR</text><text x="65" y="104" font-family="Arial, sans-serif" font-size="10"  text-anchor="middle" fill="#fff">quien habla</text>
+    <rect x="340" y="60" width="110" height="60" rx="10" fill="#0ea5e9"/>
+    <text x="395" y="86" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" fill="#fff" font-weight="bold">RECEPTOR</text><text x="395" y="104" font-family="Arial, sans-serif" font-size="10"  text-anchor="middle" fill="#fff">quien escucha</text>
+    <rect x="165" y="66" width="130" height="48" rx="24" fill="#facc15" stroke="#1e1b4b" stroke-width="2"/>
+    <text x="230" y="87" font-family="Arial, sans-serif" font-size="13" fill="#1e1b4b" text-anchor="middle" font-weight="bold">MENSAJE</text><text x="230" y="103" font-family="Arial, sans-serif" font-size="10" fill="#1e1b4b" text-anchor="middle">lo que se dice</text>
+    <path d="M122 90 H160 M298 90 H334" stroke="#1e1b4b" stroke-width="3"/>
+    <path d="M160 84 L168 90 L160 96 Z M334 84 L342 90 L334 96 Z" fill="#1e1b4b"/>
+    <path d="M395 124 C395 170 65 170 65 124" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <path d="M59 132 L65 122 L71 132 Z" fill="#94a3b8"/>
+    <text x="230" y="190" font-family="Arial, sans-serif" font-size="10"  text-anchor="middle" fill="#64748b">Retroalimentación: el receptor responde</text>
+    
+      <text x="60" y="24" font-family="Arial, sans-serif" font-size="12"  text-anchor="middle" font-weight="bold" fill="#be123c">Canal</text><text x="60" y="40" font-family="Arial, sans-serif" font-size="10"  text-anchor="middle" fill="#64748b">voz, papel, celular</text>
+      <text x="230" y="24" font-family="Arial, sans-serif" font-size="12"  text-anchor="middle" font-weight="bold" fill="#be123c">Código</text><text x="230" y="40" font-family="Arial, sans-serif" font-size="10"  text-anchor="middle" fill="#64748b">español, tsotsil, señas</text>
+      <text x="400" y="24" font-family="Arial, sans-serif" font-size="12"  text-anchor="middle" font-weight="bold" fill="#be123c">Contexto</text><text x="400" y="40" font-family="Arial, sans-serif" font-size="10"  text-anchor="middle" fill="#64748b">lugar y situación</text></svg>

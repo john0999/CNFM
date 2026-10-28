@@ -23,8 +23,9 @@ const VistaLengua = {
   renderSelector(contenedor) {
     contenedor.innerHTML = `
       <div style="background: linear-gradient(135deg, #e11d48, #be123c); color: #fff; padding: 3rem 1.5rem; text-align: center;">
+        <img src="images/lengua/alebrije-jaguar.svg" alt="Balam, el alebrije-jaguar" style="width: 130px; margin: 0 auto 0.5rem; background: rgba(255,255,255,0.9); border-radius: 50%; padding: 0.6rem;">
         <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">📖 Lengua y Comunicación</h2>
-        <p style="opacity: 0.9;">Selecciona un semestre para comenzar tu aprendizaje.</p>
+        <p style="opacity: 0.9;">Selecciona un semestre para comenzar tu aprendizaje. ¡Balam, el alebrije, te acompaña en el primer semestre!</p>
       </div>
       <div class="contenedor" style="padding: 2rem 1.5rem;">
         <button class="btn-volver" onclick="Router.ir('home')">← Volver al inicio</button>
@@ -140,6 +141,7 @@ const VistaLengua = {
 
         <div style="padding: 1.5rem;">
           <div class="contenido-tema" style="margin-bottom: 1.5rem;">${tema.contenido}</div>
+          ${this.renderEstudio(tema.id)}
 
           ${!estaBloqueado && tema.actividades ? `
           <div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;">
@@ -164,6 +166,18 @@ const VistaLengua = {
         this.cargarActividad(tema.id, tema.actividades, 0);
       }
     });
+  },
+
+  // Material de estudio ampliado (js/data/lengua-estudio.js), plegable
+  renderEstudio(temaId) {
+    const extra = typeof LENGUA_ESTUDIO !== 'undefined' && LENGUA_ESTUDIO[temaId];
+    if (!extra) return '';
+    return `
+      <details class="estudio-extra">
+        <summary>📚 Estudia más sobre este tema</summary>
+        <div class="contenido-tema">${extra}</div>
+      </details>
+    `;
   },
 
   cargarActividad(temaId, actividades, index) {
