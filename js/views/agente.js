@@ -1,5 +1,5 @@
 /* ==========================================================
-   VIEW - AGENTE IA (Chat con OpenRouter)
+   VIEW - AGENTE IA (Chat con OpenRouter vía Cloudflare Worker)
 ========================================================== */
 
 const VistaAgente = {
@@ -58,8 +58,8 @@ const VistaAgente = {
         <div id="sugerencias" style="
           display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;
         ">
-          ${a.sugerencias.map(s => `
-            <button onclick="VistaAgente.usarSugerencia('${s.texto}')" style="
+          ${a.sugerencias.map((s, i) => `
+            <button onclick="VistaAgente.usarSugerencia(${i})" style="
               background: #f0fdfa; color: #0f766e; padding: 0.5rem 1rem;
               border: 1px solid #0d9488; border-radius: 20px; font-size: 0.85rem;
               cursor: pointer; font-weight: 500;
@@ -69,8 +69,9 @@ const VistaAgente = {
 
         <!-- ===== Input ===== -->
         <div style="display: flex; gap: 0.5rem;">
-          <input type="text" id="inputMensaje" 
+          <input type="text" id="inputMensaje"
                  placeholder="Escribe tu pregunta..."
+                 maxlength="${a.config.maxLargoMensaje}"
                  style="
                    flex: 1;
                    padding: 0.9rem 1.2rem;
@@ -94,9 +95,8 @@ const VistaAgente = {
       </div>
     `;
 
-    // Cargar historial previo
     this.historial = [
-      { role: "assistant", content: AGENTE.mensajes.bienvenida }
+      { role: "assistant", content: AGENTE.mensajes.bienvenida, inicial: true }
     ];
 
     this.renderHistorial();
@@ -118,11 +118,6 @@ const VistaAgente = {
     chatArea.innerHTML = this.historial.map(msg => {
       const esUsuario = msg.role === 'user';
 
-      // 🆕 Convertir markdown básico a HTML
-      const contenidoFormateado = esUsuario
-        ? this.escaparHTML(msg.content)
-        : this.formatearMarkdown(msg.content);
-
       return `
       <div style="
         display: flex;
@@ -140,33 +135,56 @@ const VistaAgente = {
           word-wrap: break-word;
         ">
           ${esUsuario ? '' : '<strong style="display:block;margin-bottom:0.3rem;color:#0f766e;font-size:0.85rem;">CienTIA</strong>'}
-          ${contenidoFormateado}
+          <div class="msg-contenido">${this.formatearContenido(msg)}</div>
         </div>
       </div>
     `;
     }).join('');
 
     chatArea.scrollTop = chatArea.scrollHeight;
-    // 🆕 Renderizar las fórmulas LaTeX después de insertar el HTML
-    if (window.renderMathInElement) {
-      window.renderMathInElement(chatArea, {
-        delimiters: [
-          { left: '$$', right: '$$', display: true },
-          { left: '$', right: '$', display: false }
-        ],
-        throwOnError: false
-      });
-    }
+    this.renderizarFormulas(chatArea);
   },
 
-  // 🆕 Escapar HTML para mensajes del usuario (seguridad)
+  // Actualiza solo la burbuja del último mensaje (mientras llega el texto)
+  actualizarUltimo(conFormulas = false) {
+    const chatArea = document.getElementById('chatArea');
+    const nodos = chatArea?.querySelectorAll('.msg-contenido');
+    if (!nodos?.length) return;
+
+    const ultimo = nodos[nodos.length - 1];
+    ultimo.innerHTML = this.formatearContenido(this.historial[this.historial.length - 1]);
+    if (conFormulas) this.renderizarFormulas(ultimo);
+
+    // Solo baja el scroll si el usuario ya estaba abajo
+    const cercaDelFinal = chatArea.scrollHeight - chatArea.scrollTop - chatArea.clientHeight < 80;
+    if (cercaDelFinal) chatArea.scrollTop = chatArea.scrollHeight;
+  },
+
+  formatearContenido(msg) {
+    if (msg.role === 'user') return this.escaparHTML(msg.content);
+    if (!msg.content) return `⏳ ${AGENTE.mensajes.pensando}`;
+    return this.formatearMarkdown(msg.content);
+  },
+
+  renderizarFormulas(elemento) {
+    if (!window.renderMathInElement) return;
+    window.renderMathInElement(elemento, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false }
+      ],
+      throwOnError: false
+    });
+  },
+
+  // Escapar HTML para mensajes del usuario (seguridad)
   escaparHTML(texto) {
     const div = document.createElement('div');
     div.textContent = texto;
     return div.innerHTML.replace(/\n/g, '<br>');
   },
 
-  // 🆕 Formatear markdown básico en respuestas de la IA
+  // Formatear markdown básico en respuestas de la IA
   formatearMarkdown(texto) {
     let html = texto;
 
@@ -192,9 +210,9 @@ const VistaAgente = {
     return '<p style="margin:0;">' + html + '</p>';
   },
 
-  usarSugerencia(texto) {
+  usarSugerencia(indice) {
     const input = document.getElementById('inputMensaje');
-    input.value = texto;
+    input.value = AGENTE.sugerencias[indice].texto;
     this.enviar();
   },
 
@@ -205,141 +223,163 @@ const VistaAgente = {
 
     if (!mensaje || this.enviando) return;
 
-    // Verificar API key
-    // if (!AGENTE.config.apiKey || AGENTE.config.apiKey === "TU-OPENROUTER-API-KEY") {
-    //     this.agregarMensaje('assistant', AGENTE.mensajes.errorApiKey);
-    //     return;
-    // }
+    // El historial se toma antes de agregar el mensaje nuevo, para no duplicarlo
+    const historial = this.historialReciente();
 
-    // Agregar mensaje del usuario
-    this.agregarMensaje('user', mensaje);
+    this.historial.push({ role: 'user', content: mensaje });
     input.value = '';
 
     // Estado de carga
     this.enviando = true;
     btnEnviar.disabled = true;
-    btnEnviar.textContent = 'Pensando...';
+    btnEnviar.textContent = 'Escribiendo...';
     btnEnviar.style.background = '#94a3b8';
 
-    // Agregar placeholder de respuesta
-    this.agregarMensaje('assistant', '⏳ Pensando...');
+    // Burbuja vacía que se va llenando conforme llega el texto
+    const respuesta = { role: 'assistant', content: '' };
+    this.historial.push(respuesta);
+    this.renderHistorial();
+
+    let pendiente = false;
+    const alRecibir = (texto) => {
+      respuesta.content = texto;
+      if (pendiente) return;
+      pendiente = true;
+      requestAnimationFrame(() => {
+        pendiente = false;
+        this.actualizarUltimo();
+      });
+    };
 
     try {
-      const respuesta = await this.consultarIA(mensaje);
-
-      // Reemplazar el placeholder
-      this.historial.pop();
-      this.agregarMensaje('assistant', respuesta);
-
+      respuesta.content = await this.consultarIA(mensaje, historial, alRecibir);
     } catch (error) {
       console.error('Error:', error);
-      this.historial.pop();
 
       let mensajeError = AGENTE.mensajes.errorGeneral;
-      if (error.message.includes('401') || error.message.includes('key')) {
-        mensajeError = AGENTE.mensajes.errorApiKey;
-      } else if (error.message.includes('429')) {
+      if (error.message.includes('401') || error.message.includes('403') || error.message.includes('key')) {
+        mensajeError = AGENTE.mensajes.errorConfig;
+      } else if (error.message.includes('429') || error.message.includes('503')) {
         mensajeError = AGENTE.mensajes.errorLimite;
       } else if (error.message.includes('fetch') || error.message.includes('network')) {
         mensajeError = AGENTE.mensajes.errorRed;
       }
 
-      this.agregarMensaje('assistant', mensajeError);
-
+      // Si ya había llegado texto parcial, se conserva y se avisa abajo
+      respuesta.content = respuesta.content
+        ? respuesta.content + '\n\n' + mensajeError
+        : mensajeError;
+      respuesta.error = true;
     } finally {
+      requestAnimationFrame(() => this.actualizarUltimo(true));
       this.enviando = false;
       btnEnviar.disabled = false;
       btnEnviar.textContent = 'Enviar';
       btnEnviar.style.background = '#0d9488';
-      document.getElementById('inputMensaje').focus();
+      input.focus();
     }
   },
 
-  agregarMensaje(role, content) {
-    this.historial.push({ role, content });
-    this.renderHistorial();
+  // Últimos mensajes para dar contexto (sin la bienvenida ni los errores).
+  // El system prompt vive en el Worker; aquí solo va la conversación.
+  historialReciente() {
+    return this.historial
+      .filter(m => !m.error && !m.inicial && m.content)
+      .slice(-AGENTE.config.maxHistorial)
+      .map(({ role, content }) => ({ role, content }));
   },
 
-  async consultarIA(mensajeUsuario) {
-    const config = AGENTE.config;
-
-    // 1. Reconstruimos el historial reciente como texto plano
-    //    (El Worker de Cloudflare es simple y solo recibe { prompt: "..." })
-    const historialReciente = this.historial
-      .filter(m => !m.content.startsWith('⏳') && !m.content.startsWith('⚠️'))
-      .slice(-4) // Últimos 4 mensajes para dar contexto
-      .map(m => `${m.role === 'user' ? 'Estudiante' : 'CienTIA'}: ${m.content}`)
-      .join('\n\n');
-
-    // 2. Construimos el prompt final que enviaremos al Worker
-    const promptParaWorker = `
-${AGENTE.systemPrompt}
-
---- HISTORIAL DE CONVERSACIÓN ---
-${historialReciente}
-
---- NUEVA PREGUNTA DEL ESTUDIANTE ---
-${mensajeUsuario}
-
-CienTIA:`;
-
-    // 3. Petición a TU Worker de Cloudflare (no a Google directamente)
-    const response = await fetch(config.endpoint, {
+  /**
+   * Consulta al Worker. Si responde en streaming (text/event-stream) va
+   * llamando alRecibir(textoAcumulado) con cada fragmento; si responde con
+   * JSON normal devuelve todo de una vez.
+   */
+  async consultarIA(mensaje, historial, alRecibir) {
+    const response = await fetch(AGENTE.config.endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        prompt: promptParaWorker
-      })
+      body: JSON.stringify({ mensaje, historial, stream: true })
     });
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      throw new Error(`HTTP ${response.status}: ${errorData.error || 'Error en el Worker'}`);
+      throw new Error(`HTTP ${response.status}: ${errorData.error?.message || errorData.error || 'Error en el Worker'}`);
     }
 
-    // 4. Tu Worker devuelve el JSON crudo de Gemini, así que lo parseamos aquí
-    const data = await response.json();
+    const esStream = (response.headers.get('Content-Type') || '').includes('text/event-stream');
+    const { texto, finishReason } = esStream
+      ? await this.leerStream(response, alRecibir)
+      : this.leerRespuesta(await response.json());
 
-    // Si Gemini devolvió un error, lo lanzamos
-    if (data.error) {
-      throw new Error(data.error.message || 'Error desde Gemini');
-    }
-
-    const candidate = data.candidates?.[0];
-
-    if (!candidate) {
-      throw new Error('El asistente no devolvió respuesta');
-    }
-
-    const finishReason = candidate.finishReason;
-    const texto = candidate.content?.parts?.[0]?.text;
-
-    if (!texto) {
-      throw new Error('Respuesta vacía del asistente');
-    }
-
-    // Si se cortó por MAX_TOKENS
-    if (finishReason === 'MAX_TOKENS') {
-      return texto + '\n\n---\n\n⚠️ *La respuesta fue muy larga. Pídeme que continúe o que resuma.*';
-    }
-
-    // Si fue bloqueado por seguridad
     if (finishReason === 'SAFETY') {
       return '🔒 La respuesta fue bloqueada por los filtros de seguridad. Intenta reformular tu pregunta.';
     }
-
-    // Si fue bloqueado por contenido prohibido
     if (finishReason === 'PROHIBITED_CONTENT') {
       return '🚫 El contenido fue marcado como prohibido. Reformula tu pregunta.';
     }
-
-    // Si se detuvo por otra razón anormal
+    if (!texto) {
+      throw new Error('Respuesta vacía del asistente');
+    }
+    if (finishReason === 'MAX_TOKENS') {
+      return texto + '\n\n---\n\n⚠️ *La respuesta fue muy larga. Pídeme que continúe o que resuma.*';
+    }
     if (finishReason && finishReason !== 'STOP') {
       console.warn('Finish reason inesperado:', finishReason);
       return texto + '\n\n*[Respuesta detenida: ' + finishReason + ']*';
     }
-
-    // ✅ Respuesta completa
     return texto;
+  },
+
+  // Lee el stream SSE del Worker: líneas "data: {json}" con fragmentos de texto
+  async leerStream(response, alRecibir) {
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+    let texto = '';
+    let finishReason = null;
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      buffer += decoder.decode(value, { stream: true });
+      const lineas = buffer.split('\n');
+      buffer = lineas.pop(); // la última puede venir incompleta
+
+      for (const linea of lineas) {
+        if (!linea.startsWith('data:')) continue;
+        const json = linea.slice(5).trim();
+        if (!json || json === '[DONE]') continue;
+
+        const parte = this.leerRespuesta(JSON.parse(json));
+        if (parte.texto) {
+          texto += parte.texto;
+          alRecibir(texto);
+        }
+        if (parte.finishReason) finishReason = parte.finishReason;
+      }
+    }
+
+    return { texto, finishReason };
+  },
+
+  // Extrae texto y finishReason de la respuesta del Worker
+  leerRespuesta(data) {
+    if (data.error) {
+      throw new Error(data.error.message || data.error);
+    }
+    const candidate = data.candidates?.[0];
+    return {
+      texto: candidate?.content?.parts?.map(p => p.text || '').join('') || '',
+      finishReason: this.normalizarFin(candidate?.finishReason)
+    };
+  },
+
+  // OpenRouter usa "stop" / "length" / "content_filter"; se unifican en mayúsculas
+  normalizarFin(motivo) {
+    if (!motivo) return null;
+    const equivalencias = { STOP: 'STOP', LENGTH: 'MAX_TOKENS', CONTENT_FILTER: 'SAFETY' };
+    const m = String(motivo).toUpperCase();
+    return equivalencias[m] || m;
   }
 };

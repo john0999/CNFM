@@ -3,7 +3,7 @@
    Estructura: raíz con index.html, sw.js, /css /js /images /views
    ============================================================ */
 
-const CACHE_VERSION = 'v10'; // ⬅️ Sube este número cada vez que actualices
+const CACHE_VERSION = 'v11'; // ⬅️ Sube este número cada vez que actualices
 const CACHE_NAME = `quantix-ciencias-${CACHE_VERSION}`;
 
 // Detecta la ruta base automáticamente (funciona en raíz o subcarpeta)
