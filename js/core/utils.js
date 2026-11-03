@@ -53,5 +53,48 @@ const Utils = {
   // Año actual
   anioActual() {
     return new Date().getFullYear();
+  },
+
+  // ===== MODO DESARROLLADOR =====
+  // Desbloquea todos los temas y niveles para revisar el contenido.
+  // Solo afecta a este navegador y no modifica el avance guardado.
+  PIN_DESARROLLADOR: '2026', // ⬅️ Cámbialo por el PIN que quieras
+
+  modoDesarrollador() {
+    try { return localStorage.getItem('quantix_modo_desarrollador') === '1'; } catch { return false; }
+  },
+
+  activarModoDesarrollador(pin) {
+    if (String(pin).trim() !== this.PIN_DESARROLLADOR) return false;
+    try { localStorage.setItem('quantix_modo_desarrollador', '1'); } catch { return false; }
+    this.mostrarAvisoDesarrollador();
+    return true;
+  },
+
+  desactivarModoDesarrollador() {
+    try { localStorage.removeItem('quantix_modo_desarrollador'); } catch {}
+    this.mostrarAvisoDesarrollador();
+  },
+
+  // Franja fija que avisa que el modo desarrollador está activo
+  mostrarAvisoDesarrollador() {
+    let aviso = document.getElementById('avisoModoDesarrollador');
+    if (!this.modoDesarrollador()) {
+      aviso?.remove();
+      return;
+    }
+    if (aviso) return;
+    aviso = document.createElement('div');
+    aviso.id = 'avisoModoDesarrollador';
+    aviso.className = 'aviso-desarrollador';
+    aviso.innerHTML = `
+      <span>🛠️ <strong>Modo desarrollador activo:</strong> todos los temas están desbloqueados.</span>
+      <button type="button">Desactivar</button>
+    `;
+    aviso.querySelector('button').addEventListener('click', () => {
+      this.desactivarModoDesarrollador();
+      Router.ejecutar();
+    });
+    document.body.appendChild(aviso);
   }
 };

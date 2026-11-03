@@ -1,6 +1,7 @@
 /* ==========================================================
    DATA - Lengua y Comunicación I, II y III
-   Alineado al plan de estudios COSFAC
+   Alineado al plan de estudios COSFAC (MCCEMS, Modelo Educativo 2025):
+   cada tema indica en "proposito" el propósito formativo que cubre
 ========================================================== */
 
 const LENGUA = {
@@ -15,6 +16,7 @@ const LENGUA = {
     temas: [
       {
         id: "lc1-1",
+        proposito: "Propósito formativo 1",
         titulo: "Lectura y Escritura: Un Diálogo Humano",
         icono: "🗣️",
         imagen: "linear-gradient(135deg, #e11d48, #be123c)",
@@ -36,7 +38,67 @@ const LENGUA = {
         ]
       },
       {
+        id: "lc1-10",
+        proposito: "Propósito formativo 2",
+        titulo: "Diversidad de Textos, Soportes y Formatos",
+        icono: "🗞️",
+        imagen: "linear-gradient(135deg, #0891b2, #2563eb)",
+        contenido: `
+          <div class="nota-estudio">
+            <strong>💡 Idea clave:</strong> Un recibo de luz, una receta, un mensaje de WhatsApp y una novela son textos. ¡Vivimos rodeados de ellos! Investiguemos qué lee la gente de tu escuela.
+          </div>
+
+          <h4>¿Qué tipos de textos existen?</h4>
+          <table class="tabla-estudio">
+            <tr><th>Tipo</th><th>Propósito</th><th>Ejemplos</th></tr>
+            <tr><td>Informativos</td><td>Dar a conocer hechos o datos</td><td>Noticia, artículo de divulgación, infografía</td></tr>
+            <tr><td>Literarios</td><td>Crear belleza, emocionar, imaginar</td><td>Cuento, poema, leyenda, novela</td></tr>
+            <tr><td>Instructivos</td><td>Explicar cómo hacer algo</td><td>Receta, manual, instructivo de un medicamento</td></tr>
+            <tr><td>Argumentativos o persuasivos</td><td>Convencer</td><td>Anuncio, artículo de opinión, ensayo</td></tr>
+            <tr><td>Normativos</td><td>Establecer reglas</td><td>Reglamento escolar, acuerdos de la asamblea</td></tr>
+            <tr><td>Personales</td><td>Comunicarse con alguien cercano</td><td>Carta, diario, mensaje de texto</td></tr>
+          </table>
+
+          <h4>Soportes y formatos</h4>
+          <ul>
+            <li><strong>Soporte:</strong> el material donde está el texto: papel, pantalla, una pared (mural), una manta, una camiseta.</li>
+            <li><strong>Formato:</strong> la forma en que se organiza: libro, revista, periódico, cartel, folleto, infografía, blog, publicación en redes, pódcast.</li>
+          </ul>
+          <div class="ejemplo">
+            <strong>Un mismo tema, muchos formatos:</strong> la campaña de vacunación de tu comunidad puede aparecer como cartel en el centro de salud, aviso por el altavoz, folleto, mensaje de WhatsApp y publicación en Facebook. Cada formato se escribe de manera diferente.
+          </div>
+
+          <h4>Características generales de todo texto escrito</h4>
+          <ol>
+            <li><strong>Emisor:</strong> quién lo escribe.</li>
+            <li><strong>Destinatario:</strong> para quién se escribe.</li>
+            <li><strong>Propósito:</strong> para qué se escribe (informar, convencer, entretener, instruir).</li>
+            <li><strong>Tema:</strong> de qué trata.</li>
+            <li><strong>Estructura:</strong> cómo se organiza (título, párrafos, imágenes).</li>
+          </ol>
+
+          <h4>Textos en la vida cotidiana</h4>
+          <p>Necesitamos leer y escribir para inscribirnos en la escuela, llenar una solicitud de beca, leer la etiqueta de un fertilizante, seguir una receta, entender un contrato o enviar un mensaje a la familia que está lejos.</p>
+
+          <h4>✍️ Ejemplo práctico: encuesta de gustos lectores</h4>
+          <ol>
+            <li>En equipo, escriban 6 a 8 preguntas: ¿qué te gusta leer?, ¿en papel o en pantalla?, ¿cuánto tiempo lees al día?, ¿en qué lengua lees?, ¿quién te recomienda lecturas?</li>
+            <li>Aplíquenla a 20 personas de su comunidad escolar: estudiantes, docentes, personal de la escuela.</li>
+            <li>Organicen los resultados en una tabla y una gráfica.</li>
+            <li>Escriban un breve informe con sus conclusiones y preséntenlo al grupo.</li>
+          </ol>
+        `,
+        actividades: [
+          { pregunta: "Una receta de tamales es un texto:", opciones: ["Literario", "Instructivo", "Normativo", "Argumentativo"], correcta: "Instructivo", explicacion: "Explica paso a paso cómo hacer algo." },
+          { pregunta: "El material donde está escrito un texto (papel, pantalla, pared) se llama:", opciones: ["Formato", "Soporte", "Tema", "Emisor"], correcta: "Soporte", explicacion: "El formato, en cambio, es la forma en que se organiza: cartel, libro, blog." },
+          { pregunta: "El reglamento de tu escuela es un texto:", opciones: ["Normativo", "Literario", "Personal", "Instructivo"], correcta: "Normativo", explicacion: "Establece reglas que deben cumplirse." },
+          { pregunta: "¿Para qué sirve una encuesta de gustos lectores?", opciones: ["Para calificar a los compañeros", "Para conocer qué y cómo lee la comunidad escolar", "Para copiar textos", "Para no leer"], correcta: "Para conocer qué y cómo lee la comunidad escolar", explicacion: "Ayuda a descubrir la diversidad de textos que se leen." },
+          { pregunta: "El propósito de un anuncio publicitario es:", opciones: ["Informar sin opinar", "Convencer", "Contar una leyenda", "Dar instrucciones"], correcta: "Convencer", explicacion: "Busca que el lector compre o haga algo." }
+        ]
+      },
+      {
         id: "lc1-2",
+        proposito: "Propósito formativo 3",
         titulo: "Propiedades del Texto",
         icono: "📝",
         imagen: "linear-gradient(135deg, #0ea5e9, #0284c7)",
@@ -61,6 +123,7 @@ const LENGUA = {
       },
       {
         id: "lc1-3",
+        proposito: "Propósito formativo 4",
         titulo: "Tipos de Párrafos",
         icono: "🧩",
         imagen: "linear-gradient(135deg, #10b981, #059669)",
@@ -86,57 +149,72 @@ const LENGUA = {
         ]
       },
       {
-        id: "lc1-4",
-        titulo: "Ideas Principales y Secundarias",
-        icono: "💡",
-        imagen: "linear-gradient(135deg, #f59e0b, #d97706)",
+        id: "lc1-7",
+        proposito: "Propósito formativo 4",
+        titulo: "Párrafos y Textos Descriptivos",
+        icono: "🖼️",
+        imagen: "linear-gradient(135deg, #8b5cf6, #ec4899)",
         contenido: `
-          <h4>El corazón del texto</h4>
-          <p>La <strong>idea principal</strong> es el mensaje central, lo más importante que el autor quiere decir. Sin ella, el texto no tendría sentido.</p>
-          <p>Las <strong>ideas secundarias</strong> son los detalles, ejemplos o explicaciones que apoyan a la idea principal.</p>
-          <h4>Elementos paratextuales</h4>
-          <p>Son los títulos, subtítulos, imágenes y negritas que nos ayudan a predecir de qué tratará el texto.</p>
-        `,
-        actividades: [
-          { pregunta: "La idea principal es:", opciones: ["Un detalle sin importancia", "El mensaje central del texto", "El título", "La primera palabra"], correcta: "El mensaje central del texto", explicacion: "Es el núcleo del texto." },
-          { pregunta: "¿Qué son los elementos paratextuales?", opciones: ["Las letras", "Títulos, subtítulos e imágenes", "Los autores", "Los libros"], correcta: "Títulos, subtítulos e imágenes", explicacion: "Acompañan al texto y ayudan a entenderlo." },
-          { pregunta: "Si la idea principal es 'El agua es vital', una idea secundaria sería:", opciones: ["El agua es vida", "El cuerpo humano es 70% agua", "El agua", "Nadar"], correcta: "El cuerpo humano es 70% agua", explicacion: "Es un dato que apoya la idea principal." },
-          { pregunta: "Las ideas secundarias sirven para:", opciones: ["Desviar el tema", "Apoyar y explicar la idea principal", "Confundir al lector", "Hacer el texto más largo"], correcta: "Apoyar y explicar la idea principal", explicacion: "Dan soporte a la idea central." },
-          { pregunta: "Un elemento paratextual en este texto son los:", opciones: ["Párrafos", "Títulos en negrita", "Puntos", "Sustantivos"], correcta: "Títulos en negrita", explicacion: "Guían al lector antes de leer." }
-        ]
-      },
-      {
-        id: "lc1-5",
-        titulo: "Exposición Oral",
-        icono: "🎤",
-        imagen: "linear-gradient(135deg, #8b5cf6, #7c3aed)",
-        contenido: `
-          <h4>Hablar para comunicar</h4>
-          <p>Una exposición oral requiere preparación. No se trata de leer un papel, sino de explicar un tema con nuestras propias palabras.</p>
-          <h4>Elementos paralingüísticos</h4>
+          <div class="nota-estudio">
+            <strong>💡 Idea clave:</strong> describir es «pintar con palabras». Un buen texto descriptivo permite que el lector imagine algo que nunca ha visto.
+          </div>
+
+          <h4>¿Qué es describir?</h4>
+          <p><strong>Describir</strong> es decir cómo es una persona, un animal, un lugar, un objeto o un proceso, de forma ordenada y precisa, para que el lector pueda imaginarlo. El <strong>párrafo descriptivo</strong> es uno de los tres tipos de párrafo que estudia el programa, junto con el narrativo y el argumentativo.</p>
+
+          <h4>Herramientas para describir</h4>
           <ul>
-            <li><strong>Volumen:</strong> Hablar fuerte para que todos escuchen.</li>
-            <li><strong>Tono:</strong> Cambiar la voz para no ser monótonos.</li>
-            <li><strong>Lenguaje corporal:</strong> Movimientos de manos y contacto visual.</li>
+            <li><strong>Observa con orden:</strong> de lo general a lo particular, de arriba hacia abajo o de lo cercano a lo lejano.</li>
+            <li><strong>Adjetivos calificativos:</strong> dicen cómo es algo: <em>áspero, brillante, enorme, silencioso</em>.</li>
+            <li><strong>Comparaciones (símil):</strong> usan «como» o «parece»: <em>el lago brilla como un espejo</em>.</li>
+            <li><strong>Los cinco sentidos:</strong> no solo lo que ves; también lo que se oye, se huele, se siente y se saborea.</li>
           </ul>
+
+          <h4>Ejemplos con el patrimonio de Chiapas</h4>
+          <div class="ejemplo">
+            <strong>Un objeto — el jaguar de barro de Amatenango del Valle:</strong> «La figura mide casi un metro de largo. Su cuerpo de barro cocido es de color crema y está cubierto de manchas negras redondas, pintadas a mano. Tiene las patas firmes, la cola curva como un gancho y la cabeza levantada, con unos ojos grandes que parecen vigilar el patio. Al tocarlo se siente áspero y frío.»
+          </div>
+          <div class="ejemplo">
+            <strong>Un lugar — las Lagunas de Montebello:</strong> «Entre pinos altos se extienden lagunas de colores distintos: unas son azul turquesa, otras verde esmeralda y algunas casi moradas. El agua está tan quieta que refleja las nubes como un espejo. Huele a tierra húmeda y a resina, y solo se escucha el canto de los pájaros.»
+          </div>
+
+          <h4>Tipos de descripción</h4>
+          <table class="tabla-estudio">
+            <tr><th>Tipo</th><th>¿Qué describe?</th><th>Ejemplo</th></tr>
+            <tr><td>Objetiva</td><td>Los datos tal como son, sin opinión</td><td>«El huipil mide 80 cm y tiene bordados rojos y verdes.»</td></tr>
+            <tr><td>Subjetiva</td><td>Lo que siente u opina quien describe</td><td>«Es el huipil más hermoso que he visto.»</td></tr>
+            <tr><td>Topografía</td><td>Un lugar o paisaje</td><td>La descripción de Montebello</td></tr>
+            <tr><td>Prosopografía</td><td>El aspecto físico de una persona</td><td>«Tiene el cabello trenzado y las manos curtidas por el trabajo.»</td></tr>
+            <tr><td>Etopeya</td><td>El carácter y la forma de ser</td><td>«Es paciente, alegre y nunca deja de enseñar a sus nietas a bordar.»</td></tr>
+            <tr><td>Retrato</td><td>Lo físico y el carácter juntos</td><td>La unión de los dos ejemplos anteriores</td></tr>
+          </table>
+
+          <h4>✍️ Ejemplo práctico: describe el patrimonio de tu comunidad</h4>
+          <ol>
+            <li>Elige algo representativo de tu comunidad: una artesanía, un platillo, un lugar o una persona que admires.</li>
+            <li>Obsérvalo con calma y anota lo que percibes con cada sentido.</li>
+            <li>Escribe un párrafo descriptivo de 6 a 8 líneas con al menos <strong>cinco adjetivos</strong> y <strong>dos comparaciones</strong>, siguiendo un orden claro.</li>
+            <li>Revisa la concordancia y la puntuación de tu texto.</li>
+            <li>Léelo a un compañero sin decirle qué es: ¿puede adivinarlo o dibujarlo?</li>
+          </ol>
         `,
         actividades: [
-          { pregunta: "Los elementos paralingüísticos incluyen:", opciones: ["Las reglas gramaticales", "El tono y el lenguaje corporal", "Solo las diapositivas", "El texto escrito"], correcta: "El tono y el lenguaje corporal", explicacion: "Son los elementos no verbales de la voz y el cuerpo." },
-          { pregunta: "Para una buena exposición oral es fundamental:", opciones: ["Leer palabra por palabra", "Preparar el tema y los recursos", "Improvisar todo", "No mirar al público"], correcta: "Preparar el tema y los recursos", explicacion: "La preparación da seguridad." },
-          { pregunta: "El volumen de la voz debe ser:", opciones: ["Muy bajo", "Adecuado para el espacio", "Gritando", "Susurrando"], correcta: "Adecuado para el espacio", explicacion: "Para que todos escuchen sin lastimar oídos." },
-          { pregunta: "Un recurso visual de apoyo es:", opciones: ["Un mapa mental", "Un texto largo", "Tus manos", "El silencio"], correcta: "Un mapa mental", explicacion: "Ayuda a resumir la información." },
-          { pregunta: "El contacto visual con el público transmite:", opciones: ["Miedo", "Confianza y conexión", "Enojo", "Aburrimiento"], correcta: "Confianza y conexión", explicacion: "Mantiene al público interesado." }
+          { pregunta: "Describir es:", opciones: ["Contar una historia con un final", "Decir cómo es algo para que el lector lo imagine", "Dar una opinión con argumentos", "Hacer un resumen"], correcta: "Decir cómo es algo para que el lector lo imagine", explicacion: "Es pintar con palabras." },
+          { pregunta: "«El lago brilla como un espejo» es un ejemplo de:", opciones: ["Comparación o símil", "Pregunta", "Narración", "Argumento"], correcta: "Comparación o símil", explicacion: "Compara dos cosas usando la palabra «como»." },
+          { pregunta: "La descripción de un lugar o paisaje se llama:", opciones: ["Topografía", "Etopeya", "Prosopografía", "Paráfrasis"], correcta: "Topografía", explicacion: "Como la descripción de las Lagunas de Montebello." },
+          { pregunta: "La descripción del carácter o forma de ser de una persona se llama:", opciones: ["Prosopografía", "Etopeya", "Topografía", "Resumen"], correcta: "Etopeya", explicacion: "La prosopografía describe lo físico; la etopeya, el carácter." },
+          { pregunta: "«Es el huipil más hermoso que he visto» es una descripción:", opciones: ["Objetiva", "Subjetiva", "Numérica", "Científica"], correcta: "Subjetiva", explicacion: "Expresa la opinión y el sentimiento de quien describe." }
         ]
       },
       {
         id: "lc1-6",
-        titulo: "Signos de Puntuación",
+        proposito: "Propósito formativo 4",
+        titulo: "Puntuación y Sintaxis",
         icono: "❗",
         imagen: "linear-gradient(135deg, #f43f5e, #e11d48)",
         contenido: `
-          <div class="alebrije-tip">
-            <img src="images/lengua/alebrije-jaguar.svg" alt="Balam, el alebrije-jaguar">
-            <p><strong>Balam dice:</strong> «Los signos de puntuación son como las señales del camino: indican cuándo hacer una pausa, cuándo preguntar y cuándo emocionarse. ¡Una coma puede cambiar todo el sentido!»</p>
+          <div class="nota-estudio">
+            <strong>💡 Idea clave:</strong> Los signos de puntuación son como las señales del camino: indican cuándo hacer una pausa, cuándo preguntar y cuándo emocionarse. ¡Una coma puede cambiar todo el sentido!
           </div>
 
           <h4>Los signos más usados</h4>
@@ -158,6 +236,19 @@ const LENGUA = {
             «Vamos a comer niños.» → ¡suena a que te los vas a comer!<br><br>
             «No, quiero café.» → no a otra cosa; sí quieres café.<br>
             «No quiero café.» → no quieres café.
+          </div>
+
+          <h4>Sintaxis: el orden de las palabras en la oración</h4>
+          <p>La <strong>sintaxis</strong> estudia cómo se ordenan y combinan las palabras para formar oraciones con sentido. El orden más común en español es:</p>
+          <div class="formula">SUJETO (quién) + VERBO (qué hace) + COMPLEMENTOS (qué, dónde, cuándo, cómo)<br>
+Mi abuela &nbsp;|&nbsp; prepara &nbsp;|&nbsp; tamales de chipilín los domingos.</div>
+          <ul>
+            <li>Una <strong>oración simple</strong> tiene un solo verbo: «El río creció».</li>
+            <li>Una <strong>oración compuesta</strong> une dos o más ideas con nexos: «El río creció y no pudimos cruzar».</li>
+            <li>Cuando un complemento va al inicio, suele separarse con coma: «Los domingos, mi abuela prepara tamales».</li>
+          </ul>
+          <div class="ejemplo">
+            <strong>Cuidado con el orden:</strong> «Se venden medias para señora de seda» parece decir que la señora es de seda. Con buen orden: «Se venden medias de seda para señora». Otro ejemplo: «Vendo perro que come de todo y quiere mucho a los niños» → ¿se come a los niños? Mejor: «Vendo perro cariñoso con los niños, que come de todo».
           </div>
 
           <h4>Errores frecuentes</h4>
@@ -184,80 +275,164 @@ const LENGUA = {
         ]
       },
       {
-        id: "lc1-7",
-        titulo: "La Descripción: Crea tu Alebrije",
-        icono: "🦄",
-        imagen: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+        id: "lc1-4",
+        proposito: "Propósito formativo 5",
+        titulo: "Ideas Principales y Secundarias",
+        icono: "💡",
+        imagen: "linear-gradient(135deg, #f59e0b, #d97706)",
         contenido: `
-          <div class="alebrije-tip">
-            <img src="images/lengua/alebrije-jaguar.svg" alt="Balam, el alebrije-jaguar">
-            <p><strong>Balam dice:</strong> «¡Yo soy un alebrije! Mi nombre significa <em>jaguar</em> en maya; en tsotsil y tseltal al jaguar se le dice <em>bolom</em>. En este tema aprenderás a describirme… y a inventar tu propio alebrije.»</p>
-          </div>
-
-          <h4>¿Qué es un alebrije?</h4>
-          <p>Los alebrijes son figuras de artesanía mexicana que mezclan partes de distintos animales reales y fantásticos, pintadas con colores muy vivos y llenas de figuras: puntos, rayas, espirales y zigzags.</p>
-          <ul>
-            <li><strong>Origen:</strong> en 1936 el artesano cartonero <strong>Pedro Linares</strong>, de la Ciudad de México, contó que durante una enfermedad soñó con criaturas extrañas que gritaban «¡alebrijes!». Al despertar las hizo de papel maché (cartonería).</li>
-            <li><strong>Oaxaca:</strong> después, artesanos de San Antonio Arrazola y San Martín Tilcajete comenzaron a tallarlos en madera de copal, y hoy son famosos en todo el mundo.</li>
-          </ul>
-          <div class="ejemplo">
-            <strong>Contexto Chiapas:</strong> Chiapas también tiene artesanías llenas de color que puedes describir: los jaguares de barro de Amatenango del Valle, la laca de Chiapa de Corzo y los bordados de Zinacantán.
-          </div>
-
-          <h4>¿Qué es describir?</h4>
-          <p><strong>Describir</strong> es «pintar con palabras»: decir cómo es una persona, un animal, un lugar o un objeto para que el lector pueda imaginarlo.</p>
-          <figure class="diagrama-quimica">
-            <img src="images/lengua/alebrije-quetzal.svg" alt="Alebrije con cabeza de quetzal y cola de serpiente" loading="lazy">
-            <figcaption><strong>Ejemplo de descripción:</strong> «Este alebrije tiene cabeza de quetzal, verde como las hojas de la selva, con un copete de plumas que parece una corona. Su pico es amarillo y puntiagudo. Las alas son azules, con rayas rosas, y su cola es una serpiente verde con anillos amarillos que termina en espiral. En el pecho luce una mancha roja con forma de sonrisa, y camina sobre unas patas delgadas y anaranjadas.»</figcaption>
-          </figure>
-
-          <h4>Herramientas para describir</h4>
-          <ul>
-            <li><strong>Observa con orden:</strong> de lo general a lo particular, o de arriba hacia abajo (cabeza, cuerpo, patas, cola).</li>
-            <li><strong>Adjetivos calificativos:</strong> dicen cómo es algo: <em>brillante, áspero, enorme, travieso</em>.</li>
-            <li><strong>Comparaciones (símil):</strong> usan «como» o «parece»: <em>sus ojos brillan como luciérnagas</em>.</li>
-            <li><strong>Los cinco sentidos:</strong> no solo lo que ves; también lo que se oye, se huele, se siente y hasta su sabor.</li>
-          </ul>
-
-          <h4>Tipos de descripción</h4>
-          <table class="tabla-estudio">
-            <tr><th>Tipo</th><th>¿Qué describe?</th><th>Ejemplo</th></tr>
-            <tr><td>Objetiva</td><td>Los datos tal como son, sin opinión</td><td>«Mide 30 cm y tiene cuatro patas.»</td></tr>
-            <tr><td>Subjetiva</td><td>Lo que siente u opina quien describe</td><td>«Es la criatura más simpática que he visto.»</td></tr>
-            <tr><td>Prosopografía</td><td>El aspecto físico</td><td>«Tiene cuernos verdes y alas moradas.»</td></tr>
-            <tr><td>Etopeya</td><td>El carácter y la forma de ser</td><td>«Es curioso, valiente y un poco presumido.»</td></tr>
-            <tr><td>Retrato</td><td>Lo físico y el carácter juntos</td><td>La descripción de Balam de abajo.</td></tr>
-          </table>
-          <div class="ejemplo">
-            <strong>Retrato de Balam:</strong> «Balam tiene cabeza de jaguar anaranjada, con bigotes largos y unos cuernos verdes enroscados. Su cuerpo rosa está cubierto de círculos amarillos y de un zigzag turquesa, como el río cuando le pega el sol. Tiene alas de colores, una cola rayada que se enrosca como caracol y patas con rayas rojas. Es curioso y platicador: siempre quiere saber qué estás leyendo.»
-          </div>
-
-          <h4>✍️ Ejemplo práctico: crea tu alebrije chiapaneco</h4>
-          <ol>
-            <li>Elige dos o tres animales de Chiapas: jaguar, quetzal, tapir, mono saraguato, tucán, guacamaya roja, cocodrilo del Sumidero, armadillo…</li>
-            <li>Dibújalo y píntalo con colores vivos y figuras (puntos, rayas, espirales).</li>
-            <li>Ponle un nombre; puede ser una palabra en tu lengua o en la de tu comunidad.</li>
-            <li>Escribe su <strong>retrato</strong> en 6 a 8 líneas, de la cabeza a la cola, con al menos <strong>cinco adjetivos</strong>, <strong>dos comparaciones</strong> y una parte sobre su <strong>carácter</strong>.</li>
-            <li>Intercambia tu texto con un compañero: ¿puede dibujar tu alebrije solo con leer tu descripción?</li>
-          </ol>
+          <h4>El corazón del texto</h4>
+          <p>La <strong>idea principal</strong> es el mensaje central, lo más importante que el autor quiere decir. Sin ella, el texto no tendría sentido.</p>
+          <p>Las <strong>ideas secundarias</strong> son los detalles, ejemplos o explicaciones que apoyan a la idea principal.</p>
+          <h4>Elementos paratextuales</h4>
+          <p>Son los títulos, subtítulos, imágenes y negritas que nos ayudan a predecir de qué tratará el texto.</p>
         `,
         actividades: [
-          { pregunta: "¿Quién creó los primeros alebrijes en 1936?", opciones: ["Frida Kahlo", "Pedro Linares", "Diego Rivera", "Rosario Castellanos"], correcta: "Pedro Linares", explicacion: "Era un artesano cartonero de la Ciudad de México." },
-          { pregunta: "Describir es:", opciones: ["Contar una historia con un final", "Decir cómo es algo para que el lector lo imagine", "Dar una opinión con argumentos", "Hacer un resumen"], correcta: "Decir cómo es algo para que el lector lo imagine", explicacion: "Es pintar con palabras." },
-          { pregunta: "«Sus ojos brillan como luciérnagas» es un ejemplo de:", opciones: ["Comparación o símil", "Pregunta", "Narración", "Argumento"], correcta: "Comparación o símil", explicacion: "Compara dos cosas usando la palabra «como»." },
-          { pregunta: "La descripción del carácter o forma de ser se llama:", opciones: ["Prosopografía", "Etopeya", "Paráfrasis", "Topografía"], correcta: "Etopeya", explicacion: "La prosopografía describe lo físico; la etopeya, el carácter." },
-          { pregunta: "«Es la criatura más simpática que he visto» es una descripción:", opciones: ["Objetiva", "Subjetiva", "Numérica", "Científica"], correcta: "Subjetiva", explicacion: "Expresa la opinión y el sentimiento de quien describe." }
+          { pregunta: "La idea principal es:", opciones: ["Un detalle sin importancia", "El mensaje central del texto", "El título", "La primera palabra"], correcta: "El mensaje central del texto", explicacion: "Es el núcleo del texto." },
+          { pregunta: "¿Qué son los elementos paratextuales?", opciones: ["Las letras", "Títulos, subtítulos e imágenes", "Los autores", "Los libros"], correcta: "Títulos, subtítulos e imágenes", explicacion: "Acompañan al texto y ayudan a entenderlo." },
+          { pregunta: "Si la idea principal es 'El agua es vital', una idea secundaria sería:", opciones: ["El agua es vida", "El cuerpo humano es 70% agua", "El agua", "Nadar"], correcta: "El cuerpo humano es 70% agua", explicacion: "Es un dato que apoya la idea principal." },
+          { pregunta: "Las ideas secundarias sirven para:", opciones: ["Desviar el tema", "Apoyar y explicar la idea principal", "Confundir al lector", "Hacer el texto más largo"], correcta: "Apoyar y explicar la idea principal", explicacion: "Dan soporte a la idea central." },
+          { pregunta: "Un elemento paratextual en este texto son los:", opciones: ["Párrafos", "Títulos en negrita", "Puntos", "Sustantivos"], correcta: "Títulos en negrita", explicacion: "Guían al lector antes de leer." }
+        ]
+      },
+      {
+        id: "lc1-11",
+        proposito: "Propósito formativo 6",
+        titulo: "Concordancia y Conectores",
+        icono: "🔗",
+        imagen: "linear-gradient(135deg, #7c3aed, #db2777)",
+        contenido: `
+          <div class="nota-estudio">
+            <strong>💡 Idea clave:</strong> Los conectores son como los puentes colgantes de la selva: unen una idea con otra para que el lector cruce sin caerse.
+          </div>
+
+          <h4>La concordancia en el texto</h4>
+          <p>Hay concordancia cuando las palabras que se relacionan coinciden:</p>
+          <ul>
+            <li><strong>Sustantivo y adjetivo</strong> (género y número): <em>las montañas verdes</em>, no <s>las montañas verde</s>.</li>
+            <li><strong>Sujeto y verbo</strong> (número y persona): <em>mis primos llegaron</em>, no <s>mis primos llegó</s>.</li>
+            <li><strong>Artículo y sustantivo:</strong> <em>el agua</em>, <em>las aguas</em> (con palabras femeninas que empiezan con «a» tónica se usa «el» en singular).</li>
+          </ul>
+
+          <h4>Los conectores</h4>
+          <p>Son palabras o frases que unen ideas e indican qué relación hay entre ellas.</p>
+          <table class="tabla-estudio">
+            <tr><th>Tipo</th><th>¿Qué indica?</th><th>Conectores</th><th>Ejemplo</th></tr>
+            <tr><td><strong>De adición</strong></td><td>Suma una idea más</td><td>y, además, también, asimismo, incluso</td><td>Chiapas produce café; <em>además</em>, cultiva cacao y plátano.</td></tr>
+            <tr><td><strong>Causales</strong></td><td>Explican la causa o el porqué</td><td>porque, ya que, puesto que, debido a, dado que</td><td>No hubo clases <em>porque</em> se inundó el camino.</td></tr>
+            <tr><td><strong>Comparativos</strong></td><td>Comparan dos ideas</td><td>como, igual que, así como, más que, menos que, del mismo modo</td><td>La marimba es tan importante para Chiapas <em>como</em> el mariachi para Jalisco.</td></tr>
+          </table>
+          <p>Existen otros tipos que verás más adelante: de contraste (pero, sin embargo), de consecuencia (por lo tanto, por eso) y de orden (primero, después, finalmente).</p>
+
+          <h4>Ejemplo: antes y después de usar conectores</h4>
+          <div class="ejemplo">
+            <strong>Sin conectores:</strong> «Llovió toda la noche. El río creció. No pudimos cruzar. Nos quedamos en casa de mi tía.»<br><br>
+            <strong>Con conectores:</strong> «Llovió toda la noche y el río creció. <em>Debido a</em> eso no pudimos cruzar, <em>así que</em> nos quedamos en casa de mi tía.»
+          </div>
+
+          <h4>✍️ Ejemplo práctico</h4>
+          <p>Escribe un párrafo de 6 líneas sobre la feria de tu comunidad usando <strong>dos conectores de adición, dos causales y uno comparativo</strong>. Subráyalos con colores distintos y revisa que haya concordancia entre sujetos y verbos.</p>
+          <details class="ejercicio-estudio">
+            <summary>Corrige: «Los niño de la comunidad juega en el río porque hacía calor, además la agua estaba fresca.»</summary>
+            <div>«Los niños de la comunidad jugaban en el río porque hacía calor; además, el agua estaba fresca.»</div>
+          </details>
+        `,
+        actividades: [
+          { pregunta: "«Porque», «ya que» y «debido a» son conectores:", opciones: ["De adición", "Causales", "Comparativos", "De orden"], correcta: "Causales", explicacion: "Explican la causa de algo." },
+          { pregunta: "¿Cuál es un conector de adición?", opciones: ["Además", "Porque", "Como", "Sin embargo"], correcta: "Además", explicacion: "Suma una idea a la anterior." },
+          { pregunta: "En «Canta igual que su abuela», el conector es:", opciones: ["Causal", "Comparativo", "De adición", "De contraste"], correcta: "Comparativo", explicacion: "«Igual que» compara dos cosas." },
+          { pregunta: "¿Qué oración tiene concordancia correcta?", opciones: ["Mis primos llegó tarde", "Mis primos llegaron tarde", "Mi primos llegaron tarde", "Mis primo llegaron tarde"], correcta: "Mis primos llegaron tarde", explicacion: "El sujeto plural pide un verbo en plural." },
+          { pregunta: "Los conectores sirven para:", opciones: ["Hacer el texto más largo", "Unir ideas y mostrar la relación entre ellas", "Poner títulos", "Separar párrafos"], correcta: "Unir ideas y mostrar la relación entre ellas", explicacion: "Dan cohesión al texto." }
+        ]
+      },
+      {
+        id: "lc1-12",
+        proposito: "Propósito formativo 7",
+        titulo: "Lectura en Voz Alta y Apreciación de Textos",
+        icono: "📢",
+        imagen: "linear-gradient(135deg, #ea580c, #e11d48)",
+        contenido: `
+          <div class="nota-estudio">
+            <strong>💡 Idea clave:</strong> Leer en voz alta es regalar un texto a quien te escucha. ¡Con tu voz puedes hacer que una leyenda dé miedo o que un poema haga llorar!
+          </div>
+
+          <h4>¿Cómo leer bien en voz alta?</h4>
+          <table class="tabla-estudio">
+            <tr><th>Elemento</th><th>¿Qué es?</th><th>Consejo</th></tr>
+            <tr><td>Dicción</td><td>Pronunciar con claridad cada palabra</td><td>No te «comas» las letras finales.</td></tr>
+            <tr><td>Volumen</td><td>Qué tan fuerte hablas</td><td>Que te escuche la última fila sin gritar.</td></tr>
+            <tr><td>Entonación</td><td>Subir y bajar la voz</td><td>Sube al preguntar, baja al terminar una idea.</td></tr>
+            <tr><td>Ritmo o velocidad</td><td>Qué tan rápido lees</td><td>Más lento en el suspenso, más rápido en la acción.</td></tr>
+            <tr><td>Pausas</td><td>Silencios que marca la puntuación</td><td>Pausa breve en la coma, más larga en el punto.</td></tr>
+            <tr><td>Expresividad</td><td>Transmitir emoción</td><td>Cambia la voz según el personaje.</td></tr>
+          </table>
+          <p>Estos son <strong>elementos paralingüísticos</strong>: acompañan a las palabras y les dan sentido.</p>
+
+          <h4>Pasos para preparar una lectura en voz alta</h4>
+          <ol>
+            <li>Elige un texto breve que te guste (un poema, una leyenda, un fragmento de cuento).</li>
+            <li>Léelo en silencio para entenderlo y busca las palabras difíciles.</li>
+            <li>Marca con lápiz las pausas (/) y las palabras que quieres resaltar.</li>
+            <li>Ensaya varias veces; grábate con el celular y escúchate.</li>
+            <li>Al leer frente al grupo, levanta la vista de vez en cuando para mirar al público.</li>
+          </ol>
+
+          <h4>Apreciar un texto: dar una opinión oral o escrita</h4>
+          <p>Después de escuchar o leer, compartimos lo que el texto nos hizo sentir y pensar. Una buena apreciación responde:</p>
+          <ul>
+            <li>¿De qué trata el texto?</li>
+            <li>¿Qué fue lo que más me gustó o me impactó, y por qué?</li>
+            <li>¿Con qué de mi vida o de mi comunidad lo relaciono?</li>
+            <li>¿Lo recomendaría? ¿A quién?</li>
+          </ul>
+          <div class="ejemplo">
+            <strong>Ejemplo de apreciación escrita:</strong> «La leyenda del Sombrerón me dio miedo por la forma en que mi compañero cambió la voz al final. Me recordó las historias que cuenta mi abuelo cuando se va la luz. Se la recomiendo a quienes les gustan los relatos de terror.»
+          </div>
+
+          <h4>✍️ Ejemplo práctico: círculo de lectura</h4>
+          <p>Formen un círculo. Cada estudiante lee en voz alta un texto breve de su elección (también puede ser en su lengua materna, con una traducción). Después, dos compañeros comparten su apreciación oral y todos escriben una apreciación de una lectura que no sea la suya.</p>
+        `,
+        actividades: [
+          { pregunta: "Pronunciar con claridad cada palabra se llama:", opciones: ["Dicción", "Volumen", "Ritmo", "Coherencia"], correcta: "Dicción", explicacion: "Es básica para que el público entienda." },
+          { pregunta: "Al leer una parte de suspenso, conviene:", opciones: ["Leer muy rápido", "Bajar el ritmo y hacer pausas", "Gritar", "Saltarla"], correcta: "Bajar el ritmo y hacer pausas", explicacion: "El ritmo lento y las pausas crean tensión." },
+          { pregunta: "El volumen, la entonación y las pausas son elementos:", opciones: ["Paralingüísticos", "Paratextuales", "Gramaticales", "Ortográficos"], correcta: "Paralingüísticos", explicacion: "Acompañan a las palabras y les dan sentido." },
+          { pregunta: "Una apreciación de un texto debe incluir:", opciones: ["Solo el título", "Lo que te hizo sentir y pensar, y por qué", "Una copia del texto", "La biografía completa del autor"], correcta: "Lo que te hizo sentir y pensar, y por qué", explicacion: "Es una opinión personal con razones." },
+          { pregunta: "En la lectura en voz alta, la coma indica:", opciones: ["Una pausa breve", "El final del texto", "Que se debe gritar", "Una pregunta"], correcta: "Una pausa breve", explicacion: "El punto, en cambio, indica una pausa más larga." }
+        ]
+      },
+      {
+        id: "lc1-5",
+        proposito: "Propósito formativo 8",
+        titulo: "Exposición Oral",
+        icono: "🎤",
+        imagen: "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+        contenido: `
+          <h4>Hablar para comunicar</h4>
+          <p>Una exposición oral requiere preparación. No se trata de leer un papel, sino de explicar un tema con nuestras propias palabras.</p>
+          <h4>Elementos paralingüísticos</h4>
+          <ul>
+            <li><strong>Volumen:</strong> Hablar fuerte para que todos escuchen.</li>
+            <li><strong>Tono:</strong> Cambiar la voz para no ser monótonos.</li>
+            <li><strong>Lenguaje corporal:</strong> Movimientos de manos y contacto visual.</li>
+          </ul>
+        `,
+        actividades: [
+          { pregunta: "Los elementos paralingüísticos incluyen:", opciones: ["Las reglas gramaticales", "El tono y el lenguaje corporal", "Solo las diapositivas", "El texto escrito"], correcta: "El tono y el lenguaje corporal", explicacion: "Son los elementos no verbales de la voz y el cuerpo." },
+          { pregunta: "Para una buena exposición oral es fundamental:", opciones: ["Leer palabra por palabra", "Preparar el tema y los recursos", "Improvisar todo", "No mirar al público"], correcta: "Preparar el tema y los recursos", explicacion: "La preparación da seguridad." },
+          { pregunta: "El volumen de la voz debe ser:", opciones: ["Muy bajo", "Adecuado para el espacio", "Gritando", "Susurrando"], correcta: "Adecuado para el espacio", explicacion: "Para que todos escuchen sin lastimar oídos." },
+          { pregunta: "Un recurso visual de apoyo es:", opciones: ["Un mapa mental", "Un texto largo", "Tus manos", "El silencio"], correcta: "Un mapa mental", explicacion: "Ayuda a resumir la información." },
+          { pregunta: "El contacto visual con el público transmite:", opciones: ["Miedo", "Confianza y conexión", "Enojo", "Aburrimiento"], correcta: "Confianza y conexión", explicacion: "Mantiene al público interesado." }
         ]
       },
       {
         id: "lc1-8",
+        proposito: "Complementario · Estrategias de estudio",
         titulo: "Resumen, Paráfrasis y Organizadores Gráficos",
         icono: "🗺️",
         imagen: "linear-gradient(135deg, #0ea5e9, #6366f1)",
         contenido: `
-          <div class="alebrije-tip">
-            <img src="images/lengua/alebrije-jaguar.svg" alt="Balam, el alebrije-jaguar">
-            <p><strong>Balam dice:</strong> «Para estudiar no hace falta memorizar todo el libro. Primero encuentra las ideas principales y luego organízalas en un mapa. ¡Tu cerebro te lo agradecerá!»</p>
+          <div class="nota-estudio">
+            <strong>💡 Idea clave:</strong> Para estudiar no hace falta memorizar todo el libro. Primero encuentra las ideas principales y luego organízalas en un mapa. ¡Tu cerebro te lo agradecerá!
           </div>
 
           <h4>Tres formas de reescribir un texto</h4>
@@ -290,7 +465,7 @@ const LENGUA = {
           <h4>Organizadores gráficos</h4>
           <figure class="diagrama-quimica">
             <img src="images/lengua/mapa-conceptual.svg" alt="Mapa conceptual de los tipos de texto" loading="lazy">
-            <figcaption><strong>Mapa conceptual:</strong> los conceptos van en recuadros y se unen con líneas y <em>palabras de enlace</em> («puede ser», «dice cómo es»), de modo que se puedan leer como oraciones: «El texto puede ser descriptivo; el descriptivo dice cómo es un alebrije».</figcaption>
+            <figcaption><strong>Mapa conceptual:</strong> los conceptos van en recuadros y se unen con líneas y <em>palabras de enlace</em> («puede ser», «dice cómo es»), de modo que se puedan leer como oraciones: «El texto puede ser descriptivo; el descriptivo dice cómo es un paisaje».</figcaption>
           </figure>
           <table class="tabla-estudio">
             <tr><th>Organizador</th><th>¿Cómo es?</th><th>Úsalo para…</th></tr>
@@ -314,13 +489,13 @@ const LENGUA = {
       },
       {
         id: "lc1-9",
+        proposito: "Complementario · Interculturalidad y diversidad lingüística",
         titulo: "Las Lenguas de Chiapas",
         icono: "🌽",
         imagen: "linear-gradient(135deg, #10b981, #0d9488)",
         contenido: `
-          <div class="alebrije-tip">
-            <img src="images/lengua/alebrije-jaguar.svg" alt="Balam, el alebrije-jaguar">
-            <p><strong>Balam dice:</strong> «En Chiapas se habla en muchas lenguas. Cada una es una forma distinta de nombrar el mundo. ¡Hablar dos lenguas es un superpoder!»</p>
+          <div class="nota-estudio">
+            <strong>💡 Idea clave:</strong> En Chiapas se habla en muchas lenguas. Cada una es una forma distinta de nombrar el mundo. ¡Hablar dos lenguas es un superpoder!
           </div>
 
           <h4>Comunicación, lengua y habla</h4>
@@ -389,79 +564,61 @@ const LENGUA = {
     contexto: "Las leyendas de Chiapas, los cuentos de la comunidad y las nuevas formas de contar historias (como el pódcast) son tus herramientas.",
     temas: [
       {
-        id: "lc2-1",
-        titulo: "Narrativas Populares",
-        icono: "👻",
-        imagen: "linear-gradient(135deg, #e11d48, #be123c)",
+        id: "lc2-8",
+        proposito: "Propósito formativo 1",
+        titulo: "Mi Historia de Vida: Cartas y Relatos Personales",
+        icono: "✉️",
+        imagen: "linear-gradient(135deg, #f472b6, #e11d48)",
         contenido: `
-          <h4>El arte de contar historias</h4>
-          <p>Las narrativas populares (cuentos, mitos, leyendas, cómics, creepypastas) nacen del pueblo y se transmiten de generación en generación.</p>
-          <h4>Características</h4>
+          <h4>Narrar lo que hemos vivido</h4>
+          <p>Todos tenemos historias que nos marcaron: un viaje, la llegada de un hermano, una pérdida, el primer día en la escuela, una fiesta del pueblo. Contarlas nos ayuda a entendernos y a que otros nos conozcan.</p>
           <ul>
-            <li>Tienen personajes definidos (héroes, villanos, seres sobrenaturales).</li>
-            <li>Ocurren en un tiempo y espacio (a veces real, a veces fantástico).</li>
-            <li>Dejan una enseñanza o buscan asustar/entretener.</li>
+            <li><strong>Narración:</strong> cuenta lo que pasó, en orden.</li>
+            <li><strong>Descripción:</strong> pinta cómo eran los lugares, las personas y lo que sentías.</li>
+            <li><strong>Reflexión:</strong> explica por qué esa experiencia dejó una huella en ti.</li>
           </ul>
-          <div class="ejemplo">
-            <strong>Ejemplo:</strong> La leyenda de la Llorona, el Sombrerón o los relatos de la Selva Lacandona.
-          </div>
-        `,
-        actividades: [
-          { pregunta: "¿Qué es una narrativa popular?", opciones: ["Un texto científico", "Historias transmitidas por el pueblo", "Un ensayo", "Un noticiero"], correcta: "Historias transmitidas por el pueblo", explicacion: "Nacen de la tradición oral." },
-          { pregunta: "Las leyendas, mitos y cómics son:", opciones: ["Textos aburridos", "Formas de narrativa popular", "Textos escolares", "Solo para niños"], correcta: "Formas de narrativa popular", explicacion: "Expresan la cultura de forma creativa." },
-          { pregunta: "Una característica de la narrativa es que tiene:", opciones: ["Solo un párrafo", "Trama, conflicto y personajes", "Fórmulas matemáticas", "Reglas estrictas"], correcta: "Trama, conflicto y personajes", explicacion: "Son elementos esenciales del relato." },
-          { pregunta: "¿Qué es una creepypasta?", opciones: ["Una pasta de comer", "Una historia de terror corta de internet", "Un libro de texto", "Un tipo de poema"], correcta: "Una historia de terror corta de internet", explicacion: "Es una adaptación moderna de las historias de terror." },
-          { pregunta: "El escenario de una narrativa es:", opciones: ["Quién cuenta la historia", "Dónde y cuándo ocurre", "El final", "El título"], correcta: "Dónde y cuándo ocurre", explicacion: "Es el espacio-tiempo del relato." }
-        ]
-      },
-      {
-        id: "lc2-2",
-        titulo: "El Pódcast Narrativo",
-        icono: "🎧",
-        imagen: "linear-gradient(135deg, #0ea5e9, #0284c7)",
-        contenido: `
-          <h4>Contar historias en la era digital</h4>
-          <p>El pódcast es un formato de audio digital. Para hacer un pódcast narrativo necesitas:</p>
+
+          <h4>La carta personal</h4>
+          <p>La carta es una forma muy cercana de narrar experiencias. Sus partes son:</p>
           <ol>
-            <li><strong>Guion:</strong> El texto que leerás (con acotaciones).</li>
-            <li><strong>Grabación:</strong> Usar el celular o una compu con micrófono.</li>
-            <li><strong>Edición:</strong> Quitar ruidos, agregar música o efectos.</li>
+            <li><strong>Lugar y fecha:</strong> «Ocosingo, Chiapas, a 3 de marzo de 2026».</li>
+            <li><strong>Saludo:</strong> «Querida abuela:».</li>
+            <li><strong>Cuerpo:</strong> lo que quieres contar.</li>
+            <li><strong>Despedida:</strong> «Te quiere mucho,».</li>
+            <li><strong>Firma.</strong></li>
+            <li><strong>Posdata (P. D.):</strong> algo que olvidaste decir (opcional).</li>
           </ol>
-          <h4>Elementos extralingüísticos</h4>
-          <p>Sonidos, música y silencios que le dan emoción a la historia.</p>
+          <div class="guion">
+            <p style="text-align:right">Comitán, Chiapas, a 12 de septiembre de 2026</p>
+            <p>Querido Tomás:</p>
+            <p>Te escribo para contarte del día que cambió mi forma de ver el campo. Fue en la cosecha de café del año pasado. Me levanté a las cinco, cuando la neblina todavía tapaba los cerros, y acompañé a mi papá al cafetal. Al mediodía me dolían las manos y la espalda, pero cuando vi los costales llenos entendí todo lo que trabajan mis papás para que yo estudie.</p>
+            <p>Desde ese día valoro más cada taza de café que tomamos en casa.</p>
+            <p>Tu amigo,<br>Daniel</p>
+            <p>P. D.: Cuando vengas te llevo a conocer el cafetal.</p>
+          </div>
+
+          <h4>El relato autobiográfico</h4>
+          <p>Es una narración en <strong>primera persona</strong> en la que el autor cuenta hechos de su propia vida. Usa verbos en pasado, marcas de tiempo («cuando tenía diez años», «después», «esa tarde») y expresa emociones.</p>
+
+          <h4>✍️ Ejemplo práctico</h4>
+          <ol>
+            <li>Elige una experiencia que haya dejado huella en ti.</li>
+            <li>Escríbela en forma de carta para alguien importante (puede ser real o alguien que ya no está).</li>
+            <li>Incluye qué pasó, cómo era el lugar, qué sentiste y qué aprendiste.</li>
+            <li>Si quieres, compártela en voz alta en un círculo de diálogo; escucha con respeto las historias de tus compañeros e identifica en ellas la idea principal y las ideas secundarias.</li>
+          </ol>
         `,
         actividades: [
-          { pregunta: "Un pódcast se basa principalmente en:", opciones: ["Imágenes", "Audio", "Texto escrito", "Videojuegos"], correcta: "Audio", explicacion: "Es un formato sonoro." },
-          { pregunta: "El guion de un pódcast es:", opciones: ["El texto que se leerá", "La música", "El micrófono", "El oyente"], correcta: "El texto que se leerá", explicacion: "Guía la grabación." },
-          { pregunta: "Los elementos extralingüísticos en el audio son:", opciones: ["Las palabras", "Los efectos de sonido y música", "Los actores", "El estudio"], correcta: "Los efectos de sonido y música", explicacion: "Dan atmósfera a la historia." },
-          { pregunta: "Para grabar un pódcast puedes usar:", opciones: ["Un celular", "Una calculadora", "Una regla", "Un libro"], correcta: "Un celular", explicacion: "Hoy en día un celular tiene buen micrófono." },
-          { pregunta: "La edición sirve para:", opciones: ["Hacerlo más largo", "Mejorar el sonido y quitar errores", "Leer mejor", "Escribir el guion"], correcta: "Mejorar el sonido y quitar errores", explicacion: "Pule el producto final." }
-        ]
-      },
-      {
-        id: "lc2-3",
-        titulo: "Personajes y Conflicto",
-        icono: "🎭",
-        imagen: "linear-gradient(135deg, #10b981, #059669)",
-        contenido: `
-          <h4>El motor de la historia</h4>
-          <p>Los <strong>personajes</strong> son quienes viven la historia. Pueden ser:</p>
-          <ul>
-            <li><strong>Principales:</strong> Llevan el peso de la trama (protagonista/antagonista).</li>
-            <li><strong>Secundarios:</strong> Apoyan a los principales.</li>
-          </ul>
-          <p>El <strong>conflicto</strong> es el problema que deben resolver los personajes (ej. un jaguar que se come a los animales de la comunidad).</p>
-        `,
-        actividades: [
-          { pregunta: "El protagonista es el personaje:", opciones: ["Que estorba", "Principal de la historia", "Que muere primero", "Que no habla"], correcta: "Principal de la historia", explicacion: "Es el héroe o heroína." },
-          { pregunta: "El conflicto en una narrativa es:", opciones: ["El final feliz", "El problema o reto a superar", "El lugar", "El autor"], correcta: "El problema o reto a superar", explicacion: "Sin conflicto no hay historia." },
-          { pregunta: "Un personaje que ayuda al protagonista es:", opciones: ["Antagonista", "Secundario", "Narrador", "Lector"], correcta: "Secundario", explicacion: "Apoya a la trama principal." },
-          { pregunta: "El antagonista representa:", opciones: ["La ayuda", "La oposición o el obstáculo", "El amor", "La naturaleza"], correcta: "La oposición o el obstáculo", explicacion: "Es el villano o la fuerza contraria." },
-          { pregunta: "¿Qué tipo de personajes son redondos?", opciones: ["Los que no cambian", "Los que evolucionan en la historia", "Los que son malos", "Los que mueren"], correcta: "Los que evolucionan en la historia", explicacion: "Tienen profundidad psicológica." }
+          { pregunta: "Un relato autobiográfico se narra en:", opciones: ["Primera persona", "Tercera persona", "Segunda persona", "Forma de poema"], correcta: "Primera persona", explicacion: "El autor cuenta su propia vida: «yo viví…»." },
+          { pregunta: "¿Qué parte de la carta es «Querida abuela:»?", opciones: ["Despedida", "Saludo", "Posdata", "Firma"], correcta: "Saludo", explicacion: "Va después del lugar y la fecha." },
+          { pregunta: "La posdata (P. D.) sirve para:", opciones: ["Saludar", "Agregar algo que se olvidó decir", "Poner la fecha", "Firmar"], correcta: "Agregar algo que se olvidó decir", explicacion: "Va al final, después de la firma." },
+          { pregunta: "Al narrar una experiencia personal, la reflexión explica:", opciones: ["El precio de las cosas", "Por qué esa experiencia dejó una huella", "El clima del día", "El nombre de la escuela"], correcta: "Por qué esa experiencia dejó una huella", explicacion: "Le da sentido a lo que contamos." },
+          { pregunta: "«Cuando tenía diez años», «después» y «esa tarde» son:", opciones: ["Marcas de tiempo", "Adjetivos", "Rimas", "Acotaciones"], correcta: "Marcas de tiempo", explicacion: "Ordenan los hechos en la narración." }
         ]
       },
       {
         id: "lc2-4",
+        proposito: "Propósito formativo 2",
         titulo: "La Estructura Narrativa",
         icono: "📈",
         imagen: "linear-gradient(135deg, #f59e0b, #e11d48)",
@@ -501,6 +658,17 @@ const LENGUA = {
             <li><strong>Espacio:</strong> el lugar donde ocurre la historia (real como Chiapa de Corzo, o imaginario).</li>
           </ul>
 
+          <h4>Ficción y realidad</h4>
+          <p>Un texto narrativo puede basarse en hechos reales o ser inventado (ficción). Muchas veces mezcla ambos: el microrrelato de Mateo ocurre en una fiesta real, la Fiesta Grande de Chiapa de Corzo, pero Mateo y su abuela son personajes inventados.</p>
+
+          <h4>Organizar las ideas antes de escribir</h4>
+          <ol>
+            <li><strong>Define el sentido:</strong> ¿qué quieres que sienta o piense el lector?</li>
+            <li><strong>Lluvia de ideas:</strong> anota personajes, lugar, conflicto y posibles finales.</li>
+            <li><strong>Esquema:</strong> ordena las ideas en inicio, nudo, clímax y desenlace.</li>
+            <li><strong>Borrador, revisión y versión final.</strong></li>
+          </ol>
+
           <h4>✍️ Ejemplo práctico</h4>
           <p>Escribe un <strong>microrrelato de máximo 150 palabras</strong> que ocurra en tu comunidad. Marca con colores sus cuatro partes y decide qué tipo de narrador usarás. Léelo en voz alta en clase.</p>
         `,
@@ -513,7 +681,35 @@ const LENGUA = {
         ]
       },
       {
+        id: "lc2-1",
+        proposito: "Propósito formativo 3",
+        titulo: "Narrativas Populares",
+        icono: "👻",
+        imagen: "linear-gradient(135deg, #e11d48, #be123c)",
+        contenido: `
+          <h4>El arte de contar historias</h4>
+          <p>Las narrativas populares (cuentos, mitos, leyendas, cómics, creepypastas) nacen del pueblo y se transmiten de generación en generación.</p>
+          <h4>Características</h4>
+          <ul>
+            <li>Tienen personajes definidos (héroes, villanos, seres sobrenaturales).</li>
+            <li>Ocurren en un tiempo y espacio (a veces real, a veces fantástico).</li>
+            <li>Dejan una enseñanza o buscan asustar/entretener.</li>
+          </ul>
+          <div class="ejemplo">
+            <strong>Ejemplo:</strong> La leyenda de la Llorona, el Sombrerón o los relatos de la Selva Lacandona.
+          </div>
+        `,
+        actividades: [
+          { pregunta: "¿Qué es una narrativa popular?", opciones: ["Un texto científico", "Historias transmitidas por el pueblo", "Un ensayo", "Un noticiero"], correcta: "Historias transmitidas por el pueblo", explicacion: "Nacen de la tradición oral." },
+          { pregunta: "Las leyendas, mitos y cómics son:", opciones: ["Textos aburridos", "Formas de narrativa popular", "Textos escolares", "Solo para niños"], correcta: "Formas de narrativa popular", explicacion: "Expresan la cultura de forma creativa." },
+          { pregunta: "Una característica de la narrativa es que tiene:", opciones: ["Solo un párrafo", "Trama, conflicto y personajes", "Fórmulas matemáticas", "Reglas estrictas"], correcta: "Trama, conflicto y personajes", explicacion: "Son elementos esenciales del relato." },
+          { pregunta: "¿Qué es una creepypasta?", opciones: ["Una pasta de comer", "Una historia de terror corta de internet", "Un libro de texto", "Un tipo de poema"], correcta: "Una historia de terror corta de internet", explicacion: "Es una adaptación moderna de las historias de terror." },
+          { pregunta: "El escenario de una narrativa es:", opciones: ["Quién cuenta la historia", "Dónde y cuándo ocurre", "El final", "El título"], correcta: "Dónde y cuándo ocurre", explicacion: "Es el espacio-tiempo del relato." }
+        ]
+      },
+      {
         id: "lc2-5",
+        proposito: "Propósito formativo 3",
         titulo: "Leyendas y Mitos de Chiapas",
         icono: "🌙",
         imagen: "linear-gradient(135deg, #1e293b, #6d28d9)",
@@ -565,6 +761,7 @@ const LENGUA = {
       },
       {
         id: "lc2-6",
+        proposito: "Propósito formativo 3",
         titulo: "El Cómic y la Historieta",
         icono: "💥",
         imagen: "linear-gradient(135deg, #facc15, #f97316)",
@@ -610,6 +807,7 @@ const LENGUA = {
       },
       {
         id: "lc2-7",
+        proposito: "Propósito formativo 3 y 8",
         titulo: "El Texto Dramático y el Guion",
         icono: "🎬",
         imagen: "linear-gradient(135deg, #6366f1, #8b5cf6)",
@@ -648,6 +846,152 @@ const LENGUA = {
           { pregunta: "En un guion de pódcast, las acotaciones indican sobre todo:", opciones: ["Colores del escenario", "Sonidos y música", "El vestuario", "Los gestos de la cara"], correcta: "Sonidos y música", explicacion: "En audio el público no ve; todo se escucha." },
           { pregunta: "¿Dónde se escribe el nombre del personaje que habla?", opciones: ["Al final del diálogo", "Antes del diálogo, en mayúsculas", "Entre paréntesis", "No se escribe"], correcta: "Antes del diálogo, en mayúsculas", explicacion: "Así los actores saben qué les toca decir." }
         ]
+      },
+      {
+        id: "lc2-3",
+        proposito: "Propósito formativo 4",
+        titulo: "Personajes y Conflicto",
+        icono: "🎭",
+        imagen: "linear-gradient(135deg, #10b981, #059669)",
+        contenido: `
+          <h4>El motor de la historia</h4>
+          <p>Los <strong>personajes</strong> son quienes viven la historia. Pueden ser:</p>
+          <ul>
+            <li><strong>Principales:</strong> Llevan el peso de la trama (protagonista/antagonista).</li>
+            <li><strong>Secundarios:</strong> Apoyan a los principales.</li>
+          </ul>
+          <p>El <strong>conflicto</strong> es el problema que deben resolver los personajes (ej. un jaguar que se come a los animales de la comunidad).</p>
+        `,
+        actividades: [
+          { pregunta: "El protagonista es el personaje:", opciones: ["Que estorba", "Principal de la historia", "Que muere primero", "Que no habla"], correcta: "Principal de la historia", explicacion: "Es el héroe o heroína." },
+          { pregunta: "El conflicto en una narrativa es:", opciones: ["El final feliz", "El problema o reto a superar", "El lugar", "El autor"], correcta: "El problema o reto a superar", explicacion: "Sin conflicto no hay historia." },
+          { pregunta: "Un personaje que ayuda al protagonista es:", opciones: ["Antagonista", "Secundario", "Narrador", "Lector"], correcta: "Secundario", explicacion: "Apoya a la trama principal." },
+          { pregunta: "El antagonista representa:", opciones: ["La ayuda", "La oposición o el obstáculo", "El amor", "La naturaleza"], correcta: "La oposición o el obstáculo", explicacion: "Es el villano o la fuerza contraria." },
+          { pregunta: "¿Qué tipo de personajes son redondos?", opciones: ["Los que no cambian", "Los que evolucionan en la historia", "Los que son malos", "Los que mueren"], correcta: "Los que evolucionan en la historia", explicacion: "Tienen profundidad psicológica." }
+        ]
+      },
+      {
+        id: "lc2-9",
+        proposito: "Propósito formativo 5",
+        titulo: "Tema, Idea Central y Conectores en la Narración",
+        icono: "🎯",
+        imagen: "linear-gradient(135deg, #0d9488, #65a30d)",
+        contenido: `
+          <h4>Tema e idea principal no son lo mismo</h4>
+          <table class="tabla-estudio">
+            <tr><th></th><th>Tema</th><th>Idea principal</th></tr>
+            <tr><td><strong>¿Qué es?</strong></td><td>De qué trata el texto, en pocas palabras</td><td>Lo que el texto dice sobre ese tema, en una oración</td></tr>
+            <tr><td><strong>Ejemplo (La Llorona)</strong></td><td>La culpa de una madre</td><td>Una mujer que pierde a sus hijos vaga llorando por ellos eternamente.</td></tr>
+            <tr><td><strong>Ejemplo (El Sombrerón)</strong></td><td>El peligro de la noche</td><td>Un ser misterioso seduce y castiga a quienes andan solos de noche.</td></tr>
+          </table>
+
+          <h4>Las ideas secundarias en la narrativa</h4>
+          <p>Son los hechos, descripciones y detalles que acompañan a la idea principal: cómo era el lugar, qué hacían los personajes, qué pasó antes y después. Sin ellas, la historia sería solo un resumen.</p>
+
+          <h4>Un mismo tema en distintas narrativas</h4>
+          <p>Tema: <strong>el agua y sus peligros</strong>.</p>
+          <ul>
+            <li><strong>Leyenda:</strong> la Tisigua atrae a los hombres a las pozas.</li>
+            <li><strong>Creepypasta:</strong> un video viral muestra una figura que sale del río cada noche.</li>
+            <li><strong>Cómic:</strong> un grupo de amigos debe cruzar el río crecido para llegar a la escuela.</li>
+            <li><strong>Cuento realista:</strong> una familia pierde su cosecha por una inundación.</li>
+          </ul>
+          <p>Comparar cómo cada narrativa trata el mismo tema ayuda a reconocer qué tienen en común y qué cambia según el formato y la época.</p>
+
+          <h4>Conectores que ordenan la narración</h4>
+          <table class="tabla-estudio">
+            <tr><th>Función</th><th>Conectores</th></tr>
+            <tr><td>Inicio</td><td>Había una vez, hace mucho tiempo, cierto día, al principio</td></tr>
+            <tr><td>Secuencia</td><td>Primero, luego, después, más tarde, mientras tanto</td></tr>
+            <tr><td>Momento importante</td><td>De pronto, de repente, en ese momento, sin embargo</td></tr>
+            <tr><td>Cierre</td><td>Finalmente, al final, por último, desde entonces</td></tr>
+          </table>
+
+          <h4>✍️ Ejemplo práctico</h4>
+          <p>Elige dos narrativas populares que traten el mismo tema (por ejemplo, una leyenda y una creepypasta). Haz un <strong>cuadro comparativo</strong> con: tema, idea principal, personajes, escenario y conectores que usa cada una. Escribe una conclusión de cinco líneas.</p>
+        `,
+        actividades: [
+          { pregunta: "El tema de un texto es:", opciones: ["De qué trata, en pocas palabras", "El título", "El nombre del autor", "La última oración"], correcta: "De qué trata, en pocas palabras", explicacion: "La idea principal dice qué afirma el texto sobre ese tema." },
+          { pregunta: "Las ideas secundarias en una narración son:", opciones: ["Los detalles y hechos que acompañan a la idea principal", "Los errores del texto", "El título", "Las imágenes"], correcta: "Los detalles y hechos que acompañan a la idea principal", explicacion: "Le dan vida a la historia." },
+          { pregunta: "«De pronto» y «de repente» son conectores que indican:", opciones: ["El inicio", "Un momento importante o inesperado", "El final", "Una causa"], correcta: "Un momento importante o inesperado", explicacion: "Anuncian que algo cambia en la historia." },
+          { pregunta: "«Había una vez» es un conector de:", opciones: ["Inicio", "Cierre", "Causa", "Comparación"], correcta: "Inicio", explicacion: "Abre muchas narraciones tradicionales." },
+          { pregunta: "Comparar un mismo tema en distintas narrativas sirve para:", opciones: ["Copiar historias", "Reconocer qué cambia según el formato y la época", "Elegir la más corta", "No leer"], correcta: "Reconocer qué cambia según el formato y la época", explicacion: "Por ejemplo, una leyenda y una creepypasta sobre el mismo miedo." }
+        ]
+      },
+      {
+        id: "lc2-10",
+        proposito: "Propósito formativo 6 y 7",
+        titulo: "Tipos de Narración y Tonos: Reescribe un Relato",
+        icono: "🔄",
+        imagen: "linear-gradient(135deg, #9333ea, #f59e0b)",
+        contenido: `
+          <h4>Trama y conflicto</h4>
+          <p>La <strong>trama</strong> es la cadena de hechos de la historia; el <strong>conflicto</strong> es el problema que la mueve. Al reescribir un relato puedes cambiar ambos para crear una versión nueva.</p>
+
+          <h4>Tipos de narración</h4>
+          <table class="tabla-estudio">
+            <tr><th>Tipo</th><th>Características</th><th>Ejemplo de idea</th></tr>
+            <tr><td><strong>Realista</strong></td><td>Hechos que podrían pasar en la vida real</td><td>Una joven que migra a Tuxtla para estudiar</td></tr>
+            <tr><td><strong>Fantástica</strong></td><td>Lo imposible irrumpe en lo cotidiano</td><td>Un jaguar de barro que cobra vida en el mercado</td></tr>
+            <tr><td><strong>Histórica</strong></td><td>Ocurre en un momento real del pasado</td><td>Un niño durante la construcción de la presa de Chicoasén</td></tr>
+            <tr><td><strong>Autobiográfica</strong></td><td>El autor cuenta su propia vida</td><td>Mi primer día en el COBACH</td></tr>
+          </table>
+
+          <h4>Tonos narrativos</h4>
+          <ul>
+            <li><strong>Humorístico:</strong> busca hacer reír con situaciones absurdas o exageraciones.</li>
+            <li><strong>Dramático:</strong> busca conmover, con conflictos serios y emociones intensas.</li>
+            <li><strong>Irónico:</strong> dice una cosa para dar a entender lo contrario, con burla o crítica.</li>
+          </ul>
+
+          <h4>Ejemplo: una leyenda en tres tonos</h4>
+          <div class="ejemplo">
+            <strong>Dramático:</strong> «El Sombrerón trenzó las crines del caballo de mi abuelo la noche antes de que muriera. Desde entonces nadie se atreve a cuidar ese corral.»<br><br>
+            <strong>Humorístico:</strong> «El Sombrerón llegó a trenzar las crines del caballo, pero el caballo era tan pelón que el pobre fantasma terminó peinándose a sí mismo.»<br><br>
+            <strong>Irónico:</strong> «Qué valiente es el Sombrerón: solo se aparece a las muchachas que andan solas a medianoche.»
+          </div>
+
+          <h4>✍️ Ejemplo práctico: taller de reescritura colaborativa</h4>
+          <ol>
+            <li>En equipos de cuatro, elijan una leyenda o cuento breve.</li>
+            <li>Decidan qué van a cambiar: el tipo de narración, el tono, el narrador o el final.</li>
+            <li>Cada integrante escribe una parte (inicio, nudo, clímax, desenlace).</li>
+            <li>Intercambien su texto con otro equipo, que dará sugerencias: ¿se entiende?, ¿el tono se mantiene?, ¿hay errores de puntuación o concordancia?</li>
+            <li>Corrijan y presenten la versión final, leída en voz alta o grabada como pódcast.</li>
+          </ol>
+        `,
+        actividades: [
+          { pregunta: "Una narración en la que lo imposible aparece en la vida cotidiana es:", opciones: ["Realista", "Fantástica", "Histórica", "Autobiográfica"], correcta: "Fantástica", explicacion: "Como un jaguar de barro que cobra vida." },
+          { pregunta: "El tono que busca conmover con conflictos serios es el:", opciones: ["Humorístico", "Dramático", "Irónico", "Informativo"], correcta: "Dramático", explicacion: "Provoca emociones intensas." },
+          { pregunta: "Decir una cosa para dar a entender lo contrario corresponde al tono:", opciones: ["Irónico", "Dramático", "Realista", "Descriptivo"], correcta: "Irónico", explicacion: "Suele usarse para criticar o burlarse." },
+          { pregunta: "La cadena de hechos de una historia se llama:", opciones: ["Trama", "Tono", "Narrador", "Escenario"], correcta: "Trama", explicacion: "El conflicto es el problema que la mueve." },
+          { pregunta: "En un taller de reescritura colaborativa, el intercambio con otro equipo sirve para:", opciones: ["Copiar su trabajo", "Recibir sugerencias y corregir", "Terminar más rápido", "Calificar sin leer"], correcta: "Recibir sugerencias y corregir", explicacion: "El diálogo entre pares mejora los textos." }
+        ]
+      },
+      {
+        id: "lc2-2",
+        proposito: "Propósito formativo 8",
+        titulo: "El Pódcast Narrativo",
+        icono: "🎧",
+        imagen: "linear-gradient(135deg, #0ea5e9, #0284c7)",
+        contenido: `
+          <h4>Contar historias en la era digital</h4>
+          <p>El pódcast es un formato de audio digital. Para hacer un pódcast narrativo necesitas:</p>
+          <ol>
+            <li><strong>Guion:</strong> El texto que leerás (con acotaciones).</li>
+            <li><strong>Grabación:</strong> Usar el celular o una compu con micrófono.</li>
+            <li><strong>Edición:</strong> Quitar ruidos, agregar música o efectos.</li>
+          </ol>
+          <h4>Elementos extralingüísticos</h4>
+          <p>Sonidos, música y silencios que le dan emoción a la historia.</p>
+        `,
+        actividades: [
+          { pregunta: "Un pódcast se basa principalmente en:", opciones: ["Imágenes", "Audio", "Texto escrito", "Videojuegos"], correcta: "Audio", explicacion: "Es un formato sonoro." },
+          { pregunta: "El guion de un pódcast es:", opciones: ["El texto que se leerá", "La música", "El micrófono", "El oyente"], correcta: "El texto que se leerá", explicacion: "Guía la grabación." },
+          { pregunta: "Los elementos extralingüísticos en el audio son:", opciones: ["Las palabras", "Los efectos de sonido y música", "Los actores", "El estudio"], correcta: "Los efectos de sonido y música", explicacion: "Dan atmósfera a la historia." },
+          { pregunta: "Para grabar un pódcast puedes usar:", opciones: ["Un celular", "Una calculadora", "Una regla", "Un libro"], correcta: "Un celular", explicacion: "Hoy en día un celular tiene buen micrófono." },
+          { pregunta: "La edición sirve para:", opciones: ["Hacerlo más largo", "Mejorar el sonido y quitar errores", "Leer mejor", "Escribir el guion"], correcta: "Mejorar el sonido y quitar errores", explicacion: "Pule el producto final." }
+        ]
       }
     ]
   },
@@ -659,142 +1003,60 @@ const LENGUA = {
     clase: "s3",
     icono: "✒️",
     descripcion: "Movimientos literarios, análisis crítico y figuras retóricas.",
-    contexto: "Descubre cómo el Romanticismo, el Realismo y el Realismo Mágico (muy presente en Latinoamérica) han moldeado nuestra forma de ver el mundo.",
+    contexto: "Del Barroco de Sor Juana al Realismo Mágico y las literaturas digitales, descubre cómo la literatura ha moldeado nuestra forma de ver el mundo, y conoce a las voces de Chiapas, como Rosario Castellanos, Jaime Sabines y las poetas que escriben en tsotsil.",
     temas: [
       {
-        id: "lc3-1",
-        titulo: "Movimientos Literarios",
-        icono: "🏛️",
-        imagen: "linear-gradient(135deg, #f59e0b, #d97706)",
+        id: "lc3-8",
+        proposito: "Propósito formativo 1",
+        titulo: "Lectura Crítica: Sentido Global e Intención del Autor",
+        icono: "🔍",
+        imagen: "linear-gradient(135deg, #334155, #0f766e)",
         contenido: `
-          <h4>La literatura a través del tiempo</h4>
-          <ul>
-            <li><strong>Romanticismo:</strong> Exalta los sentimientos, la libertad y la naturaleza.</li>
-            <li><strong>Realismo:</strong> Retrata la vida cotidiana y los problemas sociales tal como son.</li>
-            <li><strong>Realismo Mágico:</strong> Lo sobrenatural ocurre en la vida cotidiana (muy típico de Latinoamérica).</li>
-          </ul>
-          <div class="ejemplo">
-            <strong>Ejemplo:</strong> En el Realismo Mágico, un personaje puede hablar con los muertos como si nada.
-          </div>
-        `,
-        actividades: [
-          { pregunta: "El movimiento que exalta los sentimientos es:", opciones: ["Realismo", "Romanticismo", "Vanguardismo", "Clasicismo"], correcta: "Romanticismo", explicacion: "Prioriza la emoción sobre la razón." },
-          { pregunta: "El Realismo Mágico es característico de:", opciones: ["Europa", "Latinoamérica", "Asia", "África"], correcta: "Latinoamérica", explicacion: "Gabriel García Márquez es su máximo exponente." },
-          { pregunta: "El Realismo retrata la realidad para:", opciones: ["Escapar de ella", "Denunciar problemas sociales", "Hacer magia", "Hablar de reyes"], correcta: "Denunciar problemas sociales", explicacion: "Muestra las injusticias." },
-          { pregunta: "¿Qué movimiento rompe las reglas tradicionales?", opciones: ["Neoclasicismo", "Vanguardias", "Realismo", "Clasicismo"], correcta: "Vanguardias", explicacion: "Buscan la innovación radical." },
-          { pregunta: "En el Realismo Mágico, lo fantástico se trata como:", opciones: ["Un sueño", "Algo normal", "Un error", "Magia pura"], correcta: "Algo normal", explicacion: "Los personajes no se sorprenden de lo mágico." }
-        ]
-      },
-      {
-        id: "lc3-2",
-        titulo: "Géneros Literarios",
-        icono: "🎭",
-        imagen: "linear-gradient(135deg, #8b5cf6, #7c3aed)",
-        contenido: `
-          <h4>Las formas de la literatura</h4>
-          <ul>
-            <li><strong>Narrativa (Novela/Cuento):</strong> Cuenta una historia con personajes y acciones.</li>
-            <li><strong>Lírica (Poesía):</strong> Expresa sentimientos usando ritmo y rima.</li>
-            <li><strong>Dramática (Teatro):</strong> Está escrita para ser representada por actores.</li>
-            <li><strong>Ensayo:</strong> Expone ideas y reflexiones del autor.</li>
-          </ul>
-        `,
-        actividades: [
-          { pregunta: "El género que expresa sentimientos es:", opciones: ["Narrativo", "Lírico", "Dramático", "Ensayo"], correcta: "Lírico", explicacion: "La lírica es la poesía." },
-          { pregunta: "Una obra de teatro pertenece al género:", opciones: ["Narrativo", "Lírico", "Dramático", "Ensayo"], correcta: "Dramático", explicacion: "Está hecha para ser actuada." },
-          { pregunta: "Una novela de misterio es del género:", opciones: ["Lírico", "Narrativo", "Dramático", "Poético"], correcta: "Narrativo", explicacion: "Cuenta una historia." },
-          { pregunta: "El ensayo se caracteriza por:", opciones: ["Tener rima", "Exponer ideas del autor", "Tener actos", "Ser un cuento"], correcta: "Exponer ideas del autor", explicacion: "Es un texto argumentativo." },
-          { pregunta: "Un subgénero del terror busca:", opciones: ["Hacer reír", "Causar miedo", "Enseñar matemáticas", "Narrar historia"], correcta: "Causar miedo", explicacion: "Es su objetivo principal." }
-        ]
-      },
-      {
-        id: "lc3-3",
-        titulo: "Figuras Retóricas",
-        icono: "🎨",
-        imagen: "linear-gradient(135deg, #ec4899, #db2777)",
-        contenido: `
-          <h4>El arte de jugar con las palabras</h4>
-          <ul>
-            <li><strong>Metáfora:</strong> Identificar algo con otra cosa (ej. "Tus ojos son dos luceros").</li>
-            <li><strong>Hipérbole:</strong> Exageración (ej. "Te lo dije un millón de veces").</li>
-            <li><strong>Personificación:</strong> Dar cualidades humanas a objetos (ej. "El viento susurraba").</li>
-            <li><strong>Ironía:</strong> Decir lo contrario de lo que se piensa.</li>
-          </ul>
-        `,
-        actividades: [
-          { pregunta: "'El sol es una naranja en el cielo' es un ejemplo de:", opciones: ["Hipérbole", "Metáfora", "Personificación", "Ironía"], correcta: "Metáfora", explicacion: "Compara el sol con una naranja sin usar 'como'." },
-          { pregunta: "'Lloré ríos de lágrimas' es un ejemplo de:", opciones: ["Metáfora", "Hipérbole", "Ironía", "Personificación"], correcta: "Hipérbole", explicacion: "Es una exageración." },
-          { pregunta: "'La luna sonrió al verme' es una:", opciones: ["Metáfora", "Hipérbole", "Personificación", "Ironía"], correcta: "Personificación", explicacion: "Le da una acción humana a la luna." },
-          { pregunta: "La figura que usa 'como' para comparar es:", opciones: ["Metáfora", "Símil", "Hipérbole", "Ironía"], correcta: "Símil", explicacion: "Ej: 'Es fuerte como un roble'." },
-          { pregunta: "Decir '¡Qué bonito día!' cuando hay una tormenta es:", opciones: ["Metáfora", "Hipérbole", "Ironía", "Personificación"], correcta: "Ironía", explicacion: "Se dice lo contrario de lo que se siente." }
-        ]
-      },
-      {
-        id: "lc3-4",
-        titulo: "La Reseña Crítica",
-        icono: "📰",
-        imagen: "linear-gradient(135deg, #14b8a6, #0d9488)",
-        contenido: `
-          <h4>Analizar y opinar</h4>
-          <p>Una reseña es un texto que describe y evalúa una obra (un libro, una película, una obra de teatro).</p>
-          <h4>Partes de una reseña:</h4>
-          <ol>
-            <li><strong>Ficha técnica:</strong> Título, autor, género.</li>
-            <li><strong>Resumen:</strong> De qué trata (sin contar el final).</li>
-            <li><strong>Crítica:</strong> Tu opinión fundamentada (¿por qué es buena o mala?).</li>
-            <li><strong>Conclusión:</strong> ¿La recomiendas?</li>
-          </ol>
-        `,
-        actividades: [
-          { pregunta: "El propósito de una reseña es:", opciones: ["Copiar el libro", "Informar y dar una opinión crítica", "Inventar una historia", "Solo poner estrellas"], correcta: "Informar y dar una opinión crítica", explicacion: "Evalúa la obra." },
-          { pregunta: "¿Qué NO debe faltar en una reseña?", opciones: ["El final de la historia", "La opinión fundamentada", "El precio", "Fotos"], correcta: "La opinión fundamentada", explicacion: "No basta con decir 'me gustó', hay que explicar por qué." },
-          { pregunta: "El resumen de una reseña debe evitar:", opciones: ["El título", "Revelar el final (Spoilers)", "El autor", "El género"], correcta: "Revelar el final (Spoilers)", explicacion: "Se debe dejar la intriga." },
-          { pregunta: "La ficha técnica incluye:", opciones: ["Tu opinión", "Título y autor", "El resumen", "La recomendación"], correcta: "Título y autor", explicacion: "Son los datos de la obra." },
-          { pregunta: "Una reseña puede ser de:", opciones: ["Solo libros", "Solo películas", "Libros, películas, obras de teatro, etc.", "Nada"], correcta: "Libros, películas, obras de teatro, etc.", explicacion: "Se puede reseñar cualquier obra artística." }
-        ]
-      },
-      {
-        id: "lc3-5",
-        titulo: "Literatura de Chiapas",
-        icono: "📜",
-        imagen: "linear-gradient(135deg, #be123c, #7c2d12)",
-        contenido: `
-          <h4>Voces chiapanecas en la literatura mexicana</h4>
+          <h4>Leer más allá de las palabras</h4>
+          <p>Leer de forma crítica es comprender lo que dice un texto, descubrir <strong>para qué</strong> lo escribió su autor y tomar una <strong>postura propia</strong> frente a lo que expone.</p>
+
+          <h4>Tres niveles de lectura</h4>
           <table class="tabla-estudio">
-            <tr><th>Autor</th><th>Obras importantes</th><th>¿Por qué leerlo?</th></tr>
-            <tr><td><strong>Rosario Castellanos</strong> (1925–1974). Nació en la Ciudad de México y creció en Comitán.</td><td><em>Balún Canán</em> (1957), <em>Ciudad Real</em> (1960), <em>Oficio de tinieblas</em> (1962)</td><td>Retrata la vida en Chiapas, la desigualdad entre ladinos e indígenas y la situación de las mujeres. <em>Balún Canán</em> («nueve estrellas») es el antiguo nombre de Comitán.</td></tr>
-            <tr><td><strong>Jaime Sabines</strong> (1926–1999), de Tuxtla Gutiérrez</td><td><em>Horal</em> (1950), <em>Tarumba</em> (1956), el poema «Los amorosos»</td><td>Uno de los poetas más leídos de México: habla del amor, la muerte y la vida diaria con un lenguaje sencillo y profundo.</td></tr>
-            <tr><td><strong>Eraclio Zepeda</strong> (1937–2015), de Tuxtla Gutiérrez</td><td><em>Benzulul</em> (1959), cuentos</td><td>Narra la vida de los pueblos indígenas y campesinos de Chiapas.</td></tr>
-            <tr><td><strong>Juan Bañuelos</strong> (1932–2017), de Tuxtla Gutiérrez</td><td>Poesía, parte del grupo «La espiga amotinada»</td><td>Poesía comprometida con los problemas sociales.</td></tr>
+            <tr><th>Nivel</th><th>Pregunta clave</th><th>Ejemplo</th></tr>
+            <tr><td><strong>Literal</strong></td><td>¿Qué dice el texto?</td><td>«La nota dice que el río Sabinal se desbordó.»</td></tr>
+            <tr><td><strong>Inferencial</strong></td><td>¿Qué da a entender aunque no lo diga?</td><td>«Si menciona la basura en el cauce, quizá culpa a la falta de limpieza.»</td></tr>
+            <tr><td><strong>Crítico</strong></td><td>¿Estoy de acuerdo? ¿Por qué?</td><td>«Coincido, pero también influye la construcción de casas en la orilla.»</td></tr>
           </table>
 
-          <h4>Literatura en lenguas originarias</h4>
-          <p>Hoy muchos escritores chiapanecos escriben en su lengua y publican sus obras en ediciones bilingües. Por ejemplo, las poetas <strong>Enriqueta Lunez</strong> y <strong>Ruperta Bautista</strong> escriben en tsotsil. Su obra muestra que las lenguas originarias también son lenguas de literatura.</p>
-          <div class="ejemplo">
-            <strong>Para reflexionar:</strong> cuando lees un texto bilingüe, compara las dos versiones. ¿Hay palabras que no se pueden traducir exactamente? Eso nos enseña que cada lengua ve el mundo de una forma distinta.
-          </div>
+          <h4>El sentido global del texto</h4>
+          <p>Es la idea que resume todo el texto. Para encontrarlo, junta las ideas principales de cada párrafo y pregúntate: ¿qué quiere decir el texto en conjunto?</p>
 
-          <h4>Cómo leer una obra literaria con contexto</h4>
-          <ol>
-            <li><strong>El autor:</strong> ¿dónde y cuándo vivió? ¿Qué le tocó ver?</li>
-            <li><strong>La época:</strong> ¿qué pasaba en Chiapas y en México?</li>
-            <li><strong>El tema:</strong> ¿de qué habla la obra en el fondo (injusticia, amor, identidad)?</li>
-            <li><strong>Tu lectura:</strong> ¿qué tiene que ver con tu vida y tu comunidad hoy?</li>
-          </ol>
+          <h4>La intención del autor</h4>
+          <ul>
+            <li><strong>Informar:</strong> presenta datos y hechos.</li>
+            <li><strong>Persuadir:</strong> quiere convencerte de algo.</li>
+            <li><strong>Entretener o conmover:</strong> busca que disfrutes o sientas.</li>
+            <li><strong>Denunciar:</strong> muestra una injusticia para que se conozca.</li>
+          </ul>
+          <p>Pistas para descubrirla: ¿quién escribe y desde dónde?, ¿qué palabras elige (neutras o cargadas de emoción)?, ¿qué información incluye y cuál deja fuera?, ¿a quién se dirige?</p>
+
+          <h4>Usa tus conocimientos previos</h4>
+          <p>Lo que ya sabes cambia tu forma de leer. Si conoces tu comunidad, puedes detectar cuando una noticia sobre ella exagera, omite datos o tiene prejuicios.</p>
+
+          <h4>Tomar postura</h4>
+          <div class="formula">Estoy de acuerdo / en desacuerdo con el autor porque… (razón)<br>
+Por ejemplo… (dato o experiencia)<br>
+Sin embargo, el texto no considera… (lo que falta)</div>
 
           <h4>✍️ Ejemplo práctico</h4>
-          <p>Lee un capítulo de <em>Balún Canán</em> o un poema de Jaime Sabines (los encuentras en bibliotecas públicas y escolares). Escribe una ficha con: autor, obra, tema principal, un fragmento que te haya gustado y por qué. Después, comparte en clase un lugar de Chiapas que aparezca en la obra.</p>
+          <p>Elige una noticia o un artículo de opinión sobre Chiapas. Responde por escrito: ¿cuál es el sentido global?, ¿cuál es la intención del autor y qué pistas lo demuestran?, ¿qué sabías tú del tema? Termina con un párrafo donde tomes postura usando la estructura de arriba.</p>
         `,
         actividades: [
-          { pregunta: "¿Quién escribió la novela «Balún Canán»?", opciones: ["Jaime Sabines", "Rosario Castellanos", "Eraclio Zepeda", "Octavio Paz"], correcta: "Rosario Castellanos", explicacion: "La publicó en 1957; se desarrolla en Comitán." },
-          { pregunta: "«Balún Canán», que significa «nueve estrellas», es el antiguo nombre de:", opciones: ["Tuxtla Gutiérrez", "Comitán", "Palenque", "Tapachula"], correcta: "Comitán", explicacion: "Rosario Castellanos creció ahí." },
-          { pregunta: "Jaime Sabines nació en:", opciones: ["San Cristóbal de las Casas", "Tuxtla Gutiérrez", "Comitán", "Oaxaca"], correcta: "Tuxtla Gutiérrez", explicacion: "Es autor de «Horal», «Tarumba» y «Los amorosos»." },
-          { pregunta: "Enriqueta Lunez y Ruperta Bautista escriben poesía en:", opciones: ["Inglés", "Tsotsil", "Náhuatl", "Francés"], correcta: "Tsotsil", explicacion: "Son ejemplo de la literatura actual en lenguas originarias." },
-          { pregunta: "Al leer una obra con contexto conviene preguntarse:", opciones: ["Solo cuántas páginas tiene", "Dónde y cuándo vivió el autor y qué pasaba en su época", "El precio del libro", "Nada"], correcta: "Dónde y cuándo vivió el autor y qué pasaba en su época", explicacion: "El contexto ayuda a entender el sentido de la obra." }
+          { pregunta: "Preguntarse «¿estoy de acuerdo con el autor y por qué?» corresponde al nivel de lectura:", opciones: ["Literal", "Inferencial", "Crítico", "Exploratorio"], correcta: "Crítico", explicacion: "Implica evaluar y tomar postura." },
+          { pregunta: "Descubrir lo que un texto da a entender sin decirlo directamente es leer en el nivel:", opciones: ["Literal", "Inferencial", "Crítico", "Ninguno"], correcta: "Inferencial", explicacion: "Se basa en pistas del texto." },
+          { pregunta: "Si un texto muestra una injusticia para que se conozca, su intención es:", opciones: ["Entretener", "Denunciar", "Dar instrucciones", "Describir un paisaje"], correcta: "Denunciar", explicacion: "Busca que el lector conozca un problema." },
+          { pregunta: "El sentido global de un texto es:", opciones: ["La primera oración", "La idea que resume todo el texto", "El título", "Una palabra desconocida"], correcta: "La idea que resume todo el texto", explicacion: "Se obtiene al juntar las ideas principales." },
+          { pregunta: "Una pista para conocer la intención del autor es:", opciones: ["El tamaño de la letra", "Las palabras que elige y la información que omite", "El color del papel", "El número de páginas"], correcta: "Las palabras que elige y la información que omite", explicacion: "Las palabras cargadas de emoción suelen buscar persuadir." }
         ]
       },
       {
         id: "lc3-6",
+        proposito: "Propósito formativo 1 (tomar postura)",
         titulo: "El Ensayo Argumentativo",
         icono: "⚖️",
         imagen: "linear-gradient(135deg, #0f766e, #0ea5e9)",
@@ -849,7 +1111,121 @@ const LENGUA = {
         ]
       },
       {
+        id: "lc3-1",
+        proposito: "Propósito formativo 2",
+        titulo: "Movimientos Literarios",
+        icono: "🏛️",
+        imagen: "linear-gradient(135deg, #f59e0b, #d97706)",
+        contenido: `
+          <h4>La literatura a través del tiempo</h4>
+          <ul>
+            <li><strong>Romanticismo:</strong> Exalta los sentimientos, la libertad y la naturaleza.</li>
+            <li><strong>Realismo:</strong> Retrata la vida cotidiana y los problemas sociales tal como son.</li>
+            <li><strong>Realismo Mágico:</strong> Lo sobrenatural ocurre en la vida cotidiana (muy típico de Latinoamérica).</li>
+          </ul>
+          <div class="ejemplo">
+            <strong>Ejemplo:</strong> En el Realismo Mágico, un personaje puede hablar con los muertos como si nada.
+          </div>
+        `,
+        actividades: [
+          { pregunta: "El movimiento que exalta los sentimientos es:", opciones: ["Realismo", "Romanticismo", "Vanguardismo", "Clasicismo"], correcta: "Romanticismo", explicacion: "Prioriza la emoción sobre la razón." },
+          { pregunta: "El Realismo Mágico es característico de:", opciones: ["Europa", "Latinoamérica", "Asia", "África"], correcta: "Latinoamérica", explicacion: "Gabriel García Márquez es su máximo exponente." },
+          { pregunta: "El Realismo retrata la realidad para:", opciones: ["Escapar de ella", "Denunciar problemas sociales", "Hacer magia", "Hablar de reyes"], correcta: "Denunciar problemas sociales", explicacion: "Muestra las injusticias." },
+          { pregunta: "¿Qué movimiento rompe las reglas tradicionales?", opciones: ["Neoclasicismo", "Vanguardias", "Realismo", "Clasicismo"], correcta: "Vanguardias", explicacion: "Buscan la innovación radical." },
+          { pregunta: "En el Realismo Mágico, lo fantástico se trata como:", opciones: ["Un sueño", "Algo normal", "Un error", "Magia pura"], correcta: "Algo normal", explicacion: "Los personajes no se sorprenden de lo mágico." }
+        ]
+      },
+      {
+        id: "lc3-2",
+        proposito: "Propósito formativo 3",
+        titulo: "Géneros Literarios",
+        icono: "🎭",
+        imagen: "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+        contenido: `
+          <h4>Las formas de la literatura</h4>
+          <ul>
+            <li><strong>Narrativa (Novela/Cuento):</strong> Cuenta una historia con personajes y acciones.</li>
+            <li><strong>Lírica (Poesía):</strong> Expresa sentimientos usando ritmo y rima.</li>
+            <li><strong>Dramática (Teatro):</strong> Está escrita para ser representada por actores.</li>
+            <li><strong>Ensayo:</strong> Expone ideas y reflexiones del autor.</li>
+          </ul>
+        `,
+        actividades: [
+          { pregunta: "El género que expresa sentimientos es:", opciones: ["Narrativo", "Lírico", "Dramático", "Ensayo"], correcta: "Lírico", explicacion: "La lírica es la poesía." },
+          { pregunta: "Una obra de teatro pertenece al género:", opciones: ["Narrativo", "Lírico", "Dramático", "Ensayo"], correcta: "Dramático", explicacion: "Está hecha para ser actuada." },
+          { pregunta: "Una novela de misterio es del género:", opciones: ["Lírico", "Narrativo", "Dramático", "Poético"], correcta: "Narrativo", explicacion: "Cuenta una historia." },
+          { pregunta: "El ensayo se caracteriza por:", opciones: ["Tener rima", "Exponer ideas del autor", "Tener actos", "Ser un cuento"], correcta: "Exponer ideas del autor", explicacion: "Es un texto argumentativo." },
+          { pregunta: "Un subgénero del terror busca:", opciones: ["Hacer reír", "Causar miedo", "Enseñar matemáticas", "Narrar historia"], correcta: "Causar miedo", explicacion: "Es su objetivo principal." }
+        ]
+      },
+      {
+        id: "lc3-9",
+        proposito: "Propósito formativo 4",
+        titulo: "Subgéneros Narrativos",
+        icono: "🧟",
+        imagen: "linear-gradient(135deg, #111827, #b91c1c)",
+        contenido: `
+          <h4>Historias para cada gusto</h4>
+          <p>Dentro de la narrativa (cuento y novela) hay <strong>subgéneros</strong> que comparten temas, ambientes y formas de contar.</p>
+          <table class="tabla-estudio">
+            <tr><th>Subgénero</th><th>Características</th><th>Autores o lecturas</th></tr>
+            <tr><td><strong>Suspenso</strong></td><td>Mantiene al lector en tensión, esperando qué pasará; la información se revela poco a poco.</td><td>Edgar Allan Poe, «El corazón delator»</td></tr>
+            <tr><td><strong>Terror</strong></td><td>Busca provocar miedo con lo sobrenatural, lo desconocido o la violencia.</td><td>Amparo Dávila, «El huésped»; antologías de microrrelatos de terror escritos por jóvenes</td></tr>
+            <tr><td><strong>Ciencia ficción</strong></td><td>Imagina cómo los avances científicos y tecnológicos cambian la vida: futuros, otros planetas, robots.</td><td>Ray Bradbury, <em>Crónicas marcianas</em></td></tr>
+            <tr><td><strong>Narrativas del cuerpo y autoficción</strong></td><td>El autor mezcla su propia vida con la ficción y reflexiona sobre su cuerpo, su identidad y su historia.</td><td>Guadalupe Nettel, <em>El cuerpo en que nací</em></td></tr>
+            <tr><td><strong>Neorrealismo urbano</strong></td><td>Retrata la vida en la ciudad: jóvenes, violencia, desigualdad, con lenguaje cotidiano y callejero.</td><td>Parménides García Saldaña (literatura de la Onda)</td></tr>
+            <tr><td><strong>Literaturas del antropoceno</strong></td><td>Narran la crisis ambiental y la relación entre los seres humanos y la naturaleza: deforestación, sequías, extinción.</td><td>Relatos sobre el cambio climático y la pérdida de ecosistemas</td></tr>
+          </table>
+
+          <h4>Elementos discursivos que los distinguen</h4>
+          <ul>
+            <li><strong>Ambiente:</strong> una casa oscura (terror), una estación espacial (ciencia ficción), una colonia de la ciudad (neorrealismo).</li>
+            <li><strong>Lenguaje:</strong> descripciones que generan miedo, términos científicos, jerga juvenil.</li>
+            <li><strong>Narrador:</strong> la autoficción casi siempre usa la primera persona.</li>
+            <li><strong>Ritmo:</strong> el suspenso alarga la espera; el terror usa giros inesperados.</li>
+          </ul>
+
+          <div class="ejemplo">
+            <strong>Conexión con Chiapas:</strong> la deforestación de la Selva Lacandona o las sequías que afectan a la milpa pueden ser el punto de partida de un relato del antropoceno; los nahuales y los seres del monte, de un relato de terror.
+          </div>
+
+          <h4>✍️ Ejemplo práctico</h4>
+          <p>Lee un cuento de uno de estos subgéneros e identifica tres elementos discursivos que lo caracterizan. Después escribe el inicio (10 líneas) de un relato propio de otro subgénero ambientado en Chiapas.</p>
+        `,
+        actividades: [
+          { pregunta: "El subgénero que imagina cómo la tecnología cambiará la vida es:", opciones: ["Terror", "Ciencia ficción", "Autoficción", "Neorrealismo urbano"], correcta: "Ciencia ficción", explicacion: "Habla de futuros, robots u otros planetas." },
+          { pregunta: "Cuando el autor mezcla su propia vida con la ficción, se trata de:", opciones: ["Autoficción", "Suspenso", "Terror", "Fábula"], correcta: "Autoficción", explicacion: "Como «El cuerpo en que nací» de Guadalupe Nettel." },
+          { pregunta: "Un relato sobre la sequía y la pérdida de la selva pertenece a las:", opciones: ["Literaturas del antropoceno", "Narrativas de suspenso", "Comedias", "Odas"], correcta: "Literaturas del antropoceno", explicacion: "Narran la crisis ambiental causada por los seres humanos." },
+          { pregunta: "El neorrealismo urbano retrata principalmente:", opciones: ["La vida en el espacio", "La vida en la ciudad, con lenguaje cotidiano", "Mitos antiguos", "Dioses griegos"], correcta: "La vida en la ciudad, con lenguaje cotidiano", explicacion: "Suele hablar de jóvenes, violencia y desigualdad." },
+          { pregunta: "El subgénero que mantiene al lector en tensión revelando la información poco a poco es el:", opciones: ["Suspenso", "Ensayo", "Lírico", "Autobiográfico"], correcta: "Suspenso", explicacion: "Como «El corazón delator» de Poe." }
+        ]
+      },
+      {
+        id: "lc3-3",
+        proposito: "Propósito formativo 5",
+        titulo: "Figuras Retóricas",
+        icono: "🎨",
+        imagen: "linear-gradient(135deg, #ec4899, #db2777)",
+        contenido: `
+          <h4>El arte de jugar con las palabras</h4>
+          <ul>
+            <li><strong>Metáfora:</strong> Identificar algo con otra cosa (ej. "Tus ojos son dos luceros").</li>
+            <li><strong>Hipérbole:</strong> Exageración (ej. "Te lo dije un millón de veces").</li>
+            <li><strong>Personificación:</strong> Dar cualidades humanas a objetos (ej. "El viento susurraba").</li>
+            <li><strong>Ironía:</strong> Decir lo contrario de lo que se piensa.</li>
+          </ul>
+        `,
+        actividades: [
+          { pregunta: "'El sol es una naranja en el cielo' es un ejemplo de:", opciones: ["Hipérbole", "Metáfora", "Personificación", "Ironía"], correcta: "Metáfora", explicacion: "Compara el sol con una naranja sin usar 'como'." },
+          { pregunta: "'Lloré ríos de lágrimas' es un ejemplo de:", opciones: ["Metáfora", "Hipérbole", "Ironía", "Personificación"], correcta: "Hipérbole", explicacion: "Es una exageración." },
+          { pregunta: "'La luna sonrió al verme' es una:", opciones: ["Metáfora", "Hipérbole", "Personificación", "Ironía"], correcta: "Personificación", explicacion: "Le da una acción humana a la luna." },
+          { pregunta: "La figura que usa 'como' para comparar es:", opciones: ["Metáfora", "Símil", "Hipérbole", "Ironía"], correcta: "Símil", explicacion: "Ej: 'Es fuerte como un roble'." },
+          { pregunta: "Decir '¡Qué bonito día!' cuando hay una tormenta es:", opciones: ["Metáfora", "Hipérbole", "Ironía", "Personificación"], correcta: "Ironía", explicacion: "Se dice lo contrario de lo que se siente." }
+        ]
+      },
+      {
         id: "lc3-7",
+        proposito: "Propósito formativo 5",
         titulo: "Análisis de un Poema",
         icono: "🌸",
         imagen: "linear-gradient(135deg, #db2777, #9333ea)",
@@ -902,6 +1278,12 @@ a-la-mu-jer-sin-ra-zón → 7 sílabas + 1 = <strong>8</strong>
 
           <h4>✍️ Ejemplo práctico</h4>
           <p>Escribe una <strong>redondilla</strong> (cuatro versos de ocho sílabas con rima abba) sobre un lugar de Chiapas. Cuenta las sílabas de cada verso, marca la rima y léela en voz alta.</p>
+
+          <h4>✍️ Otras formas de crear poesía</h4>
+          <ul>
+            <li><strong>Haikú:</strong> poema japonés de tres versos de 5, 7 y 5 sílabas, que capta un instante de la naturaleza. El mexicano José Juan Tablada lo llevó a la poesía en español. Ejemplo: «Baja la niebla (5) / duerme el monte callado (7) / canta un pijije (5)». Recuerda la sinalefa: «duer-meel-mon-te» cuenta «me el» como una sola sílaba.</li>
+            <li><strong>Rap:</strong> sus letras usan rima, ritmo y figuras retóricas igual que la poesía, pero deben ajustarse al compás de la música. Escribe una estrofa de rap de ocho versos sobre tu comunidad cuidando la rima al final de cada par de versos.</li>
+          </ul>
         `,
         actividades: [
           { pregunta: "Cada línea de un poema se llama:", opciones: ["Estrofa", "Verso", "Párrafo", "Rima"], correcta: "Verso", explicacion: "Un grupo de versos forma una estrofa." },
@@ -909,6 +1291,116 @@ a-la-mu-jer-sin-ra-zón → 7 sílabas + 1 = <strong>8</strong>
           { pregunta: "Unir la vocal final de una palabra con la vocal inicial de la siguiente para contar una sola sílaba se llama:", opciones: ["Sinalefa", "Hipérbole", "Metáfora", "Acotación"], correcta: "Sinalefa", explicacion: "Ejemplo: «que acusáis» se cuenta «quea-cu-sáis»." },
           { pregunta: "Si un verso termina en palabra aguda, a la cuenta de sílabas se le:", opciones: ["Resta 1", "Suma 1", "Deja igual", "Multiplica por 2"], correcta: "Suma 1", explicacion: "Es la ley del acento final." },
           { pregunta: "Una estrofa de cuatro versos de ocho sílabas con rima abba se llama:", opciones: ["Soneto", "Redondilla", "Terceto", "Décima"], correcta: "Redondilla", explicacion: "Como la de «Hombres necios» de Sor Juana." }
+        ]
+      },
+      {
+        id: "lc3-4",
+        proposito: "Propósito formativo 6",
+        titulo: "La Reseña Crítica",
+        icono: "📰",
+        imagen: "linear-gradient(135deg, #14b8a6, #0d9488)",
+        contenido: `
+          <h4>Analizar y opinar</h4>
+          <p>Una reseña es un texto que describe y evalúa una obra (un libro, una película, una obra de teatro).</p>
+          <h4>Partes de una reseña:</h4>
+          <ol>
+            <li><strong>Ficha técnica:</strong> Título, autor, género.</li>
+            <li><strong>Resumen:</strong> De qué trata (sin contar el final).</li>
+            <li><strong>Crítica:</strong> Tu opinión fundamentada (¿por qué es buena o mala?).</li>
+            <li><strong>Conclusión:</strong> ¿La recomiendas?</li>
+          </ol>
+        `,
+        actividades: [
+          { pregunta: "El propósito de una reseña es:", opciones: ["Copiar el libro", "Informar y dar una opinión crítica", "Inventar una historia", "Solo poner estrellas"], correcta: "Informar y dar una opinión crítica", explicacion: "Evalúa la obra." },
+          { pregunta: "¿Qué NO debe faltar en una reseña?", opciones: ["El final de la historia", "La opinión fundamentada", "El precio", "Fotos"], correcta: "La opinión fundamentada", explicacion: "No basta con decir 'me gustó', hay que explicar por qué." },
+          { pregunta: "El resumen de una reseña debe evitar:", opciones: ["El título", "Revelar el final (Spoilers)", "El autor", "El género"], correcta: "Revelar el final (Spoilers)", explicacion: "Se debe dejar la intriga." },
+          { pregunta: "La ficha técnica incluye:", opciones: ["Tu opinión", "Título y autor", "El resumen", "La recomendación"], correcta: "Título y autor", explicacion: "Son los datos de la obra." },
+          { pregunta: "Una reseña puede ser de:", opciones: ["Solo libros", "Solo películas", "Libros, películas, obras de teatro, etc.", "Nada"], correcta: "Libros, películas, obras de teatro, etc.", explicacion: "Se puede reseñar cualquier obra artística." }
+        ]
+      },
+      {
+        id: "lc3-10",
+        proposito: "Propósito formativo 7",
+        titulo: "Coloquio, Simposio y Foro: Exposición Oral Formal",
+        icono: "🎙️",
+        imagen: "linear-gradient(135deg, #1d4ed8, #7c3aed)",
+        contenido: `
+          <h4>Compartir el análisis con la comunidad</h4>
+          <p>Al final del semestre puedes presentar tu reseña crítica ante otras personas en una <strong>exposición oral formal</strong>. Estas son sus formas más comunes:</p>
+          <table class="tabla-estudio">
+            <tr><th>Formato</th><th>¿Cómo funciona?</th><th>¿Cuándo usarlo?</th></tr>
+            <tr><td><strong>Coloquio</strong></td><td>Varias personas exponen sobre un tema y después conversan entre ellas y con el público.</td><td>Para intercambiar puntos de vista sobre lecturas.</td></tr>
+            <tr><td><strong>Simposio</strong></td><td>Varios expositores presentan, uno tras otro, distintos aspectos de un mismo tema; un moderador los presenta y al final abre preguntas.</td><td>Para mostrar un tema completo desde varios ángulos (por ejemplo, un movimiento literario).</td></tr>
+            <tr><td><strong>Foro</strong></td><td>Un moderador plantea un tema y el público participa libremente, por turnos. Puede ser presencial o virtual.</td><td>Para que todos opinen y debatan.</td></tr>
+          </table>
+
+          <h4>Organización paso a paso</h4>
+          <ol>
+            <li><strong>Planeación:</strong> elijan el tema general (por ejemplo, «Movimientos literarios y Chiapas»), el formato y a los participantes.</li>
+            <li><strong>Logística:</strong> fecha, hora, espacio (aula, patio, biblioteca o videollamada), orden de participación, tiempo por persona (5 a 7 minutos), equipo de sonido o proyector.</li>
+            <li><strong>Roles:</strong> moderador, expositores, persona que controla el tiempo, relator que toma notas, difusión (carteles o invitaciones).</li>
+            <li><strong>Ejecución:</strong> el moderador da la bienvenida, presenta a cada expositor, controla los tiempos y conduce las preguntas.</li>
+            <li><strong>Seguimiento:</strong> el relator escribe las conclusiones; el grupo evalúa qué funcionó y qué mejorar.</li>
+          </ol>
+
+          <h4>Lenguaje formal</h4>
+          <ul>
+            <li>Saludo: «Buenos días, compañeros y docentes. Agradezco su presencia.»</li>
+            <li>Introducción: «En mi intervención analizaré la novela <em>Balún Canán</em>…»</li>
+            <li>Transición: «Ahora pasaré a…», «En segundo lugar…»</li>
+            <li>Cierre: «En conclusión…», «Muchas gracias por su atención.»</li>
+          </ul>
+
+          <h4>✍️ Ejemplo práctico</h4>
+          <p>Organicen en el grupo un <strong>simposio literario</strong>: cada equipo presenta la reseña crítica de una obra de un movimiento literario distinto. Usen una ficha de logística, asignen roles y al final redacten las conclusiones del evento. Pueden invitar a otros grupos o a familias.</p>
+        `,
+        actividades: [
+          { pregunta: "En un simposio:", opciones: ["El público opina libremente sin expositores", "Varios expositores presentan aspectos de un mismo tema y luego hay preguntas", "Solo habla una persona", "No hay moderador nunca"], correcta: "Varios expositores presentan aspectos de un mismo tema y luego hay preguntas", explicacion: "El moderador los presenta y abre la ronda de preguntas." },
+          { pregunta: "El formato donde un moderador plantea un tema y el público participa por turnos es el:", opciones: ["Foro", "Simposio", "Monólogo", "Reseña"], correcta: "Foro", explicacion: "Puede ser presencial o virtual." },
+          { pregunta: "Definir fecha, espacio, orden y tiempos forma parte de la:", opciones: ["Logística", "Conclusión", "Reseña", "Métrica"], correcta: "Logística", explicacion: "Sin logística el evento se desorganiza." },
+          { pregunta: "La persona que conduce el evento y controla los tiempos es el:", opciones: ["Relator", "Moderador", "Público", "Autor"], correcta: "Moderador", explicacion: "El relator, en cambio, toma notas y redacta conclusiones." },
+          { pregunta: "¿Cuál es una frase de cierre formal?", opciones: ["Ya me voy, bye", "En conclusión… Muchas gracias por su atención", "Eso es todo, qué flojera", "Ahí nos vemos"], correcta: "En conclusión… Muchas gracias por su atención", explicacion: "El lenguaje formal se adecua a la situación." }
+        ]
+      },
+      {
+        id: "lc3-5",
+        proposito: "Complementario · Literatura de Chiapas e interculturalidad",
+        titulo: "Literatura de Chiapas",
+        icono: "📜",
+        imagen: "linear-gradient(135deg, #be123c, #7c2d12)",
+        contenido: `
+          <h4>Voces chiapanecas en la literatura mexicana</h4>
+          <table class="tabla-estudio">
+            <tr><th>Autor</th><th>Obras importantes</th><th>¿Por qué leerlo?</th></tr>
+            <tr><td><strong>Rosario Castellanos</strong> (1925–1974). Nació en la Ciudad de México y creció en Comitán.</td><td><em>Balún Canán</em> (1957), <em>Ciudad Real</em> (1960), <em>Oficio de tinieblas</em> (1962)</td><td>Retrata la vida en Chiapas, la desigualdad entre ladinos e indígenas y la situación de las mujeres. <em>Balún Canán</em> («nueve estrellas») es el antiguo nombre de Comitán.</td></tr>
+            <tr><td><strong>Jaime Sabines</strong> (1926–1999), de Tuxtla Gutiérrez</td><td><em>Horal</em> (1950), <em>Tarumba</em> (1956), el poema «Los amorosos»</td><td>Uno de los poetas más leídos de México: habla del amor, la muerte y la vida diaria con un lenguaje sencillo y profundo.</td></tr>
+            <tr><td><strong>Eraclio Zepeda</strong> (1937–2015), de Tuxtla Gutiérrez</td><td><em>Benzulul</em> (1959), cuentos</td><td>Narra la vida de los pueblos indígenas y campesinos de Chiapas.</td></tr>
+            <tr><td><strong>Juan Bañuelos</strong> (1932–2017), de Tuxtla Gutiérrez</td><td>Poesía, parte del grupo «La espiga amotinada»</td><td>Poesía comprometida con los problemas sociales.</td></tr>
+          </table>
+
+          <h4>Literatura en lenguas originarias</h4>
+          <p>Hoy muchos escritores chiapanecos escriben en su lengua y publican sus obras en ediciones bilingües. Por ejemplo, las poetas <strong>Enriqueta Lunez</strong> y <strong>Ruperta Bautista</strong> escriben en tsotsil. Su obra muestra que las lenguas originarias también son lenguas de literatura.</p>
+          <div class="ejemplo">
+            <strong>Para reflexionar:</strong> cuando lees un texto bilingüe, compara las dos versiones. ¿Hay palabras que no se pueden traducir exactamente? Eso nos enseña que cada lengua ve el mundo de una forma distinta.
+          </div>
+
+          <h4>Cómo leer una obra literaria con contexto</h4>
+          <ol>
+            <li><strong>El autor:</strong> ¿dónde y cuándo vivió? ¿Qué le tocó ver?</li>
+            <li><strong>La época:</strong> ¿qué pasaba en Chiapas y en México?</li>
+            <li><strong>El tema:</strong> ¿de qué habla la obra en el fondo (injusticia, amor, identidad)?</li>
+            <li><strong>Tu lectura:</strong> ¿qué tiene que ver con tu vida y tu comunidad hoy?</li>
+          </ol>
+
+          <h4>✍️ Ejemplo práctico</h4>
+          <p>Lee un capítulo de <em>Balún Canán</em> o un poema de Jaime Sabines (los encuentras en bibliotecas públicas y escolares). Escribe una ficha con: autor, obra, tema principal, un fragmento que te haya gustado y por qué. Después, comparte en clase un lugar de Chiapas que aparezca en la obra.</p>
+        `,
+        actividades: [
+          { pregunta: "¿Quién escribió la novela «Balún Canán»?", opciones: ["Jaime Sabines", "Rosario Castellanos", "Eraclio Zepeda", "Octavio Paz"], correcta: "Rosario Castellanos", explicacion: "La publicó en 1957; se desarrolla en Comitán." },
+          { pregunta: "«Balún Canán», que significa «nueve estrellas», es el antiguo nombre de:", opciones: ["Tuxtla Gutiérrez", "Comitán", "Palenque", "Tapachula"], correcta: "Comitán", explicacion: "Rosario Castellanos creció ahí." },
+          { pregunta: "Jaime Sabines nació en:", opciones: ["San Cristóbal de las Casas", "Tuxtla Gutiérrez", "Comitán", "Oaxaca"], correcta: "Tuxtla Gutiérrez", explicacion: "Es autor de «Horal», «Tarumba» y «Los amorosos»." },
+          { pregunta: "Enriqueta Lunez y Ruperta Bautista escriben poesía en:", opciones: ["Inglés", "Tsotsil", "Náhuatl", "Francés"], correcta: "Tsotsil", explicacion: "Son ejemplo de la literatura actual en lenguas originarias." },
+          { pregunta: "Al leer una obra con contexto conviene preguntarse:", opciones: ["Solo cuántas páginas tiene", "Dónde y cuándo vivió el autor y qué pasaba en su época", "El precio del libro", "Nada"], correcta: "Dónde y cuándo vivió el autor y qué pasaba en su época", explicacion: "El contexto ayuda a entender el sentido de la obra." }
         ]
       }
     ]

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" role="img"><title>Inducción electromagnética: un imán en movimiento dentro de una bobina</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <rect x="30" y="85" width="50" height="40" fill="#dc2626" stroke="#1e293b" stroke-width="2"/><text x="55" y="111" font-family="Arial, sans-serif" font-size="15"  text-anchor="middle" fill="#fff" font-weight="bold">N</text>
+    <rect x="80" y="85" width="50" height="40" fill="#2563eb" stroke="#1e293b" stroke-width="2"/><text x="105" y="111" font-family="Arial, sans-serif" font-size="15"  text-anchor="middle" fill="#fff" font-weight="bold">S</text>
+    <line x1="60" y1="70" x2="130" y2="70" stroke="#1e293b" stroke-width="2.5" marker-end="url(#fl)" /><text x="70" y="60" font-family="Arial, sans-serif" font-size="11" fill="#1e293b" >movimiento</text>
+    <ellipse cx="170" cy="105" rx="10" ry="40" fill="none" stroke="#b45309" stroke-width="4"/><ellipse cx="190" cy="105" rx="10" ry="40" fill="none" stroke="#b45309" stroke-width="4"/><ellipse cx="210" cy="105" rx="10" ry="40" fill="none" stroke="#b45309" stroke-width="4"/><ellipse cx="230" cy="105" rx="10" ry="40" fill="none" stroke="#b45309" stroke-width="4"/><ellipse cx="250" cy="105" rx="10" ry="40" fill="none" stroke="#b45309" stroke-width="4"/><ellipse cx="270" cy="105" rx="10" ry="40" fill="none" stroke="#b45309" stroke-width="4"/>
+    <path d="M160 140 L160 190 L330 190 L330 160 M280 140 L280 170 L310 170" fill="none" stroke="#b45309" stroke-width="3"/>
+    <circle cx="340" cy="150" r="22" fill="#fef9c3" stroke="#1e293b" stroke-width="2.5"/>
+    <path d="M330 154 q10 -16 20 0" fill="none" stroke="#eab308" stroke-width="2.5"/>
+    <line x1="340" y1="118" x2="340" y2="106" stroke="#eab308" stroke-width="2.5"/><line x1="366" y1="130" x2="376" y2="122" stroke="#eab308" stroke-width="2.5"/><line x1="370" y1="154" x2="384" y2="154" stroke="#eab308" stroke-width="2.5"/>
+    <text x="220" y="40" font-family="Arial, sans-serif" font-size="11" fill="#1e293b" text-anchor="middle" font-weight="bold">Bobina de cobre</text>
+    <text x="340" y="96" font-family="Arial, sans-serif" font-size="11"  text-anchor="middle" fill="#a16207" font-weight="bold">Se enciende el foco</text>
+    <text x="210" y="214" font-family="Arial, sans-serif" font-size="11" fill="#1e293b" text-anchor="middle">Un campo magnético que cambia produce corriente eléctrica</text></svg>

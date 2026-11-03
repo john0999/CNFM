@@ -159,6 +159,8 @@ const VistaHome = {
           if (semData.bloques) {
             temas = semData.bloques.flatMap(b => b.temas);
           }
+          // Los temas compartidos ({ ref }) ya aparecen en su propio módulo
+          temas = temas.filter(t => !t.ref);
 
           temas.forEach(tema => {
             const texto = Utils.normalizar(tema.titulo + ' ' + tema.contenido);

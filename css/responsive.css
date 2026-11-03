@@ -3,10 +3,13 @@
 ============================================ */
 
 @media (max-width: 850px) {
+  /* minmax(0, 1fr): una tabla o fórmula ancha ya no estira la columna más allá de la pantalla */
   .materia-contenido {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
-  
+
+  .temas-detalle .tabla-estudio { display: block; overflow-x: auto; }
+
   .indice {
     position: static;
     max-height: none;

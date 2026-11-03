@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 240" role="img"><title>Célula animal y célula vegetal</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <text x="110" y="18" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">Célula animal</text><text x="345" y="18" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">Célula vegetal</text>
+    <ellipse cx="110" cy="125" rx="95" ry="85" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+    <circle cx="110" cy="120" r="28" fill="#c4b5fd" stroke="#6d28d9" stroke-width="2"/><circle cx="114" cy="116" r="8" fill="#6d28d9"/>
+    <ellipse cx="60" cy="170" rx="18" ry="9" fill="#fb923c" stroke="#c2410c" stroke-width="1.5"/><path d="M46 170 q7 -6 14 0 q7 6 14 0" stroke="#c2410c" fill="none"/>
+    <ellipse cx="160" cy="80" rx="18" ry="9" fill="#fb923c" stroke="#c2410c" stroke-width="1.5"/><path d="M146 80 q7 -6 14 0 q7 6 14 0" stroke="#c2410c" fill="none"/>
+    <circle cx="160" cy="160" r="5" fill="#16a34a"/><circle cx="60" cy="100" r="5" fill="#16a34a"/>
+    <rect x="235" y="40" width="220" height="180" rx="10" fill="#bbf7d0" stroke="#15803d" stroke-width="5"/>
+    <rect x="245" y="50" width="200" height="160" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <rect x="300" y="90" width="110" height="80" rx="18" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+    <circle cx="275" cy="80" r="20" fill="#c4b5fd" stroke="#6d28d9" stroke-width="2"/><circle cx="278" cy="77" r="6" fill="#6d28d9"/>
+    <ellipse cx="275" cy="190" rx="14" ry="8" fill="#22c55e" stroke="#166534" stroke-width="1.5"/><ellipse cx="425" cy="70" rx="14" ry="8" fill="#22c55e" stroke="#166534" stroke-width="1.5"/><ellipse cx="430" cy="190" rx="14" ry="8" fill="#22c55e" stroke="#166534" stroke-width="1.5"/><ellipse cx="270" cy="140" rx="14" ry="8" fill="#22c55e" stroke="#166534" stroke-width="1.5"/>
+    <g fill="#475569" font-family="Arial, sans-serif" font-size="9">
+      <text x="88" y="158">Núcleo</text><text x="20" y="196">Mitocondria</text><text x="118" y="205">Membrana</text>
+      <text x="320" y="134">Vacuola</text><text x="248" y="114">Núcleo</text><text x="380" y="214">Pared celular</text><text x="393" y="60">Cloroplasto</text>
+    </g></svg>

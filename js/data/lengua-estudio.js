@@ -4,11 +4,10 @@
    sin modificarlos: se muestra en "Estudia más" bajo cada tema.
 ========================================================== */
 
-// Consejo de Balam, el alebrije-jaguar que acompaña Lengua y Comunicación I
-const balamDice = (texto) => `
-  <div class="alebrije-tip">
-    <img src="images/lengua/alebrije-jaguar.svg" alt="Balam, el alebrije-jaguar" loading="lazy">
-    <p><strong>Balam dice:</strong> ${texto}</p>
+// Recuadro con la idea clave del tema
+const ideaClave = (texto) => `
+  <div class="nota-estudio">
+    <strong>💡 Idea clave:</strong> ${texto}
   </div>`;
 
 // Ejercicio con la respuesta oculta
@@ -23,7 +22,7 @@ const LENGUA_ESTUDIO = {
   /* =================== LENGUA Y COMUNICACIÓN I =================== */
 
   "lc1-1": `
-    ${balamDice('«Leer no es solo pasar los ojos por las letras: es conversar con quien escribió. Antes, durante y después de leer, hazle preguntas al texto.»')}
+    ${ideaClave('Leer no es solo pasar los ojos por las letras: es conversar con quien escribió. Antes, durante y después de leer, hazle preguntas al texto.')}
     <h4>Estrategias de lectura</h4>
     <table class="tabla-estudio">
       <tr><th>Momento</th><th>¿Qué hago?</th></tr>
@@ -48,7 +47,7 @@ const LENGUA_ESTUDIO = {
   `,
 
   "lc1-2": `
-    ${balamDice('«Un texto es como un tejido de Zinacantán: si un hilo se sale de lugar, se nota. Las propiedades del texto hacen que todo quede bien tejido.»')}
+    ${ideaClave('Un texto es como un tejido de Zinacantán: si un hilo se sale de lugar, se nota. Las propiedades del texto hacen que todo quede bien tejido.')}
     <h4>Otras propiedades importantes</h4>
     <ul>
       <li><strong>Cohesión:</strong> las ideas están unidas con conectores (y, pero, porque, además, por eso) y no se repiten palabras sin necesidad.</li>
@@ -75,7 +74,7 @@ const LENGUA_ESTUDIO = {
   `,
 
   "lc1-3": `
-    ${balamDice('«Cada párrafo es como una habitación de una casa: tiene una idea principal y todo lo que hay dentro se relaciona con ella.»')}
+    ${ideaClave('Cada párrafo es como una habitación de una casa: tiene una idea principal y todo lo que hay dentro se relaciona con ella.')}
     <h4>Más tipos de párrafo</h4>
     <ul>
       <li><strong>Expositivo o informativo:</strong> explica un tema con datos. «El quetzal vive en los bosques de niebla de Chiapas y es un ave en peligro de extinción.»</li>
@@ -96,12 +95,21 @@ const LENGUA_ESTUDIO = {
       <strong>Cierre:</strong> Por eso el pozol es parte de la identidad chiapaneca.
     </div>
 
+    <h4>Escribir un comentario</h4>
+    <p>Un <strong>comentario</strong> es un texto breve en el que das tu opinión sobre algo que leíste, viste o escuchaste. Suele ser un párrafo argumentativo:</p>
+    <ol>
+      <li><strong>Presenta</strong> de qué hablas: «La noticia sobre la tala del bosque de Huitepec…».</li>
+      <li><strong>Opina:</strong> «me parece preocupante…».</li>
+      <li><strong>Da razones o ejemplos:</strong> «porque ese bosque provee agua a San Cristóbal».</li>
+      <li><strong>Cierra:</strong> «Por eso debemos exigir que se proteja».</li>
+    </ol>
+
     <h4>✍️ Ejemplo práctico</h4>
     <p>Escribe tres párrafos sobre el mismo lugar de tu comunidad: uno <strong>descriptivo</strong> (cómo es), uno <strong>narrativo</strong> (algo que te pasó ahí) y uno <strong>argumentativo</strong> (por qué hay que cuidarlo). Subraya la oración temática de cada uno.</p>
   `,
 
   "lc1-4": `
-    ${balamDice('«Para encontrar la idea principal pregúntate: si tuviera que contarle este texto a alguien en una sola oración, ¿qué le diría?»')}
+    ${ideaClave('Para encontrar la idea principal pregúntate: si tuviera que contarle este texto a alguien en una sola oración, ¿qué le diría?')}
     <h4>Cómo encontrar la idea principal</h4>
     <ol>
       <li>Lee el párrafo completo.</li>
@@ -129,7 +137,21 @@ const LENGUA_ESTUDIO = {
   `,
 
   "lc1-5": `
-    ${balamDice('«Antes de exponer, practica frente al espejo o con tu familia. ¡Los nervios bajan cuando conoces bien tu tema!»')}
+    ${ideaClave('Antes de exponer, practica frente al espejo o con tu familia. ¡Los nervios bajan cuando conoces bien tu tema!')}
+    <h4>Cómo preparar una exposición: decisiones y etapas</h4>
+    <ul>
+      <li><strong>Seleccionar el contenido:</strong> elige un texto o tema de tu preferencia y decide qué ideas principales vas a explicar.</li>
+      <li><strong>Decidir la forma:</strong> individual o en equipo (si es grupal, repartan las partes y ensayen juntos).</li>
+      <li><strong>Establecer las etapas:</strong>
+        <ol>
+          <li><em>Planeación:</em> investigar, organizar las ideas y preparar los recursos.</li>
+          <li><em>Acompañamiento:</em> ensayar y pedir retroalimentación al docente o a compañeros.</li>
+          <li><em>Ejecución:</em> exponer frente al grupo.</li>
+        </ol>
+      </li>
+      <li><strong>Asignar los recursos:</strong> diapositivas, mapas mentales, carteles u objetos.</li>
+    </ul>
+
     <h4>Estructura de una exposición</h4>
     <ol>
       <li><strong>Saludo y presentación:</strong> quién eres y de qué vas a hablar.</li>
@@ -236,6 +258,17 @@ const LENGUA_ESTUDIO = {
       <li><strong>Persona contra sí misma:</strong> vencer un miedo o tomar una decisión difícil.</li>
     </ul>
 
+    <h4>Los escenarios: dónde ocurre la historia</h4>
+    <p>El <strong>escenario</strong> es el lugar y el ambiente donde se desarrolla la narración. No es solo un fondo: influye en lo que sienten y hacen los personajes.</p>
+    <ul>
+      <li><strong>Físico:</strong> la selva, el mercado, una casa de adobe, la ciudad.</li>
+      <li><strong>Temporal:</strong> de noche, durante la fiesta del pueblo, hace cien años.</li>
+      <li><strong>Social:</strong> una comunidad indígena, una escuela, una familia migrante.</li>
+    </ul>
+    <div class="ejemplo">
+      Una misma escena cambia según el escenario: perderse de día en el mercado de Tuxtla es una aventura; perderse de noche en el monte, durante una tormenta, es una historia de terror.
+    </div>
+
     <h4>✍️ Ejemplo práctico: ficha de personaje</h4>
     <p>Inventa un personaje para un cuento ambientado en Chiapas. Llena su ficha: nombre, edad, comunidad, rasgos físicos, rasgos psicológicos, qué desea y qué se lo impide. Luego escribe la primera escena de su historia.</p>
   `,
@@ -243,13 +276,16 @@ const LENGUA_ESTUDIO = {
   /* =================== LENGUA Y COMUNICACIÓN III =================== */
 
   "lc3-1": `
-    <h4>Línea del tiempo de los movimientos</h4>
+    <h4>Los ocho movimientos del programa, en orden</h4>
     <ul class="linea-tiempo">
+      <li><strong>Barroco (siglo XVII):</strong> lenguaje adornado y complejo, juegos de palabras, contrastes y la idea de que la vida es breve. Autores: Sor Juana Inés de la Cruz, Luis de Góngora, Francisco de Quevedo.</li>
+      <li><strong>Neoclasicismo (siglo XVIII – inicios del XIX):</strong> la razón, el orden y la intención de enseñar (didactismo); abundan las fábulas. Autores: Félix María Samaniego, José Joaquín Fernández de Lizardi (<em>El Periquillo Sarniento</em>, 1816, considerada la primera novela latinoamericana).</li>
       <li><strong>Romanticismo (finales del siglo XVIII – siglo XIX):</strong> sentimientos, libertad, naturaleza y nacionalismo. Autores: Gustavo Adolfo Bécquer, Manuel Acuña.</li>
       <li><strong>Realismo (segunda mitad del siglo XIX):</strong> retrata la sociedad tal como es. Autores: Benito Pérez Galdós, Federico Gamboa.</li>
       <li><strong>Modernismo (finales del siglo XIX):</strong> nace en América Latina; busca la belleza, la musicalidad y lo exótico. Autores: Rubén Darío, Amado Nervo.</li>
       <li><strong>Vanguardias (inicios del siglo XX):</strong> rompen las reglas y experimentan con la forma. En México, el Estridentismo.</li>
       <li><strong>Realismo mágico (siglo XX):</strong> lo extraordinario aparece como algo normal. Autores: Gabriel García Márquez, Juan Rulfo (<em>Pedro Páramo</em>, 1955).</li>
+      <li><strong>Literaturas disidentes y digitales (siglos XX y XXI):</strong> las <em>disidentes</em> dan voz a quienes fueron excluidos o cuestionan el poder: mujeres, pueblos originarios, personas migrantes, diversidad sexual. Las <em>digitales</em> nacen o circulan en internet: hipertexto, poesía digital, fanfic, relatos en plataformas como Wattpad y microficción en redes sociales.</li>
     </ul>
 
     <h4>Cómo reconocer cada movimiento</h4>
@@ -263,6 +299,13 @@ const LENGUA_ESTUDIO = {
 
     <div class="ejemplo">
       <strong>Conexión con Chiapas:</strong> en muchas comunidades se cuenta que los nahuales (personas que se transforman en animales) caminan de noche. Esta forma de ver lo sobrenatural como parte de la vida cotidiana es muy cercana al realismo mágico.
+    </div>
+
+    <h4>Paráfrasis de una lectura</h4>
+    <p>Para comprender un fragmento de cualquier movimiento, reescríbelo con tus propias palabras sin cambiar su sentido:</p>
+    <div class="ejemplo">
+      <strong>Original (Sor Juana, Barroco):</strong> «Hombres necios que acusáis / a la mujer sin razón, / sin ver que sois la ocasión / de lo mismo que culpáis».<br>
+      <strong>Paráfrasis:</strong> Los hombres que culpan a las mujeres sin motivo son tontos, porque no se dan cuenta de que ellos mismos provocan lo que les critican.
     </div>
 
     <h4>✍️ Ejemplo práctico</h4>
@@ -302,7 +345,9 @@ const LENGUA_ESTUDIO = {
       <tr><td>Antítesis</td><td>Contrapone ideas opuestas</td><td>«Es tan corto el amor y es tan largo el olvido.» (Neruda)</td></tr>
       <tr><td>Onomatopeya</td><td>Imita sonidos</td><td>«El tic tac del reloj no me deja dormir.»</td></tr>
       <tr><td>Epíteto</td><td>Adjetivo que destaca una cualidad propia</td><td>«La blanca nieve», «el verde pasto».</td></tr>
+      <tr><td><strong>Hipérbaton</strong></td><td>Altera el orden habitual de las palabras para dar ritmo o énfasis</td><td>«Del salón en el ángulo oscuro, / de su dueña tal vez olvidada, / silenciosa y cubierta de polvo / veíase el arpa.» (Bécquer). En orden normal: «Se veía el arpa en el ángulo oscuro del salón».</td></tr>
     </table>
+    <p><strong>Prosopopeya</strong> es otro nombre de la personificación: dar cualidades humanas a animales, objetos o ideas.</p>
 
     <h4>Figuras retóricas en la vida diaria</h4>
     <p>No solo están en la poesía. Las usamos todo el tiempo y en la publicidad:</p>
@@ -342,7 +387,15 @@ const LENGUA_ESTUDIO = {
       <tr><td>«El libro está bonito.»</td><td>«El libro me atrapó porque sus descripciones de la selva me hicieron sentir que estaba ahí.»</td></tr>
     </table>
 
+    <h4>Reseña basada en un movimiento literario</h4>
+    <p>El programa pide que tu reseña crítica parta de una obra de alguno de los movimientos literarios. Agrega a tu crítica:</p>
+    <ul>
+      <li>¿A qué movimiento pertenece la obra y qué rasgos de ese movimiento se observan? Por ejemplo, en <em>Pedro Páramo</em> los muertos conversan como si estuvieran vivos (realismo mágico).</li>
+      <li>¿Qué nos dice la obra de la época en que se escribió?</li>
+      <li>¿Sigue siendo actual? ¿Por qué?</li>
+    </ul>
+
     <h4>✍️ Ejemplo práctico</h4>
-    <p>Escribe la reseña de una película, serie, canción o libro que te guste. Usa las cuatro partes, al menos tres frases para opinar con fundamento y no cuentes el final.</p>
+    <p>Escribe la reseña de una obra de alguno de los movimientos literarios (o, como práctica previa, de una película, serie, canción o libro que te guste). Usa las cuatro partes, al menos tres frases para opinar con fundamento y no cuentes el final.</p>
   `
 };

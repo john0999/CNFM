@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img"><title>Fotosíntesis: entradas y salidas</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <circle cx="50" cy="44" r="26" fill="#facc15" stroke="#eab308" stroke-width="3"/>
+    <path d="M80 60 Q150 70 180 110" fill="none" stroke="#eab308" stroke-width="3" marker-end="url(#fl)"/><text x="96" y="86" font-family="Arial, sans-serif" font-size="11"  fill="#a16207" font-weight="bold">luz solar</text>
+    <path d="M210 250 C200 200 205 160 210 120" stroke="#166534" stroke-width="6" fill="none"/>
+    <path d="M210 150 C150 120 140 80 200 70 C240 70 250 120 210 150 Z" fill="#22c55e" stroke="#166534" stroke-width="2.5"/>
+    <path d="M210 150 C190 120 195 95 205 78" stroke="#166534" stroke-width="2" fill="none"/>
+    <path d="M212 190 C270 170 300 130 250 115 C220 110 205 160 212 190 Z" fill="#4ade80" stroke="#166534" stroke-width="2.5"/>
+    <path d="M190 250 q-20 6 -40 2 M215 250 q10 10 30 12 M200 250 q0 8 -6 10" stroke="#a16207" stroke-width="2.5" fill="none"/>
+    <rect x="0" y="246" width="420" height="14" fill="#a16207" fill-opacity="0.4"/>
+    <path d="M40 160 L160 140" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#fl)"/><text x="10" y="178" font-family="Arial, sans-serif" font-size="12"  fill="#475569" font-weight="bold">CO₂ del aire</text>
+    <path d="M110 236 Q160 232 180 222" fill="none" stroke="#0284c7" stroke-width="3" marker-end="url(#fl)"/><text x="40" y="232" font-family="Arial, sans-serif" font-size="12"  fill="#0369a1" font-weight="bold">H₂O del suelo</text>
+    <path d="M262 110 L360 80" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#fl)"/><text x="300" y="70" font-family="Arial, sans-serif" font-size="12"  fill="#15803d" font-weight="bold">O₂ al aire</text>
+    <path d="M268 175 L360 190" fill="none" stroke="#ca8a04" stroke-width="3" marker-end="url(#fl)"/><text x="298" y="212" font-family="Arial, sans-serif" font-size="12"  fill="#a16207" font-weight="bold">Glucosa</text><text x="298" y="226" font-family="Arial, sans-serif" font-size="11"  fill="#a16207">(C₆H₁₂O₆)</text>
+    <text x="210" y="24" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="bold">6CO₂ + 6H₂O + luz → C₆H₁₂O₆ + 6O₂</text></svg>

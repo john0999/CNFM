@@ -23,9 +23,8 @@ const VistaLengua = {
   renderSelector(contenedor) {
     contenedor.innerHTML = `
       <div style="background: linear-gradient(135deg, #e11d48, #be123c); color: #fff; padding: 3rem 1.5rem; text-align: center;">
-        <img src="images/lengua/alebrije-jaguar.svg" alt="Balam, el alebrije-jaguar" style="width: 130px; margin: 0 auto 0.5rem; background: rgba(255,255,255,0.9); border-radius: 50%; padding: 0.6rem;">
         <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">📖 Lengua y Comunicación</h2>
-        <p style="opacity: 0.9;">Selecciona un semestre para comenzar tu aprendizaje. ¡Balam, el alebrije, te acompaña en el primer semestre!</p>
+        <p style="opacity: 0.9;">Programa MCCEMS · Selecciona un semestre para comenzar tu aprendizaje.</p>
       </div>
       <div class="contenedor" style="padding: 2rem 1.5rem;">
         <button class="btn-volver" onclick="Router.ir('home')">← Volver al inicio</button>
@@ -90,7 +89,7 @@ const VistaLengua = {
       <ul>
         ${temas.map((t, i) => {
           const completado = temasCompletados.includes(t.id);
-          const bloqueado = i > 0 && !temasCompletados.includes(temas[i-1].id);
+          const bloqueado = i > 0 && !Utils.modoDesarrollador() && !temasCompletados.includes(temas[i-1].id);
           return `
             <li>
               <a href="#${t.id}" class="${bloqueado ? 'bloqueado' : ''}" data-target="${t.id}" onclick="event.preventDefault(); if(!${bloqueado}) Utils.scrollA('${t.id}')">
@@ -117,7 +116,7 @@ const VistaLengua = {
     let temasCompletados = JSON.parse(localStorage.getItem(`lengua_progreso_sem${this.semestreActual}`) || '[]');
 
     detalle.innerHTML = temas.map((tema, index) => {
-      const estaBloqueado = index > 0 && !temasCompletados.includes(temas[index - 1].id);
+      const estaBloqueado = index > 0 && !Utils.modoDesarrollador() && !temasCompletados.includes(temas[index - 1].id);
       const estaCompletado = temasCompletados.includes(tema.id);
       const opacityStyle = estaBloqueado ? 'opacity: 0.5; filter: grayscale(1);' : '';
       const iconoEstado = estaBloqueado ? '🔒' : (estaCompletado ? '✅' : '📖');
@@ -136,6 +135,7 @@ const VistaLengua = {
           <div style="font-size: 2rem; background: rgba(255,255,255,0.2); border-radius: 12px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">${iconoEstado}</div>
           <div>
             <h3 style="font-size: 1.3rem; margin: 0; color: #fff;">${tema.titulo}</h3>
+            ${tema.proposito ? `<span style="display: inline-block; margin-top: 0.4rem; background: rgba(255,255,255,0.22); padding: 0.15rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">📌 Programa MCCEMS · ${tema.proposito}</span>` : ''}
           </div>
         </div>
 
@@ -161,7 +161,7 @@ const VistaLengua = {
     }).join('');
 
     temas.forEach((tema, index) => {
-      if (tema.actividades && (index === 0 || temasCompletados.includes(temas[index - 1].id))) {
+      if (tema.actividades && (index === 0 || Utils.modoDesarrollador() || temasCompletados.includes(temas[index - 1].id))) {
         this.aciertosActuales = 0;
         this.cargarActividad(tema.id, tema.actividades, 0);
       }

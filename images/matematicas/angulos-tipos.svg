@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 170" role="img"><title>Tipos de ángulos: agudo, recto, obtuso y llano</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs><line x1="30" y1="120" x2="100" y2="120" stroke="#1e293b" stroke-width="3"/>
+        <line x1="30" y1="120" x2="79.5" y2="70.5" stroke="#1e293b" stroke-width="3"/><path d="M54 120 A24 24 0 0 0 47 103" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+        <circle cx="30" cy="120" r="3.5" fill="#1e293b"/>
+        <text x="50" y="150" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" font-weight="bold" fill="#2563eb">Agudo</text>
+        <text x="50" y="166" font-family="Arial, sans-serif" font-size="10"  text-anchor="middle" fill="#64748b">&lt; 90°</text><line x1="150" y1="120" x2="220" y2="120" stroke="#1e293b" stroke-width="3"/>
+        <line x1="150" y1="120" x2="150" y2="50" stroke="#1e293b" stroke-width="3"/><path d="M166 120 V104 H150" fill="none" stroke="#059669" stroke-width="2"/>
+        <circle cx="150" cy="120" r="3.5" fill="#1e293b"/>
+        <text x="170" y="150" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" font-weight="bold" fill="#059669">Recto</text>
+        <text x="170" y="166" font-family="Arial, sans-serif" font-size="10"  text-anchor="middle" fill="#64748b">= 90°</text><line x1="270" y1="120" x2="340" y2="120" stroke="#1e293b" stroke-width="3"/>
+        <line x1="270" y1="120" x2="225" y2="66.4" stroke="#1e293b" stroke-width="3"/><path d="M294 120 A24 24 0 0 0 254.6 101.6" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+        <circle cx="270" cy="120" r="3.5" fill="#1e293b"/>
+        <text x="290" y="150" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" font-weight="bold" fill="#ea580c">Obtuso</text>
+        <text x="290" y="166" font-family="Arial, sans-serif" font-size="10"  text-anchor="middle" fill="#64748b">entre 90° y 180°</text><line x1="390" y1="120" x2="460" y2="120" stroke="#1e293b" stroke-width="3"/>
+        <line x1="390" y1="120" x2="320" y2="120" stroke="#1e293b" stroke-width="3"/><path d="M414 120 A24 24 0 0 0 366 120" fill="none" stroke="#9333ea" stroke-width="2.5"/>
+        <circle cx="390" cy="120" r="3.5" fill="#1e293b"/>
+        <text x="410" y="150" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" font-weight="bold" fill="#9333ea">Llano</text>
+        <text x="410" y="166" font-family="Arial, sans-serif" font-size="10"  text-anchor="middle" fill="#64748b">= 180°</text></svg>

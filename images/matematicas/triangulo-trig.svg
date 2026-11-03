@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 250" role="img"><title>Triángulo rectángulo: cateto opuesto, cateto adyacente e hipotenusa respecto al ángulo θ</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <polygon points="40,200 300,200 300,50" fill="#eff6ff" stroke="#1e293b" stroke-width="3"/>
+    <path d="M284 200 V184 H300" fill="none" stroke="#1e293b" stroke-width="2"/>
+    <path d="M90 200 A50 50 0 0 0 83.4 175" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+    <text x="96" y="190" font-family="Arial, sans-serif" font-size="18"  fill="#dc2626" font-weight="bold">θ</text>
+    <text x="170" y="222" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" fill="#059669" font-weight="bold">cateto adyacente</text>
+    <text x="308" y="130" font-family="Arial, sans-serif" font-size="13"  fill="#9333ea" font-weight="bold">cateto</text><text x="308" y="146" font-family="Arial, sans-serif" font-size="13"  fill="#9333ea" font-weight="bold">opuesto</text>
+    <text x="150" y="112" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" fill="#2563eb" font-weight="bold" transform="rotate(-30 150 112)">hipotenusa</text>
+    <text x="190" y="244" font-family="Arial, sans-serif" font-size="12"  text-anchor="middle" fill="#1e3a8a" font-weight="bold">sen θ = op/hip   ·   cos θ = ady/hip   ·   tan θ = op/ady</text></svg>

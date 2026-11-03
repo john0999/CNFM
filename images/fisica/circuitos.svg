@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 220" role="img"><title>Circuito en serie y circuito en paralelo</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <text x="110" y="18" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">En serie</text><text x="345" y="18" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">En paralelo</text>
+    <path d="M30 60 H190 V170 H30 Z" fill="none" stroke="#1e293b" stroke-width="3"/>
+    <rect x="22" y="100" width="16" height="30" fill="#fff"/><line x1="18" y1="106" x2="42" y2="106" stroke="#1e293b" stroke-width="3"/><line x1="24" y1="122" x2="36" y2="122" stroke="#1e293b" stroke-width="5"/>
+    <text x="4" y="118" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" font-weight="bold">+</text>
+    <rect x="62" y="52" width="36" height="16" fill="#fbbf24" stroke="#1e293b" stroke-width="2"/><rect x="122" y="52" width="36" height="16" fill="#fbbf24" stroke="#1e293b" stroke-width="2"/>
+    <text x="80" y="88" font-family="Arial, sans-serif" font-size="11" fill="#1e293b" text-anchor="middle">R₁</text><text x="140" y="88" font-family="Arial, sans-serif" font-size="11" fill="#1e293b" text-anchor="middle">R₂</text>
+    <text x="110" y="200" font-family="Arial, sans-serif" font-size="11" fill="#1e293b" text-anchor="middle" font-weight="bold">R total = R₁ + R₂</text>
+    <path d="M260 60 H430 M260 170 H430 M260 60 V170 M330 60 V170 M430 60 V170" fill="none" stroke="#1e293b" stroke-width="3"/>
+    <rect x="252" y="100" width="16" height="30" fill="#fff"/><line x1="248" y1="106" x2="272" y2="106" stroke="#1e293b" stroke-width="3"/><line x1="254" y1="122" x2="266" y2="122" stroke="#1e293b" stroke-width="5"/>
+    <rect x="322" y="97" width="16" height="36" fill="#fbbf24" stroke="#1e293b" stroke-width="2"/><rect x="422" y="97" width="16" height="36" fill="#fbbf24" stroke="#1e293b" stroke-width="2"/>
+    <text x="346" y="120" font-family="Arial, sans-serif" font-size="11" fill="#1e293b" >R₁</text><text x="400" y="120" font-family="Arial, sans-serif" font-size="11" fill="#1e293b" text-anchor="end">R₂</text>
+    <text x="345" y="200" font-family="Arial, sans-serif" font-size="11" fill="#1e293b" text-anchor="middle" font-weight="bold">1/R total = 1/R₁ + 1/R₂</text></svg>

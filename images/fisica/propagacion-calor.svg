@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200" role="img"><title>Conducción, convección y radiación</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <rect x="10" y="10" width="140" height="160" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><rect x="170" y="10" width="140" height="160" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><rect x="330" y="10" width="140" height="160" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M40 90 L50 150 L110 150 L120 90 Z" fill="#fde68a" stroke="#1e293b" stroke-width="2"/>
+    <line x1="60" y1="130" x2="128" y2="40" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+    <line x1="60" y1="130" x2="128" y2="40" stroke="#ef4444" stroke-width="6" stroke-linecap="round" stroke-dasharray="40 200" stroke-opacity="0.8"/>
+    <line x1="80" y1="100" x2="112" y2="58" stroke="#dc2626" stroke-width="2" marker-end="url(#fl)" />
+    <path d="M195 150 L205 70 L295 70 L305 150 Z" fill="#bae6fd" stroke="#1e293b" stroke-width="2"/>
+    <path d="M230 135 C210 110 215 90 240 85 M270 135 C290 110 285 90 260 85" fill="none" stroke="#dc2626" stroke-width="2.5" marker-end="url(#fl)"/>
+    <path d="M245 90 C250 110 250 120 245 132 M255 90 C250 110 250 120 255 132" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="3 3"/>
+    <path d="M232 152 q8 -14 16 0 q8 -14 16 0 q8 -14 16 0" fill="#f97316" stroke="#ea580c" stroke-width="1.5"/>
+    <circle cx="370" cy="55" r="22" fill="#facc15" stroke="#eab308" stroke-width="3"/>
+    <path d="M400 70 Q428 77 440 100" fill="none" stroke="#f97316" stroke-width="2.5" marker-end="url(#fl)"/><path d="M395 85 Q418 99.5 425 130" fill="none" stroke="#f97316" stroke-width="2.5" marker-end="url(#fl)"/><path d="M375 85 Q390.5 102 390 135" fill="none" stroke="#f97316" stroke-width="2.5" marker-end="url(#fl)"/>
+    <circle cx="432" cy="128" r="9" fill="#fcd34d" stroke="#1e293b" stroke-width="1.5"/><path d="M432 137 v18 M422 145 h20" stroke="#1e293b" stroke-width="2.5"/>
+    <text x="80" y="190" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">Conducción</text>
+    <text x="250" y="190" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">Convección</text>
+    <text x="400" y="190" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">Radiación</text></svg>

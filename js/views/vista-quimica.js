@@ -109,7 +109,7 @@ const VistaQuimica = {
     let temasCompletados = JSON.parse(localStorage.getItem(`quimica_progreso_sem${this.semestreActual}`) || '[]');
 
     contenedor.innerHTML = temas.map((tema, index) => {
-      const estaBloqueado = index > 0 && !temasCompletados.includes(temas[index - 1].id);
+      const estaBloqueado = index > 0 && !Utils.modoDesarrollador() && !temasCompletados.includes(temas[index - 1].id);
       const estaCompletado = temasCompletados.includes(tema.id);
       const opacityStyle = estaBloqueado ? 'opacity: 0.5; filter: grayscale(1);' : '';
       const iconoEstado = estaBloqueado ? '🔒' : (estaCompletado ? '✅' : '📖');
@@ -154,7 +154,7 @@ const VistaQuimica = {
     }).join('');
 
     temas.forEach((tema, index) => {
-      if (tema.actividades && (index === 0 || temasCompletados.includes(temas[index - 1].id))) {
+      if (tema.actividades && (index === 0 || Utils.modoDesarrollador() || temasCompletados.includes(temas[index - 1].id))) {
         this.aciertosActuales = 0; // Reiniciamos aciertos al cargar
         this.cargarActividad(tema.id, tema.actividades, 0);
       }

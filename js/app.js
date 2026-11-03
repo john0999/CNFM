@@ -78,12 +78,19 @@ document.addEventListener('DOMContentLoaded', () => {
     { titulo: 'Material de Laboratorio' }
   );
 
+  // Ruta privada (no aparece en el menú): modo desarrollador
+  Router.registrar('private',
+    (c) => VistaPrivado.render(c),
+    { titulo: 'Área privada' }
+  );
+
   Router.registrar('tabla-periodica',
     (c) => VistaTablaPeriodica.render(c),
     { titulo: 'Tabla Periódica Interactiva' }
   );
   // ===== Iniciar router =====
   Router.iniciar();
+  Utils.mostrarAvisoDesarrollador();
 
   // ===== Menú móvil =====
   document.getElementById('menuBtn')?.addEventListener('click', () => {

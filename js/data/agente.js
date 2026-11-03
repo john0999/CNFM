@@ -22,7 +22,7 @@ const AGENTE = {
         { texto: "¿Cómo balanceo una ecuación química?", icono: "⚗️" },
         { texto: "¿Qué es una función cuadrática?", icono: "📐" },
         { texto: "Diferencia entre célula procariota y eucariota", icono: "🧬" },
-        { texto: "¿Cuándo uso el presente simple en inglés?", icono: "🇬🇧" },
+        { texto: "¿Cuándo uso el presente simple en inglés?", icono: "💬" },
         { texto: "¿Qué es una figura retórica?", icono: "📖" },
         { texto: "¿Quién es CienTIA?", icono: "👋" }
     ],

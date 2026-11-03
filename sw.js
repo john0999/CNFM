@@ -3,7 +3,7 @@
    Estructura: raíz con index.html, sw.js, /css /js /images /views
    ============================================================ */
 
-const CACHE_VERSION = 'v12'; // ⬅️ Sube este número cada vez que actualices
+const CACHE_VERSION = 'v23'; // ⬅️ Sube este número cada vez que actualices
 const CACHE_NAME = `quantix-ciencias-${CACHE_VERSION}`;
 
 // Detecta la ruta base automáticamente (funciona en raíz o subcarpeta)
@@ -33,10 +33,36 @@ const ASSETS = [
     'menisco', 'filtracion', 'destilacion', 'estados-particulas', 'atomo-bohr'
   ].map(nombre => BASE + `images/quimica/${nombre}.svg`),
 
-  // Imágenes de Lengua y Comunicación (alebrijes y diagramas)
+  // Imágenes de Ciencias Naturales (diagramas)
   ...[
-    'alebrije-jaguar', 'alebrije-quetzal', 'curva-narrativa', 'comic-partes', 'mapa-conceptual', 'comunicacion'
+    'esferas-terrestres', 'capas-atmosfera', 'fotosintesis', 'piramide-energia', 'ciclo-carbono',
+    'celula', 'adn', 'mitosis', 'miller-urey', 'ciclo-5e', 'ciclo-investigacion', 'grafica-tortillero'
+  ].map(nombre => BASE + `images/ciencias/${nombre}.svg`),
+
+  // Imágenes de Física (diagramas)
+  ...[
+    'vector-componentes', 'graficas-movimiento', 'tiro-parabolico', 'diagrama-cuerpo-libre', 'presa-energia',
+    'escalas-termometricas', 'propagacion-calor', 'gas-piston', 'ondas-partes', 'reflexion-refraccion',
+    'lentes', 'orbita-kepler', 'arquimedes', 'circuitos', 'induccion'
+  ].map(nombre => BASE + `images/fisica/${nombre}.svg`),
+
+  // Imágenes de Lengua y Comunicación (diagramas)
+  ...[
+    'curva-narrativa', 'comic-partes', 'mapa-conceptual', 'comunicacion'
   ].map(nombre => BASE + `images/lengua/${nombre}.svg`),
+
+  // Imágenes de Matemáticas (diagramas)
+  ...[
+    'angulos-tipos', 'area-bajo-curva', 'campana-normal', 'conicas', 'conjuntos-numericos', 'diagrama-venn',
+    'fracciones-tortilla', 'funcion-maxmin', 'histograma', 'modelo-area-binomio', 'monomio-partes', 'numeros-mayas',
+    'parabola-elementos', 'pitagoras', 'plano-cartesiano', 'recta-pendiente', 'secante-tangente', 'sistema-ecuaciones',
+    'triangulo-trig'
+  ].map(nombre => BASE + `images/matematicas/${nombre}.svg`),
+
+  // Imágenes de Inglés (diagramas)
+  ...[
+    'adverbios-frecuencia', 'comparativos-altitud', 'linea-tiempo-verbos', 'mapa-direcciones', 'preposiciones-lugar', 'reloj-horas'
+  ].map(nombre => BASE + `images/ingles/${nombre}.svg`),
 
   // JS raíz
   BASE + 'js/app.js',
@@ -68,10 +94,13 @@ const ASSETS = [
 
   // JS data
   BASE + 'js/data/ciencias.js',
+  BASE + 'js/data/ciencias-estudio.js',
   BASE + 'js/data/contexto.js',
   BASE + 'js/data/fisica.js',
+  BASE + 'js/data/fisica-estudio.js',
   BASE + 'js/data/herramientas.js',
   BASE + 'js/data/matematicas.js',
+  BASE + 'js/data/matematicas-estudio.js',
   BASE + 'js/data/probabilidad.js',
   BASE + 'js/data/quimica.js',
   BASE + 'js/data/quimica-estudio.js',
@@ -83,6 +112,7 @@ const ASSETS = [
   BASE + 'js/data/agente.js',
   BASE + 'js/data/tabla-periodica.js',
   BASE + 'js/data/ingles.js',
+  BASE + 'js/data/ingles-estudio.js',
   BASE + 'js/data/lengua.js',
   BASE + 'js/data/lengua-estudio.js',
 
@@ -92,6 +122,7 @@ const ASSETS = [
   BASE + 'js/views/materia.js',
   BASE + 'js/views/contexto.js',
   BASE + 'js/views/herramientas.js',
+  BASE + 'js/views/privado.js',
   BASE + 'js/views/simuladores.js',
   BASE + 'js/views/agente.js',
   BASE + 'js/views/tabla-periodica.js',

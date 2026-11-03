@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240" role="img"><title>Principio de Arquímedes: empuje y peso de un cuerpo sumergido</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <path d="M40 40 L40 220 L260 220 L260 40" fill="none" stroke="#1e293b" stroke-width="3"/>
+    <rect x="42" y="80" width="216" height="138" fill="#38bdf8" fill-opacity="0.5"/>
+    <line x1="42" y1="80" x2="258" y2="80" stroke="#0284c7" stroke-width="2"/>
+    <rect x="115" y="110" width="70" height="60" rx="4" fill="#a16207" stroke="#1e293b" stroke-width="2"/>
+    <line x1="150" y1="140" x2="150" y2="212" stroke="#dc2626" stroke-width="4" marker-end="url(#fl)" /><text x="160" y="206" font-family="Arial, sans-serif" font-size="12"  fill="#dc2626" font-weight="bold">Peso</text>
+    <line x1="150" y1="140" x2="150" y2="50" stroke="#16a34a" stroke-width="4" marker-end="url(#fl)" /><text x="160" y="60" font-family="Arial, sans-serif" font-size="12"  fill="#15803d" font-weight="bold">Empuje (E)</text>
+    <text x="150" y="236" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">E = ρ · g · V</text></svg>

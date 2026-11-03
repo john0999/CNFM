@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img"><title>La Tierra como sistema: atmósfera, hidrósfera, litósfera y biósfera</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <rect x="0" y="0" width="420" height="120" fill="#e0f2fe"/>
+    <circle cx="360" cy="34" r="18" fill="#facc15"/>
+    <path d="M60 50 q12 -14 28 -6 q10 -12 26 0 q14 -2 12 10 h-66 z" fill="#fff" stroke="#cbd5e1"/>
+    <path d="M0 150 L70 110 L120 135 L170 80 L230 140 L260 150 Z" fill="#a3a3a3" stroke="#57534e" stroke-width="2"/>
+    <rect x="0" y="150" width="420" height="110" fill="#92400e" fill-opacity="0.75"/>
+    <path d="M260 150 Q300 140 420 140 L420 200 L260 200 Z" fill="#38bdf8"/>
+    <rect x="0" y="150" width="260" height="10" fill="#65a30d"/>
+    <path d="M40 150 v-26 M34 132 l6 -16 l6 16 Z M90 150 v-22 M84 134 l6 -14 l6 14 Z" stroke="#166534" stroke-width="3" fill="#16a34a"/>
+    <ellipse cx="320" cy="170" rx="12" ry="6" fill="#f97316"/><path d="M332 170 l8 -5 v10 Z" fill="#f97316"/>
+    <circle cx="200" cy="140" r="6" fill="#fcd34d" stroke="#1e293b"/><path d="M200 146 v10" stroke="#1e293b" stroke-width="2"/>
+    <text x="16" y="26" font-family="Arial, sans-serif" font-size="13"  fill="#0369a1" font-weight="bold">ATMÓSFERA</text><text x="16" y="40" font-family="Arial, sans-serif" font-size="10"  fill="#0369a1">capa de gases</text>
+    <text x="300" y="228" font-family="Arial, sans-serif" font-size="13"  fill="#0c4a6e" font-weight="bold">HIDRÓSFERA</text><text x="300" y="242" font-family="Arial, sans-serif" font-size="10"  fill="#0c4a6e">agua</text>
+    <text x="16" y="228" font-family="Arial, sans-serif" font-size="13"  fill="#fff" font-weight="bold">LITÓSFERA</text><text x="16" y="242" font-family="Arial, sans-serif" font-size="10"  fill="#fff">rocas y suelo</text>
+    <text x="118" y="108" font-family="Arial, sans-serif" font-size="13"  fill="#166534" font-weight="bold">BIÓSFERA</text><text x="118" y="122" font-family="Arial, sans-serif" font-size="10"  fill="#166534">seres vivos</text></svg>

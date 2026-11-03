@@ -75,7 +75,7 @@ const VistaQuiz = {
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
           ${this.NIVELES.map(niv => {
-            const bloqueado = (niv === 'intermedio' && avance.basico < 80) || (niv === 'avanzado' && avance.intermedio < 80);
+            const bloqueado = !Utils.modoDesarrollador() && ((niv === 'intermedio' && avance.basico < 80) || (niv === 'avanzado' && avance.intermedio < 80));
             const icono = bloqueado ? '🔒' : (niv === 'basico' ? '🌱' : niv === 'intermedio' ? '⭐' : '🏆');
             const color = bloqueado ? '#94a3b8' : asig.color;
             const record = avance[niv] > 0 ? `<p style="color: #16a34a; font-weight: bold; margin-top: 0.5rem; font-size: 0.85rem;">🏆 Tu récord: ${avance[niv]}%</p>` : '';
