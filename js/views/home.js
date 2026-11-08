@@ -7,7 +7,7 @@ const VistaHome = {
     contenedor.innerHTML = `
       <section class="hero">
         <div class="contenedor">
-          <h2>Aprende <span class="resaltado">Química, Ciencias, Matemáticas y Física</span></h2>
+          <h2>Aprende <span class="resaltado">todas tus materias</span> del bachillerato</h2>
           <p>Portal educativo alineado a tu formación academica en tu plantel. Contenido contextualizado a tu comunidad.</p>
           <div class="hero-botones">
             <a href="#/ciencias" class="btn btn-primario">Explorar asignaturas</a>
@@ -44,39 +44,21 @@ const VistaHome = {
 
   renderizarMaterias() {
     const grid = document.getElementById('gridMaterias');
-    const materias = [
-      {
-        id: 'ciencias',
-        titulo: 'Ciencias Naturales, Experimentales y Tecnología',
-        icono: '🔬',
-        descripcion: 'Química, Física y Biología integradas en 6 semestres.',
-        meta: { temas: 42, semestres: 6 },
-        clase: 'ciencias'
-      },
-      {
-        id: 'quimica',
-        titulo: 'Química',
-        icono: '⚗️',
-        descripcion: 'Química I y II: estructura atómica, enlaces, reacciones y soluciones.',
-        meta: { temas: 17, semestres: 2 },
-        clase: 'quimica'
-      },
-      {
-        id: 'matematicas',
-        titulo: 'Matemáticas',
-        icono: '📐',
-        descripcion: 'Álgebra, geometría, trigonometría y funciones.',
-        meta: { temas: 19, semestres: 4 },
-        clase: 'matematicas'
-      },
-      {
-        id: 'fisica',
-        titulo: 'Física',
-        icono: '⚡',
-        descripcion: 'Mecánica, fluidos, electricidad y física moderna.',
-        meta: { temas: 13, semestres: 3 },
-        clase: 'fisica'
-      },
+
+    // Las materias salen del catálogo (js/data/materias.js) con sus conteos reales
+    const materias = MATERIAS.map(m => {
+      const resumen = materiaResumen(m);
+      return {
+        id: m.id,
+        titulo: m.titulo,
+        icono: m.emoji,
+        descripcion: m.descripcion,
+        meta: { temas: resumen.temas, cursos: resumen.cursos },
+        fondo: `linear-gradient(135deg, ${m.color}, ${m.color2})`
+      };
+    });
+
+    const extras = [
       {
         id: 'contexto',
         titulo: 'Contexto Chiapas',
@@ -105,14 +87,14 @@ const VistaHome = {
         id: 'agente',
         titulo: 'CienTIA',
         icono: '🤖',
-        descripcion: 'Tu tutor virtual para dudas de Química, Ciencias, Matemáticas y Física.',
+        descripcion: 'Tu tutor virtual para resolver dudas de todas tus materias.',
         meta: { temas: '∞', semestres: 0 },
         clase: 'agente'
       }
     ];
 
-    grid.innerHTML = materias.map(m => `
-      <div class="tarjeta-materia ${m.clase}" data-route="${m.id}">
+    grid.innerHTML = [...materias, ...extras].map(m => `
+      <div class="tarjeta-materia ${m.clase || ''}" data-route="${m.id}" ${m.fondo ? `style="background: ${m.fondo};"` : ''}>
         <div>
           <div class="icono-grande">${m.icono}</div>
           <h3>${m.titulo}</h3>
@@ -120,7 +102,7 @@ const VistaHome = {
         </div>
         <div class="meta">
           <span>📖 ${m.meta.temas} temas</span>
-          ${m.meta.semestres ? `<span>🎓 ${m.meta.semestres} semestres</span>` : ''}
+          ${m.meta.cursos ? `<span>🎓 ${m.meta.cursos} ${m.meta.cursos === 1 ? 'curso' : 'cursos'}</span>` : ''}
         </div>
       </div>
     `).join('');
@@ -145,27 +127,18 @@ const VistaHome = {
       }
 
       const resultados = [];
-      const fuentes = {
-        ciencias: CIENCIAS,
-        matematicas: MATEMATICAS,
-        fisica: FISICA,
-        probabilidad: PROBABILIDAD
-      };
+      const consulta = Utils.normalizar(q);
 
-      Object.entries(fuentes).forEach(([materia, data]) => {
+      // Busca en todas las materias del catálogo (js/data/materias.js)
+      MATERIAS.forEach(m => {
+        const data = m.datos();
+        if (!data) return;
         Object.entries(data).forEach(([sem, semData]) => {
-          // Manejar temas directos o por bloques
-          let temas = semData.temas || [];
-          if (semData.bloques) {
-            temas = semData.bloques.flatMap(b => b.temas);
-          }
           // Los temas compartidos ({ ref }) ya aparecen en su propio módulo
-          temas = temas.filter(t => !t.ref);
-
-          temas.forEach(tema => {
-            const texto = Utils.normalizar(tema.titulo + ' ' + tema.contenido);
-            if (texto.includes(Utils.normalizar(q))) {
-              resultados.push({ materia, semestre: sem, tema, clase: semData.clase || materia });
+          materiaTemasDe(semData).forEach(tema => {
+            const texto = Utils.normalizar(`${tema.titulo} ${tema.contenido || ''} ${tema.concepto || ''}`);
+            if (texto.includes(consulta)) {
+              resultados.push({ materia: m, semestre: sem, tema });
             }
           });
         });
@@ -176,18 +149,25 @@ const VistaHome = {
         : `Sin resultados para "${q}"`;
 
       grid.innerHTML = resultados.map(r => `
-        <div class="tarjeta-materia ${r.materia}" data-materia="${r.materia}" data-tema="${r.tema.id}">
+        <div class="tarjeta-materia" style="background: linear-gradient(135deg, ${r.materia.color}, ${r.materia.color2});"
+             data-materia="${r.materia.id}" data-semestre="${r.semestre}" data-tema="${r.tema.id}">
           <div>
             <div class="icono-grande">${r.tema.icono}</div>
             <h3>${r.tema.titulo}</h3>
-            <p>${r.materia} · Semestre ${r.semestre}</p>
+            <p>${r.materia.nombre} · ${r.materia.datos()[r.semestre].semestre || 'Semestre ' + r.semestre}</p>
           </div>
         </div>
       `).join('');
 
+      // Abre el semestre del tema y baja hasta él
       grid.querySelectorAll('.tarjeta-materia').forEach(card => {
         card.addEventListener('click', () => {
-          Router.ir(card.dataset.materia, { id: card.dataset.tema });
+          const { materia, semestre, tema } = card.dataset;
+          Router.ir(materia, `semestre-${semestre}`);
+          setTimeout(() => {
+            const destino = document.getElementById(`tema-${tema}`) || document.getElementById(tema);
+            destino?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 400);
         });
       });
     }, 300);

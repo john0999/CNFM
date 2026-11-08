@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img"><title>Entrada, procesamiento, memoria, almacenamiento y salida</title>
+<defs><marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#334155"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+    <rect x="15" y="90" width="120" height="70" rx="10" fill="#2563eb" fill-opacity="0.15" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="75" y="121" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"  font-weight="bold" fill="#2563eb">ENTRADA</text><text x="75" y="140" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1e293b" >teclado · cámara</text>
+    <rect x="220" y="30" width="120" height="70" rx="10" fill="#047857" fill-opacity="0.15" stroke="#047857" stroke-width="2.5"/>
+  <text x="280" y="61" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"  font-weight="bold" fill="#047857">CPU</text><text x="280" y="80" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1e293b" >procesa</text>
+    <rect x="220" y="160" width="120" height="70" rx="10" fill="#7c3aed" fill-opacity="0.15" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="280" y="191" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"  font-weight="bold" fill="#7c3aed">MEMORIA</text><text x="280" y="210" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1e293b" >RAM · almacenamiento</text>
+    <rect x="425" y="90" width="120" height="70" rx="10" fill="#c2410c" fill-opacity="0.15" stroke="#c2410c" stroke-width="2.5"/>
+  <text x="485" y="121" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"  font-weight="bold" fill="#c2410c">SALIDA</text><text x="485" y="140" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1e293b" >pantalla · bocinas</text>
+    <line x1="135" y1="115" x2="216" y2="75" stroke="#334155" stroke-width="2" marker-end="url(#fl)"/>
+    <line x1="340" y1="75" x2="421" y2="115" stroke="#334155" stroke-width="2" marker-end="url(#fl)"/>
+    <line x1="270" y1="104" x2="270" y2="156" stroke="#334155" stroke-width="2" marker-start="url(#fl)" marker-end="url(#fl)"/>
+    <text x="280" y="18" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"  font-style="italic" fill="#475569">Software: las instrucciones que dirigen todo el proceso</text></svg>

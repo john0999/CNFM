@@ -1,0 +1,370 @@
+/* ==========================================================
+   VIEW - PENSAMIENTO FILOSÓFICO Y HUMANIDADES (Regla de Aprobación 4/5)
+   Mismo diseño y lógica que Lengua y Comunicación: cada tema
+   se desbloquea al aprobar el anterior con 4 de 5 aciertos.
+========================================================== */
+
+const VistaFilosofia = {
+  DATA: FILOSOFIA,
+  semestreActual: null,
+  aciertos: {}, // Aciertos del intento en curso, por tema
+
+  render(contenedor, params = {}) {
+    const { id } = params;
+    if (!id) return this.renderSelector(contenedor);
+
+    if (id.startsWith('semestre-')) {
+      const sem = id.replace('semestre-', '');
+      const data = this.DATA[sem];
+      if (!data) return this.renderSelector(contenedor);
+      return this.renderSemestre(contenedor, sem, data);
+    }
+    this.renderSelector(contenedor);
+  },
+
+  // Temas aprobados del semestre (misma clave que la versión anterior, así se conserva el avance)
+  obtenerProgreso(sem = this.semestreActual) {
+    try { return JSON.parse(localStorage.getItem(`filosofia_progreso_sem${sem}`) || '[]'); } catch { return []; }
+  },
+
+  guardarProgreso(temaId) {
+    const progreso = this.obtenerProgreso();
+    if (progreso.includes(temaId)) return false;
+    progreso.push(temaId);
+    try { localStorage.setItem(`filosofia_progreso_sem${this.semestreActual}`, JSON.stringify(progreso)); } catch {}
+    return true;
+  },
+
+  renderSelector(contenedor) {
+    contenedor.innerHTML = `
+      <div style="background: linear-gradient(135deg, #713f12, #ca8a04); color: #fff; padding: 3rem 1.5rem; text-align: center;">
+        <h2 style="font-size: 2rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-landmark"></i> Pensamiento Filosófico y Humanidades</h2>
+        <p style="opacity: 0.9; max-width: 680px; margin: 0 auto;">Programa MCCEMS · Pensar de forma crítica, creativa y cuidadosa en comunidades de diálogo. Selecciona un semestre para comenzar.</p>
+      </div>
+      <div class="contenedor" style="padding: 2rem 1.5rem;">
+        <button class="btn-volver" onclick="Router.ir('home')">← Volver al inicio</button>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+          ${Object.entries(this.DATA).map(([num, sem]) => {
+            const ids = sem.temas.map(t => t.id);
+            const aprobados = this.obtenerProgreso(num).filter(id => ids.includes(id)).length;
+            return `
+            <div class="tarjeta-semestre-btn" data-id="${num}" style="background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); cursor: pointer; border-top: 5px solid #a16207; transition: transform 0.2s;">
+              <div style="font-size: 3rem; margin-bottom: 1rem;">${sem.icono}</div>
+              <span style="font-size: 0.75rem; font-weight: bold; color: #a16207; text-transform: uppercase;">${sem.semestre}</span>
+              <h3 style="color: #713f12; margin: 0.2rem 0 0.3rem;">${sem.titulo}</h3>
+              <p style="color: #a16207; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">${sem.subtitulo}</p>
+              <p style="color: #64748b; font-size: 0.9rem;">${sem.descripcion}</p>
+              <p style="color: #a16207; font-size: 0.85rem; font-weight: bold; margin-top: 0.8rem;">${sem.temas.length} temas · ${aprobados} aprobados</p>
+            </div>
+          `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+
+    document.querySelectorAll('.tarjeta-semestre-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => Router.ir('filosofia', `semestre-${e.currentTarget.dataset.id}`));
+      btn.addEventListener('mouseenter', (e) => e.currentTarget.style.transform = 'translateY(-5px)');
+      btn.addEventListener('mouseleave', (e) => e.currentTarget.style.transform = 'translateY(0)');
+    });
+  },
+
+  // Mismo diseño que Lengua y Comunicación: encabezado con número, índice lateral y tarjetas de tema
+  renderSemestre(contenedor, num, data) {
+    this.semestreActual = num;
+
+    contenedor.innerHTML = `
+      <div class="contenedor materia-header" style="padding-top: 2rem;">
+        <button id="btnVolverSem" class="btn-volver">← Volver a semestres</button>
+        <div class="materia-titulo-wrap">
+          <span class="materia-numero" style="background: linear-gradient(135deg, #a16207, #713f12); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 4rem; font-weight: 900;">${num}</span>
+          <div class="materia-info">
+            <h2 style="color: #713f12; font-size: 1.6rem; margin-bottom: 0.2rem;">${data.icono} ${data.titulo}</h2>
+            <p style="color: #a16207; font-weight: 600;">${data.subtitulo}</p>
+            <p style="color: #64748b; font-size: 0.9rem;">${data.semestre} · Programa MCCEMS</p>
+          </div>
+        </div>
+        <div class="materia-contexto" style="border-left-color: #a16207; background: #fefce8; color: #713f12;">
+          <strong>📍 Contexto Chiapas:</strong> ${data.contexto}
+        </div>
+        ${data.meta ? `<div class="meta-educativa"><strong>🎯 Meta educativa:</strong> ${data.meta}</div>` : ''}
+      </div>
+
+      <div class="contenedor materia-contenido">
+        <aside class="indice indice-fisica" id="indiceFilosofia"></aside>
+        <section class="temas-detalle" id="temasDetalleFilosofia"></section>
+      </div>
+    `;
+
+    document.getElementById('btnVolverSem').addEventListener('click', () => Router.ir('filosofia'));
+    this.renderTemas(data.temas);
+  },
+
+  // Índice lateral (igual que Lengua): los temas bloqueados muestran 🔒 y no se pueden abrir
+  renderIndice(temas, completados) {
+    const indice = document.getElementById('indiceFilosofia');
+    if (!indice) return;
+
+    indice.innerHTML = `
+      <h4>📑 TEMAS (${temas.length})</h4>
+      <ul>
+        ${temas.map((t, i) => {
+          const completado = completados.includes(t.id);
+          const bloqueado = i > 0 && !Utils.modoDesarrollador() && !completados.includes(temas[i - 1].id);
+          return `
+            <li>
+              <a href="#tema-${t.id}" class="${bloqueado ? 'bloqueado' : ''}" data-target="tema-${t.id}">
+                <span style="${bloqueado ? 'opacity: 0.5;' : ''}">${bloqueado ? '🔒' : t.icono} ${t.titulo}</span>
+                ${completado ? '<span class="check">✓</span>' : ''}
+              </a>
+            </li>
+          `;
+        }).join('')}
+      </ul>
+    `;
+
+    indice.querySelectorAll('a').forEach(a => {
+      if (a.classList.contains('bloqueado')) {
+        a.addEventListener('click', (e) => e.preventDefault());
+        return;
+      }
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        Utils.scrollA(a.dataset.target);
+        indice.querySelectorAll('a').forEach(x => x.classList.remove('activo'));
+        a.classList.add('activo');
+      });
+    });
+  },
+
+  // Material de estudio ampliado (js/data/filosofia-estudio.js), plegable
+  renderEstudio(temaId) {
+    const extra = typeof FILOSOFIA_ESTUDIO !== 'undefined' && FILOSOFIA_ESTUDIO[temaId];
+    if (!extra) return '';
+    return `
+      <details class="estudio-extra">
+        <summary>📚 Estudia más sobre este tema</summary>
+        <div class="contenido-tema">${extra}</div>
+      </details>
+    `;
+  },
+
+  renderTemas(temas) {
+    const contenedor = document.getElementById('temasDetalleFilosofia');
+    const temasCompletados = this.obtenerProgreso();
+    this.renderIndice(temas, temasCompletados);
+
+    contenedor.innerHTML = temas.map((tema, index) => {
+      // El tema 1 siempre está libre; el tema N se desbloquea al aprobar el N-1 (igual que Lengua)
+      const estaBloqueado = index > 0 && !Utils.modoDesarrollador() && !temasCompletados.includes(temas[index - 1].id);
+      const estaCompletado = temasCompletados.includes(tema.id);
+      const opacityStyle = estaBloqueado ? 'opacity: 0.5; filter: grayscale(1);' : '';
+      const iconoEstado = estaBloqueado ? '🔒' : (estaCompletado ? '✅' : '📖');
+
+      return `
+      <article class="bloque-tema" id="tema-${tema.id}" style="${opacityStyle} position: relative; border-left: 6px solid ${estaBloqueado ? '#94a3b8' : '#a16207'}; padding: 0; overflow: hidden; margin-bottom: 2rem;">
+
+        ${estaBloqueado ? `
+          <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.6); z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(2px);">
+            <div style="font-size: 3rem; margin-bottom: 0.5rem;">🔒</div>
+            <p style="font-weight: bold; color: #334155; text-align: center; padding: 0 1rem;">Completa el tema anterior para desbloquear.</p>
+          </div>
+        ` : ''}
+
+        <div style="background: ${estaBloqueado ? '#cbd5e1' : (tema.imagen || '#a16207')}; padding: 1.5rem; color: #fff; display: flex; align-items: center; gap: 1rem;">
+          <div style="font-size: 2rem; background: rgba(255,255,255,0.2); border-radius: 12px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">${iconoEstado}</div>
+          <div>
+            <span style="display: block; font-size: 0.75rem; text-transform: uppercase; font-weight: bold; opacity: 0.9;">Tema ${index + 1}</span>
+            <h3 style="font-size: 1.3rem; margin: 0; color: #fff;">${tema.titulo}</h3>
+            ${tema.proposito ? `<span style="display: inline-block; margin-top: 0.4rem; background: rgba(255,255,255,0.22); padding: 0.15rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">📌 Programa MCCEMS · ${tema.proposito}</span>` : ''}
+          </div>
+        </div>
+
+        <div style="padding: 1.5rem;">
+          <div class="contenido-tema" style="margin-bottom: 1.5rem;">${tema.contenido}</div>
+          ${tema.ejemploChiapas || ''}
+          ${this.renderEstudio(tema.id)}
+
+          ${estaBloqueado ? '' : `
+          <div id="seccion-actividad-${tema.id}" style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.5rem;">🎯</span>
+                <h4 style="margin: 0; color: #1e293b;">Práctica Interactiva (Necesitas 4 aciertos para pasar)</h4>
+              </div>
+              <div style="font-size: 0.8rem; color: #a16207; font-weight: bold;" id="progreso-texto-${tema.id}">Cargando...</div>
+            </div>
+            <div id="actividad-caja-${tema.id}"></div>
+          </div>
+          `}
+        </div>
+      </article>
+      `;
+    }).join('');
+
+    // Iniciar las prácticas desbloqueadas
+    temas.forEach((tema, index) => {
+      if (index === 0 || Utils.modoDesarrollador() || temasCompletados.includes(temas[index - 1].id)) {
+        this.aciertos[tema.id] = 0;
+        this.cargarActividad(tema.id, tema.actividades, 0);
+      }
+    });
+  },
+
+  cargarActividad(temaId, actividades, index) {
+    const caja = document.getElementById(`actividad-caja-${temaId}`);
+    const progresoTxt = document.getElementById(`progreso-texto-${temaId}`);
+    if (!caja) return;
+    const aciertos = this.aciertos[temaId] || 0;
+
+    // SI COMPLETÓ TODAS LAS ACTIVIDADES (Fin del intento)
+    if (index >= actividades.length) {
+      // EVALUACIÓN: ¿Aprobó al menos 4 de 5?
+      if (aciertos >= 4) {
+        progresoTxt.innerHTML = `✅ Aprobado (${aciertos}/5)`;
+        progresoTxt.style.color = `#22c55e`;
+
+        // Guardar que este tema se completó y desbloquear la siguiente práctica
+        if (this.guardarProgreso(temaId)) {
+          setTimeout(() => {
+            this.renderTemas(this.DATA[this.semestreActual].temas);
+            document.getElementById(`tema-${temaId}`)?.scrollIntoView({ block: 'start' });
+          }, 2000);
+        }
+
+        caja.innerHTML = `
+          <div style="text-align: center; padding: 1rem;">
+            <div style="font-size: 4rem; margin-bottom: 0.5rem; animation: bounceIn 0.5s;">🏆</div>
+            <h4 style="color: #a16207; margin-bottom: 0.5rem; font-size: 1.3rem;">¡Tema Superado!</h4>
+            <p style="color: #64748b; font-size: 0.95rem;">Tuviste ${aciertos} aciertos de 5. Has desbloqueado el siguiente tema.</p>
+          </div>
+        `;
+      } else {
+        // REPROBÓ
+        progresoTxt.innerHTML = `❌ Reprobado (${aciertos}/5)`;
+        progresoTxt.style.color = `#ef4444`;
+
+        caja.innerHTML = `
+          <div style="text-align: center; padding: 1rem;">
+            <div style="font-size: 4rem; margin-bottom: 0.5rem; animation: shake 0.5s;">📚</div>
+            <h4 style="color: #ef4444; margin-bottom: 0.5rem; font-size: 1.3rem;">Necesitas repasar</h4>
+            <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1rem;">Solo acertaste ${aciertos}. Necesitas al menos 4 aciertos para avanzar. Revisa el tema y la sección «Estudia más».</p>
+            <button id="btnReintentar-${temaId}" style="background: #a16207; color: #fff; border: none; padding: 0.6rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: bold;">
+              🔄 Volver a intentar
+            </button>
+          </div>
+        `;
+
+        document.getElementById(`btnReintentar-${temaId}`).addEventListener('click', () => {
+          this.aciertos[temaId] = 0; // Reiniciar contador
+          this.cargarActividad(temaId, actividades, 0);
+        });
+      }
+      return;
+    }
+
+    const act = actividades[index];
+
+    // Mezcla las opciones en cada intento
+    const opcionesMezcladas = [...act.opciones].sort(() => Math.random() - 0.5);
+
+    progresoTxt.innerHTML = `Actividad ${index + 1} de ${actividades.length} | Aciertos: ${aciertos}`;
+    progresoTxt.style.color = '#a16207';
+
+    caja.innerHTML = `
+      <p style="font-weight: 600; margin-bottom: 1rem; color: #334155; font-size: 1.05rem;">${act.pregunta}</p>
+      <div style="display: flex; flex-direction: column; gap: 0.6rem;" id="opciones-${temaId}-${index}">
+        ${opcionesMezcladas.map((op, i) => `
+          <button class="btn-opcion-filosofia"
+                  data-tema="${temaId}" data-index="${index}" data-opcion="${op}"
+                  data-correcta="${act.correcta}" data-explicacion="${act.explicacion}" data-total="${actividades.length}"
+                  style="background: #ffffff; border: 2px solid #e2e8f0; padding: 0.8rem 1rem; border-radius: 8px; text-align: left; font-size: 0.95rem; cursor: pointer; transition: all 0.2s;">
+            <span style="font-weight: bold; color: #64748b; margin-right: 0.5rem;">${String.fromCharCode(65 + i)})</span> ${op}
+          </button>
+        `).join('')}
+      </div>
+      <div id="feedback-${temaId}-${index}" style="display: none; margin-top: 1rem;"></div>
+    `;
+
+    caja.querySelectorAll('.btn-opcion-filosofia').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const target = e.currentTarget;
+        this.comprobarRespuesta(target.dataset.tema, target.dataset.opcion, target.dataset.correcta, target.dataset.explicacion, parseInt(target.dataset.index), parseInt(target.dataset.total));
+      });
+      btn.addEventListener('mouseenter', (e) => e.currentTarget.style.borderColor = '#a16207');
+      btn.addEventListener('mouseleave', (e) => e.currentTarget.style.borderColor = '#e2e8f0');
+    });
+  },
+
+  comprobarRespuesta(temaId, seleccion, correcta, explicacion, indexActual, totalActividades) {
+    const feedback = document.getElementById(`feedback-${temaId}-${indexActual}`);
+    const botones = document.querySelectorAll(`#opciones-${temaId}-${indexActual} button`);
+    const esCorrecta = (seleccion === correcta);
+
+    if (esCorrecta) {
+      this.aciertos[temaId] = (this.aciertos[temaId] || 0) + 1;
+      // Actualizar el contador en la pantalla
+      document.getElementById(`progreso-texto-${temaId}`).innerHTML = `Actividad ${indexActual + 1} de ${totalActividades} | Aciertos: ${this.aciertos[temaId]}`;
+    }
+
+    botones.forEach(btn => {
+      btn.disabled = true;
+      btn.style.cursor = 'default';
+      const opcion = btn.dataset.opcion;
+
+      if (opcion === correcta) {
+        btn.style.background = '#dcfce7'; btn.style.borderColor = '#22c55e'; btn.style.color = '#166534';
+        btn.innerHTML = `✅ ${btn.innerHTML}`;
+      } else if (opcion === seleccion && !esCorrecta) {
+        btn.style.background = '#fee2e2'; btn.style.borderColor = '#ef4444'; btn.style.color = '#991b1b';
+        btn.innerHTML = `❌ ${btn.innerHTML}`;
+      } else {
+        btn.style.opacity = '0.5';
+      }
+    });
+
+    feedback.style.display = 'block';
+    feedback.style.padding = '1rem';
+    feedback.style.borderRadius = '8px';
+
+    if (esCorrecta) {
+      feedback.style.background = '#dcfce7'; feedback.style.borderLeft = '4px solid #22c55e';
+      feedback.innerHTML = `<strong style="color: #166534;">¡Correcto! +20 XP</strong><br><span style="color: #166534; font-size: 0.9rem;">${explicacion}</span>`;
+      this.guardarXP(20);
+    } else {
+      feedback.style.background = '#fee2e2'; feedback.style.borderLeft = '4px solid #ef4444';
+      feedback.innerHTML = `<strong style="color: #991b1b;">Incorrecto.</strong><br><span style="color: #991b1b; font-size: 0.9rem;">${explicacion}</span>`;
+    }
+
+    const btnSiguiente = document.createElement('button');
+    btnSiguiente.innerText = (indexActual + 1 === totalActividades) ? "Ver Resultados 🏁" : "Siguiente Actividad →";
+    btnSiguiente.style.cssText = "margin-top: 1rem; background: #a16207; color: #fff; border: none; padding: 0.6rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.9rem; float: right; transition: transform 0.2s;";
+
+    btnSiguiente.addEventListener('click', () => {
+      const tema = this.DATA[this.semestreActual].temas.find(t => t.id === temaId);
+      this.cargarActividad(temaId, tema.actividades, indexActual + 1);
+    });
+
+    btnSiguiente.addEventListener('mouseenter', () => btnSiguiente.style.transform = 'scale(1.05)');
+    btnSiguiente.addEventListener('mouseleave', () => btnSiguiente.style.transform = 'scale(1)');
+
+    feedback.appendChild(btnSiguiente);
+    const clearDiv = document.createElement('div');
+    clearDiv.style.clear = 'both';
+    feedback.appendChild(clearDiv);
+  },
+
+  guardarXP(puntos) {
+    let xp = parseInt(localStorage.getItem('emsad_filosofia_xp') || '0');
+    localStorage.setItem('emsad_filosofia_xp', xp + puntos);
+    this.mostrarToast(`+${puntos} XP Ganados! 🦉`);
+  },
+
+  mostrarToast(mensaje) {
+    const toast = document.createElement('div');
+    toast.style.cssText = "position: fixed; bottom: 30px; right: 30px; background: #a16207; color: #fff; padding: 1rem 1.5rem; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 9999; animation: slideIn 0.3s;";
+    toast.textContent = mensaje;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+};

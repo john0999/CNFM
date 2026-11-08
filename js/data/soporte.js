@@ -1,86 +1,85 @@
 /* ==========================================================
-   DATA - Soporte y Contacto
+   DATA - Centro de Soporte
+   Solo canales de soporte: WhatsApp y correo.
 ========================================================== */
 
 const SOPORTE = {
-  titulo: "📬 Soporte y Contacto",
-  subtitulo: "¿Tienes dudas, sugerencias o encontraste un error? Escríbenos.",
-  
-  // ===== Web3Forms =====
+  titulo: "🛟 Centro de Soporte",
+  subtitulo: "¿Algo no funciona, encontraste un error o tienes una duda sobre la app? Escríbenos y te ayudamos.",
+
+  // ===== Correo de soporte =====
+  // No se muestra escrito en la página: solo se usa en el botón «Escribir un correo».
+  correo: "moralesgomezjohnny@gmail.com",
+
+  // ===== Web3Forms (envío del formulario) =====
   web3forms: {
     endpoint: "https://api.web3forms.com/submit",
-    accessKey: "dbe1ab12-e847-4372-8bff-1285077480d6"    // ← Tu access key
-  },
-
-  // ===== Información del desarrollador =====
-  desarrollador: {
-    nombre: "Johnny Morales",              // ← CAMBIA ESTO
-    rol: "ING. EN DESARROLLO Y GESTION DE SOFTWARE",          // ← CAMBIA ESTO
-    descripcion: "Soy desarrollador y egresado del Plantel 204 Tzobojitle Jotoaquil. Apasionado por la tecnología y la educación, creé este portal para apoyar a los estudiantes de EMSAD con recursos claros, accesibles y útiles para su formación.",
-    avatar: "👨‍💻",                             // ← Puedes poner un emoji o URL de imagen
-    ubicacion: "Chiapas, México",
-    año: "2026"
+    accessKey: "dbe1ab12-e847-4372-8bff-1285077480d6"
   },
 
   // ===== Canales de contacto =====
-  // Elige los que uses y borra los que no
   canales: [
     {
-      tipo: "email",
-      icono: "📧",
-      titulo: "Correo electrónico",
-      valor: "moralesgomezjohnny@gmail.com",           // ← CAMBIA ESTO
-      enlace: "mailto:moralesgomezjohnny@gmail.com",
-      descripcion: "Respuesta en 24-48 horas"
+      tipo: "whatsapp",
+      icono: '<i class="fa-brands fa-whatsapp"></i>',
+      titulo: "Canal de WhatsApp",
+      descripcion: "Sigue el canal oficial de Quantix para recibir avisos, novedades y actualizaciones.",
+      accion: "Seguir el canal",
+      enlace: "https://whatsapp.com/channel/0029Vb96OZrDuMRozgYqyc1n"
     },
     {
-      tipo: "github",
-      icono: "🐙",
-      titulo: "GitHub",
-      valor: "john0999",                      // ← CAMBIA ESTO
-      enlace: "https://github.com/john0999",
-      descripcion: "Reporta errores técnicos"
-    },
-    {
-      tipo: "QUANTIX",
-      icono: "",
-      titulo: "WhatsApp",
-      valor: "QUANTIX",                      // ← CAMBIA ESTO
-      enlace: "https://whatsapp.com/channel/0029Vb96OZrDuMRozgYqyc1n",
-      descripcion: "Sigue el canal de Quantix en WhatsApp"
+      tipo: "correo",
+      icono: '<i class="fa-solid fa-envelope"></i>',
+      titulo: "Correo de soporte",
+      descripcion: "Para reportes, dudas técnicas o enviar capturas de pantalla. Respuesta en 24 a 48 horas hábiles.",
+      accion: "Escribir un correo",
+      enlace: "correo" // se arma con SOPORTE.correo
     }
+  ],
+
+  // ===== Antes de escribir =====
+  consejos: [
+    { icono: "📚", texto: "Indica la <strong>materia, el semestre y el tema</strong> donde está el problema." },
+    { icono: "📱", texto: "Dinos qué <strong>dispositivo y navegador</strong> usas (por ejemplo: celular Android con Chrome)." },
+    { icono: "🖼️", texto: "Si puedes, envía una <strong>captura de pantalla</strong> por correo." },
+    { icono: "🔄", texto: "Si no ves un cambio reciente, <strong>cierra y vuelve a abrir</strong> la app antes de reportarlo." }
   ],
 
   // ===== Tipos de mensaje para el formulario =====
   tiposMensaje: [
+    { value: "error",      label: "🐛 Reportar un error en el contenido" },
+    { value: "tecnico",    label: "⚙️ Problema técnico (no carga, no se guarda mi avance)" },
+    { value: "duda",       label: "❓ Duda sobre cómo usar la app" },
     { value: "sugerencia", label: "💡 Sugerencia" },
-    { value: "error",      label: "🐛 Reportar error" },
-    { value: "contenido",  label: "📚 Solicitar contenido" },
-    { value: "colaboracion", label: "🤝 Colaboración" },
+    { value: "contenido",  label: "📚 Solicitar un tema o materia" },
     { value: "otro",       label: "💬 Otro" }
   ],
 
   // ===== Preguntas frecuentes =====
   faq: [
     {
-      pregunta: "¿Cómo puedo reportar un error en el contenido?",
-      respuesta: "Usa el formulario con la opción 'Reportar error', o escríbenos por Correo. Menciona la materia, semestre y tema donde encontraste el error."
+      pregunta: "Un tema sigue bloqueado aunque ya contesté el anterior. ¿Qué hago?",
+      respuesta: "Cada tema se desbloquea al aprobar el anterior con al menos 4 de 5 aciertos. Si tuviste 3 o menos, repasa el tema y la sección «Estudia más», y vuelve a intentarlo."
+    },
+    {
+      pregunta: "Perdí mi avance o mis XP. ¿Por qué?",
+      respuesta: "Tu avance se guarda en el navegador de tu dispositivo. Si borras los datos del navegador, usas modo incógnito o cambias de celular, el avance no se conserva."
+    },
+    {
+      pregunta: "No veo los temas o cambios nuevos.",
+      respuesta: "La app guarda una copia para funcionar sin internet. Cierra todas las pestañas de Quantix y vuelve a abrirla con conexión: se actualizará sola."
+    },
+    {
+      pregunta: "¿La app funciona sin internet?",
+      respuesta: "Sí. Después de la primera visita con conexión, funciona sin internet. Puedes instalarla desde el menú del navegador con la opción «Instalar app» o «Agregar a pantalla de inicio»."
+    },
+    {
+      pregunta: "¿Cómo reporto un error en el contenido?",
+      respuesta: "Usa el formulario con la opción «Reportar un error en el contenido» y menciona la materia, el semestre y el tema. Si es una pregunta con la respuesta equivocada, copia la pregunta."
     },
     {
       pregunta: "¿Puedo usar este material en mi escuela?",
-      respuesta: "¡Sí! El contenido es de libre uso con fines educativos. Solo te pedimos mencionar la fuente cuando lo compartas."
-    },
-    {
-      pregunta: "¿Van a agregar más materias o temas?",
-      respuesta: "Sí, estamos trabajando constantemente. Envía tu sugerencia con la opción 'Solicitar contenido' y lo tomaremos en cuenta."
-    },
-    {
-      pregunta: "¿La página funciona sin internet?",
-      respuesta: "Sí, está configurada como PWA. Después de la primera visita, funciona sin conexión. Puedes instalarla desde el menú del navegador."
+      respuesta: "Sí. El contenido es de libre uso con fines educativos. Solo te pedimos mencionar a Quantix como fuente."
     }
-  ],
-
-  // ===== Cómo se reciben los mensajes =====
-  // Formspree (gratis, sin backend) - solo 1 paso
-  // formEndpoint: "https://formspree.io/f/TU-CODIGO",  // ← CAMBIA ESTO (ver instrucciones abajo)
+  ]
 };

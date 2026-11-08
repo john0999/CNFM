@@ -2,6 +2,90 @@
    APP - Punto de entrada (actualizado para Router v2)
 ========================================================== */
 
+/* ===== Menú desplegable «Materias» =====
+   Se construye desde MATERIAS (js/data/materias.js): agregar una
+   materia al catálogo la agrega automáticamente al menú. */
+const MenuMaterias = {
+  iniciar() {
+    this.contenedor = document.getElementById('navMaterias');
+    this.boton = document.getElementById('btnMaterias');
+    this.panel = document.getElementById('panelMaterias');
+    if (!this.contenedor || !this.boton || !this.panel || typeof MATERIAS === 'undefined') return;
+
+    this.panel.innerHTML = MATERIAS_GRUPOS.map(grupo => {
+      const materias = MATERIAS.filter(m => m.grupo === grupo.id);
+      if (!materias.length) return '';
+      return `
+        <p class="panel-titulo">${grupo.titulo}</p>
+        <div class="panel-grid">
+          ${materias.map(m => `
+            <a href="#/${m.id}" data-route="${m.id}" class="materia-link" role="menuitem" style="--materia: ${m.color};">
+              <span class="materia-link-icono"><i class="fa-solid ${m.icono}"></i></span>
+              <span class="materia-link-texto">
+                <strong>${m.nombre}</strong>
+                <small>${m.titulo !== m.nombre ? m.titulo : m.descripcion}</small>
+              </span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    }).join('');
+
+    this.boton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.alternar();
+    });
+
+    // Cerrar al elegir una materia, al hacer clic fuera o con Escape
+    this.panel.addEventListener('click', (e) => {
+      if (e.target.closest('a')) this.cerrar();
+    });
+    document.addEventListener('click', (e) => {
+      if (!this.contenedor.contains(e.target)) this.cerrar();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.estaAbierto()) {
+        this.cerrar();
+        this.boton.focus();
+      }
+    });
+    window.addEventListener('hashchange', () => this.cerrar());
+  },
+
+  estaAbierto() {
+    return this.contenedor.classList.contains('abierto');
+  },
+
+  alternar() {
+    this.estaAbierto() ? this.cerrar() : this.abrir();
+  },
+
+  abrir() {
+    this.contenedor.classList.add('abierto');
+    this.boton.setAttribute('aria-expanded', 'true');
+    this.acomodarPanel();
+  },
+
+  // En pantalla grande el panel flota: se recorre a la izquierda si no cabe a la derecha
+  acomodarPanel() {
+    this.panel.style.left = '';
+    if (getComputedStyle(this.panel).position !== 'absolute') return; // en celular es un acordeón
+    const margen = 16;
+    const caja = this.panel.getBoundingClientRect();
+    const exceso = caja.right - (window.innerWidth - margen);
+    if (exceso > 0) {
+      const desplazamiento = Math.min(exceso, caja.left - margen);
+      this.panel.style.left = `${-desplazamiento}px`;
+    }
+  },
+
+  cerrar() {
+    if (!this.contenedor) return;
+    this.contenedor.classList.remove('abierto');
+    this.boton.setAttribute('aria-expanded', 'false');
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // ===== Registrar rutas con títulos =====
   Router.registrar('home',
@@ -36,6 +120,16 @@ document.addEventListener('DOMContentLoaded', () => {
   Router.registrar('ingles',
     (c, params) => VistaIngles.render(c, params),
     { titulo: 'Inglés' }
+  );
+
+  Router.registrar('filosofia',
+    (c, params) => VistaFilosofia.render(c, params),
+    { titulo: 'Pensamiento Filosófico y Humanidades' }
+  );
+
+  Router.registrar('cultura-digital',
+    (c, params) => VistaCulturaDigital.render(c, params),
+    { titulo: 'Cultura Digital' }
   );
 
   Router.registrar('quiz',
@@ -88,6 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
     (c) => VistaTablaPeriodica.render(c),
     { titulo: 'Tabla Periódica Interactiva' }
   );
+  // ===== Menú «Materias» (antes de iniciar el router para que marque la materia activa) =====
+  MenuMaterias.iniciar();
+
   // ===== Iniciar router =====
   Router.iniciar();
   Utils.mostrarAvisoDesarrollador();

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 290" role="img"><title>Alegoría de la caverna de Platón: sombras, fuego, prisioneros y salida a la luz</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <rect width="520" height="290" fill="#fef3c7"/>
+    <path d="M0 290 L0 40 Q150 10 330 40 L330 120 Q400 110 430 60 L520 60 L520 290 Z" fill="#78350f"/>
+    <path d="M20 270 L20 70 Q160 45 310 70 L310 270 Z" fill="#451a03"/>
+    <rect x="22" y="80" width="10" height="180" fill="#a8a29e"/>
+    <ellipse cx="60" cy="90" rx="18" ry="12" fill="#57534e"/><ellipse cx="60" cy="140" rx="18" ry="12" fill="#57534e"/><ellipse cx="60" cy="190" rx="18" ry="12" fill="#57534e"/>
+    <text x="48" y="230" font-family="Arial, sans-serif" font-size="12"  fill="#fde68a" font-weight="bold" transform="rotate(-90 48 230)">sombras</text>
+    <circle cx="125" cy="110" r="9" fill="#e7e5e4"/><rect x="118" y="119" width="14" height="22" rx="5" fill="#e7e5e4"/><circle cx="125" cy="160" r="9" fill="#e7e5e4"/><rect x="118" y="169" width="14" height="22" rx="5" fill="#e7e5e4"/><circle cx="125" cy="210" r="9" fill="#e7e5e4"/><rect x="118" y="219" width="14" height="22" rx="5" fill="#e7e5e4"/>
+    <text x="140" y="260" font-family="Arial, sans-serif" font-size="11"  fill="#fde68a">prisioneros encadenados</text>
+    <rect x="175" y="90" width="12" height="150" fill="#57534e"/>
+    <text x="168" y="82" font-family="Arial, sans-serif" font-size="11"  fill="#fde68a">muro</text>
+    <path d="M250 200 q-12 -30 0 -50 q12 20 0 50 Z" fill="#f97316"/><path d="M250 200 q-6 -18 0 -30 q6 12 0 30 Z" fill="#fde047"/>
+    <text x="232" y="222" font-family="Arial, sans-serif" font-size="12"  fill="#fde68a" font-weight="bold">fuego</text>
+    <line x1="245" y1="160" x2="40" y2="140" stroke="#fde047" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <circle cx="470" cy="45" r="24" fill="#facc15"/><text x="470" y="90" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">sol</text>
+    <path d="M300 180 Q360 150 410 90" fill="none" stroke="#fde68a" stroke-width="3" stroke-dasharray="8 5" marker-end="url(#fl)"/>
+    <text x="352" y="182" font-family="Arial, sans-serif" font-size="11"  fill="#fef3c7" font-weight="bold">salida a la luz:</text>
+    <text x="352" y="197" font-family="Arial, sans-serif" font-size="11"  fill="#fef3c7">conocimiento</text>
+    <text x="260" y="25" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" fill="#fef3c7" font-weight="bold">Lo que vemos, ¿es la realidad o solo su apariencia?</text></svg>

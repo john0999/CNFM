@@ -6,7 +6,7 @@
 
 const AGENTE = {
     titulo: "🤖 Asistente CienTIA",
-    subtitulo: "Tu tutor virtual para dudas de Ciencias, Química, Matemáticas, Física, Inglés y Lengua",
+    subtitulo: "Tu tutor virtual para dudas de todas tus materias del bachillerato",
 
     // ===== Configuración (apunta al Worker, sin API Key) =====
     config: {
@@ -21,9 +21,10 @@ const AGENTE = {
         { texto: "Explícame la Ley de Ohm", icono: "⚡" },
         { texto: "¿Cómo balanceo una ecuación química?", icono: "⚗️" },
         { texto: "¿Qué es una función cuadrática?", icono: "📐" },
-        { texto: "Diferencia entre célula procariota y eucariota", icono: "🧬" },
         { texto: "¿Cuándo uso el presente simple en inglés?", icono: "💬" },
         { texto: "¿Qué es una figura retórica?", icono: "📖" },
+        { texto: "¿Qué es la alegoría de la caverna de Platón?", icono: "🦉" },
+        { texto: "¿Qué son las 4 libertades del software libre?", icono: "💻" },
         { texto: "¿Quién es CienTIA?", icono: "👋" }
     ],
 
@@ -32,7 +33,7 @@ const AGENTE = {
         bienvenida: `¡Hola! 👋 Soy CienTIA, tu asistente de Quantix.
 
 Puedo ayudarte con:
-- 📚 Dudas de Química, Física, Biología, Matemáticas, Inglés y Lengua
+- 📚 Dudas de Ciencias, Química, Física, Matemáticas, Inglés, Lengua, Filosofía y Cultura Digital
 - ✏️ Explicaciones paso a paso
 - 💡 Ejemplos contextualizados a Chiapas
 

@@ -3,7 +3,7 @@
    Estructura: raíz con index.html, sw.js, /css /js /images /views
    ============================================================ */
 
-const CACHE_VERSION = 'v23'; // ⬅️ Sube este número cada vez que actualices
+const CACHE_VERSION = 'v26'; // ⬅️ Sube este número cada vez que actualices
 const CACHE_NAME = `quantix-ciencias-${CACHE_VERSION}`;
 
 // Detecta la ruta base automáticamente (funciona en raíz o subcarpeta)
@@ -64,6 +64,16 @@ const ASSETS = [
     'adverbios-frecuencia', 'comparativos-altitud', 'linea-tiempo-verbos', 'mapa-direcciones', 'preposiciones-lugar', 'reloj-horas'
   ].map(nombre => BASE + `images/ingles/${nombre}.svg`),
 
+  // Imágenes de Pensamiento Filosófico y Humanidades (diagramas)
+  ...[
+    'caverna-platon', 'estructura-argumento', 'pensamiento-complejo'
+  ].map(nombre => BASE + `images/filosofia/${nombre}.svg`),
+
+  // Imágenes de Cultura Digital (diagramas)
+  ...[
+    'diagrama-flujo', 'partes-computadora', 'redes-alcance'
+  ].map(nombre => BASE + `images/cultura-digital/${nombre}.svg`),
+
   // JS raíz
   BASE + 'js/app.js',
 
@@ -113,6 +123,9 @@ const ASSETS = [
   BASE + 'js/data/tabla-periodica.js',
   BASE + 'js/data/ingles.js',
   BASE + 'js/data/ingles-estudio.js',
+  BASE + 'js/data/filosofia.js',
+  BASE + 'js/data/cultura-digital.js',
+  BASE + 'js/data/materias.js',
   BASE + 'js/data/lengua.js',
   BASE + 'js/data/lengua-estudio.js',
 
@@ -129,6 +142,8 @@ const ASSETS = [
   BASE + 'js/views/vista-fisica.js',
   BASE + 'js/views/vista-quimica.js',
   BASE + 'js/views/vista-ingles.js',
+  BASE + 'js/views/vista-filosofia.js',
+  BASE + 'js/views/vista-cultura-digital.js',
   BASE + 'js/views/vista-matematicas.js',
   BASE + 'js/views/vista-ciencias.js',
   BASE + 'js/views/vista-quiz.js',

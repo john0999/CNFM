@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quantix</title>
   <meta name="description"
-    content="Portal educativo de Ciencias Naturales, Matemáticas, Física y Probabilidad para estudiantes de EMSAD Chiapas.">
+    content="Portal educativo de bachillerato para EMSAD Chiapas: Ciencias, Química, Física, Matemáticas, Lengua, Inglés, Filosofía y Cultura Digital, alineado al programa MCCEMS.">
 
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,7 +36,7 @@
             Quantix
           </h1>
           <p style="margin: 0; font-size: 0.75rem; color: #666; font-style: italic;">
-            Ciencias, Química, Matemáticas, Física y Probabilidad
+            Tu bachillerato en un solo lugar · Programa MCCEMS
           </p>
         </div>
       </a>
@@ -45,12 +45,16 @@
 
       <nav id="nav" class="nav">
         <a href="#/" data-route="home"><i class="fa-solid fa-house" style="color: #64748b;"></i> Inicio</a>
-        <a href="#/ciencias" data-route="ciencias"><i class="fa-solid fa-microscope" style="color: #7fdf12;"></i> Ciencias</a>
-        <a href="#/quimica" data-route="quimica"><i class="fa-solid fa-flask" style="color: #dc2626;"></i> Química</a>
-        <a href="#/matematicas" data-route="matematicas"><i class="fa-solid fa-calculator" style="color: #2563eb;"></i> Matemáticas</a>
-        <a href="#/fisica" data-route="fisica"><i class="fa-solid fa-bolt" style="color: #7c3aed;"></i> Física</a>
-        <a href="#/ingles" data-route="ingles"><i class="fa-solid fa-language" style="color: #3b82f6;"></i> Inglés</a>
-        <a href="#/lengua" data-route="lengua"><i class="fa-solid fa-book-open" style="color: #e11d48;"></i> Lengua</a>
+
+        <!-- Menú «Materias»: el panel se llena desde js/data/materias.js -->
+        <div class="nav-materias" id="navMaterias">
+          <button type="button" class="nav-materias-btn" id="btnMaterias" aria-expanded="false" aria-controls="panelMaterias">
+            <i class="fa-solid fa-layer-group" style="color: #0d9488;"></i> Materias
+            <i class="fa-solid fa-chevron-down nav-flecha" aria-hidden="true"></i>
+          </button>
+          <div class="panel-materias" id="panelMaterias" role="menu"></div>
+        </div>
+
         <a href="#/simuladores" data-route="simuladores"><i class="fa-solid fa-atom" style="color: #8b5cf6;"></i> Simuladores</a>
         <a href="#/herramientas" data-route="herramientas"><i class="fa-solid fa-screwdriver-wrench" style="color: #475569;"></i> Herramientas</a>
       </nav>
@@ -103,6 +107,9 @@
   <script src="js/data/tabla-periodica.js"></script>
   <script src="js/data/ingles.js"></script>
   <script src="js/data/ingles-estudio.js"></script>
+  <script src="js/data/filosofia.js"></script>
+  <script src="js/data/cultura-digital.js"></script>
+  <script src="js/data/materias.js"></script>
   <script src="js/data/lengua.js"></script>
   <script src="js/data/lengua-estudio.js"></script>
 
@@ -120,6 +127,8 @@
   <script src="js/views/vista-quimica.js"></script>
   <script src="js/views/vista-laboratorio.js"></script>
   <script src="js/views/vista-ingles.js"></script>
+  <script src="js/views/vista-filosofia.js"></script>
+  <script src="js/views/vista-cultura-digital.js"></script>
   <script src="js/views/vista-matematicas.js"></script>
   <script src="js/views/vista-ciencias.js"></script>
   <script src="js/views/vista-quiz.js"></script>

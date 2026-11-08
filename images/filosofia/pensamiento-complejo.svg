@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 330" role="img"><title>Pensamiento complejo: crítico, creativo y cuidadoso</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <circle cx="170" cy="130" r="95" fill="#2563eb" fill-opacity="0.28" stroke="#1d4ed8" stroke-width="3"/>
+    <circle cx="290" cy="130" r="95" fill="#ca8a04" fill-opacity="0.28" stroke="#a16207" stroke-width="3"/>
+    <circle cx="230" cy="215" r="95" fill="#db2777" fill-opacity="0.25" stroke="#be185d" stroke-width="3"/>
+    <text x="125" y="100" font-family="Arial, sans-serif" font-size="15"  text-anchor="middle" font-weight="bold" fill="#1d4ed8">CRÍTICO</text>
+    <text x="125" y="118" font-family="Arial, sans-serif" font-size="11"  text-anchor="middle" fill="#1e3a8a">problematizar</text>
+    <text x="125" y="133" font-family="Arial, sans-serif" font-size="11"  text-anchor="middle" fill="#1e3a8a">argumentar</text>
+    <text x="125" y="148" font-family="Arial, sans-serif" font-size="11"  text-anchor="middle" fill="#1e3a8a">pensar por sí</text>
+    <text x="335" y="100" font-family="Arial, sans-serif" font-size="15"  text-anchor="middle" font-weight="bold" fill="#a16207">CREATIVO</text>
+    <text x="335" y="118" font-family="Arial, sans-serif" font-size="11"  text-anchor="middle" fill="#713f12">hipótesis</text>
+    <text x="335" y="133" font-family="Arial, sans-serif" font-size="11"  text-anchor="middle" fill="#713f12">ejemplos</text>
+    <text x="335" y="148" font-family="Arial, sans-serif" font-size="11"  text-anchor="middle" fill="#713f12">alternativas</text>
+    <text x="230" y="262" font-family="Arial, sans-serif" font-size="15"  text-anchor="middle" font-weight="bold" fill="#be185d">CUIDADOSO</text>
+    <text x="230" y="280" font-family="Arial, sans-serif" font-size="11"  text-anchor="middle" fill="#831843">escucha · emociones</text>
+    <text x="230" y="295" font-family="Arial, sans-serif" font-size="11"  text-anchor="middle" fill="#831843">dar y recibir la palabra</text>
+    <text x="230" y="165" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">Comunidad</text>
+    <text x="230" y="181" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">de diálogo</text>
+    <text x="230" y="24" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="bold">Las tres dimensiones del pensamiento complejo (Lipman)</text></svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" role="img"><title>Redes PAN, LAN, MAN y WAN según su alcance</title>
+<defs><marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#334155"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+    <circle cx="260" cy="160" r="135" fill="#0e7490" fill-opacity="0.08" stroke="#0e7490" stroke-width="2.5"/>
+    <circle cx="260" cy="175" r="100" fill="#7c3aed" fill-opacity="0.08" stroke="#7c3aed" stroke-width="2.5"/>
+    <circle cx="260" cy="192" r="66" fill="#2563eb" fill-opacity="0.10" stroke="#2563eb" stroke-width="2.5"/>
+    <circle cx="260" cy="212" r="32" fill="#047857" fill-opacity="0.18" stroke="#047857" stroke-width="2.5"/>
+    <text x="260" y="210" font-family="Arial, sans-serif" font-size="13" text-anchor="middle"  font-weight="bold" fill="#047857">PAN</text><text x="260" y="225" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e293b" >metros</text>
+    <text x="260" y="150" font-family="Arial, sans-serif" font-size="13" text-anchor="middle"  font-weight="bold" fill="#2563eb">LAN</text><text x="260" y="164" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e293b" >casa · escuela</text>
+    <text x="260" y="96" font-family="Arial, sans-serif" font-size="13" text-anchor="middle"  font-weight="bold" fill="#7c3aed">MAN</text><text x="260" y="110" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e293b" >ciudad</text>
+    <text x="260" y="45" font-family="Arial, sans-serif" font-size="13" text-anchor="middle"  font-weight="bold" fill="#0e7490">WAN</text><text x="260" y="59" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e293b" >países · internet</text>
+    <text x="70" y="120" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"  font-weight="bold" fill="#475569">Más alcance</text><line x1="70" y1="250" x2="70" y2="132" stroke="#334155" stroke-width="2" marker-end="url(#fl)"/>
+    <text x="450" y="120" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"  font-weight="bold" fill="#475569">Ejemplos</text>
+    <text x="450" y="145" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1e293b" >Bluetooth</text><text x="450" y="163" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1e293b" >wifi del plantel</text><text x="450" y="181" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1e293b" >red municipal</text><text x="450" y="199" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1e293b" >internet</text></svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 250" role="img"><title>Estructura de un argumento: premisas que sostienen una conclusión</title>
+<defs>
+  <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="context-stroke"/></marker>
+</defs>
+    <rect x="20" y="40" width="225" height="62" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="132" y="62" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" font-weight="bold" fill="#1d4ed8">Premisa 1</text>
+    <text x="132" y="82" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">Todos los seres humanos</text><text x="132" y="96" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">son mortales.</text>
+    <rect x="275" y="40" width="225" height="62" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="387" y="62" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" font-weight="bold" fill="#1d4ed8">Premisa 2</text>
+    <text x="387" y="82" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">Sócrates es un ser humano.</text>
+    <line x1="132" y1="102" x2="245" y2="150" stroke="#475569" stroke-width="2.5" marker-end="url(#fl)"/>
+    <line x1="387" y1="102" x2="275" y2="150" stroke="#475569" stroke-width="2.5" marker-end="url(#fl)"/>
+    <rect x="145" y="155" width="230" height="56" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="260" y="177" font-family="Arial, sans-serif" font-size="13"  text-anchor="middle" font-weight="bold" fill="#15803d">Conclusión</text>
+    <text x="260" y="197" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">Por lo tanto, Sócrates es mortal.</text>
+    <text x="260" y="24" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="bold">Silogismo: si las premisas son verdaderas y la forma es válida, la conclusión es verdadera</text>
+    <text x="260" y="238" font-family="Arial, sans-serif" font-size="11"  text-anchor="middle" fill="#64748b">Indicadores: «porque», «ya que» (premisa) · «por lo tanto», «en consecuencia» (conclusión)</text></svg>

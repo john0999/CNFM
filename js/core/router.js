@@ -177,6 +177,12 @@ const Router = {
       const routeAttr = a.dataset.route || a.getAttribute('href')?.replace(/^#\//, '');
       a.classList.toggle('activo', routeAttr === ruta);
     });
+
+    // El botón «Materias» se marca cuando la ruta es una de las materias del catálogo
+    const btnMaterias = document.getElementById('btnMaterias');
+    if (btnMaterias && typeof MATERIAS !== 'undefined') {
+      btnMaterias.classList.toggle('activo', MATERIAS.some(m => m.id === ruta));
+    }
   },
 
   // ===== Utilidades =====

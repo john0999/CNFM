@@ -1,12 +1,13 @@
 /* ==========================================================
-   VIEW - SOPORTE Y CONTACTO
-   Versión corregida: bug reset, honeypot, timeout, a11y
+   VIEW - CENTRO DE SOPORTE
+   Canales (WhatsApp y correo), consejos, formulario y FAQ.
+   Formulario con honeypot, timeout y mensajes accesibles.
 ========================================================== */
 
 const VistaSoporte = {
   render(contenedor) {
     const s = SOPORTE;
-    const dev = s.desarrollador;
+    const enlaceCorreo = `mailto:${s.correo}?subject=${encodeURIComponent('Soporte Quantix')}`;
 
     contenedor.innerHTML = `
       <div class="soporte-header">
@@ -17,35 +18,29 @@ const VistaSoporte = {
       </div>
 
       <div class="contenedor soporte-contenido">
-        <!-- ===== Tarjeta del desarrollador ===== -->
-        <section class="dev-card">
-          <div class="dev-avatar">${dev.avatar}</div>
-          <div class="dev-info">
-            <h3>${dev.nombre}</h3>
-            <p class="dev-rol">${dev.rol}</p>
-            <p class="dev-descripcion">${dev.descripcion}</p>
-            <p class="dev-meta">
-              <span>📍 ${dev.ubicacion}</span>
-              <span>📅 ${dev.año}</span>
-            </p>
-          </div>
-        </section>
-
-        <!-- ===== Canales de contacto ===== -->
+        <!-- ===== Canales de contacto: WhatsApp y correo ===== -->
         <section class="soporte-seccion">
-          <h3 class="seccion-titulo">🌐 Canales de contacto</h3>
+          <h3 class="seccion-titulo">📞 Canales de soporte</h3>
           <div class="grid-canales">
             ${s.canales.map(c => `
-              <a href="${c.enlace}" target="_blank" rel="noopener" class="canal-card">
+              <a href="${c.enlace === 'correo' ? enlaceCorreo : c.enlace}" ${c.enlace === 'correo' ? '' : 'target="_blank" rel="noopener"'} class="canal-card canal-${c.tipo}">
                 <span class="canal-icono">${c.icono}</span>
                 <div>
                   <h4>${c.titulo}</h4>
-                  <p class="canal-valor">${c.valor}</p>
                   <p class="canal-desc">${c.descripcion}</p>
+                  <span class="canal-accion">${c.accion} →</span>
                 </div>
               </a>
             `).join('')}
           </div>
+        </section>
+
+        <!-- ===== Antes de escribir ===== -->
+        <section class="soporte-seccion">
+          <h3 class="seccion-titulo">📝 Antes de escribirnos</h3>
+          <ul class="soporte-consejos">
+            ${s.consejos.map(c => `<li><span>${c.icono}</span><p>${c.texto}</p></li>`).join('')}
+          </ul>
         </section>
 
         <!-- ===== Formulario ===== -->
@@ -59,9 +54,9 @@ const VistaSoporte = {
 
             <div class="form-fila">
               <div class="form-grupo">
-                <label for="nombre">Nombre completo *</label>
+                <label for="nombre">Nombre *</label>
                 <input type="text" id="nombre" name="nombre" required
-                       placeholder="Ej: Juan Pérez López">
+                       placeholder="Ej: Ana López">
               </div>
               <div class="form-grupo">
                 <label for="email">Correo electrónico *</label>
@@ -72,9 +67,9 @@ const VistaSoporte = {
 
             <div class="form-fila">
               <div class="form-grupo">
-                <label for="centro">Centro EMSAD (opcional)</label>
+                <label for="centro">Plantel (opcional)</label>
                 <input type="text" id="centro" name="centro"
-                       placeholder="Ej: EMSAD 170 Sombra Carrizal">
+                       placeholder="Ej: COBACH o EMSAD y número de plantel">
               </div>
               <div class="form-grupo">
                 <label for="tipo">Tipo de mensaje *</label>
@@ -95,7 +90,7 @@ const VistaSoporte = {
             <div class="form-grupo">
               <label for="mensaje">Mensaje *</label>
               <textarea id="mensaje" name="mensaje" required rows="6"
-                        placeholder="Cuéntanos con detalle tu duda, sugerencia o error encontrado..."
+                        placeholder="Describe qué pasó: materia, semestre, tema, qué esperabas ver y qué viste…"
                         maxlength="1000"></textarea>
               <small class="contador"><span id="contadorMsg">0</span> / 1000 caracteres</small>
             </div>
@@ -203,8 +198,8 @@ const VistaSoporte = {
 
       // Metadatos de Web3Forms
       formData.append("access_key", SOPORTE.web3forms.accessKey);
-      formData.append("subject",    `Nuevo mensaje desde Quantix - ${formData.get("tipo")}`);
-      formData.append("from_name",  "Portal Quantix");
+      formData.append("subject",    `Soporte Quantix - ${formData.get("tipo")}`);
+      formData.append("from_name",  "Soporte Quantix");
 
       // Estado de carga
       enviando = true;
@@ -260,14 +255,13 @@ const VistaSoporte = {
       } catch (error) {
         console.error("❌ Error al enviar:", error);
 
-        const email = encodeURIComponent(SOPORTE.canales[0].valor);
-        const emailVisible = escapar(SOPORTE.canales[0].valor);
+        const correo = escapar(SOPORTE.correo);
         const esTimeout = error.name === "AbortError";
 
         const html = esTimeout
           ? `⏱️ El envío tardó demasiado. Revisa tu conexión e inténtalo de nuevo.`
-          : `⚠️ No se pudo enviar el mensaje. Intenta de nuevo o escríbenos a
-             <a href="mailto:${email}">${emailVisible}</a>`;
+          : `⚠️ No se pudo enviar el mensaje. Intenta de nuevo o
+             <a href="mailto:${correo}?subject=Soporte%20Quantix">escríbenos por correo</a>.`;
 
         mostrarEstado("error", html, "alert");
 
